@@ -9,7 +9,7 @@ PREDICTIONS = {
     "teams": ("Uruguay", "Cabo Verde"),
     "powers": (81, 50),
     "venue": "Hard Rock Stadium, 迈阿密",
-    "time": "6/21 18:00 EDT (北京时间 6/22 06:00)",
+    "time": "6/22 06:00 北京时间 (美国 6/21 18:00 EDT · 迈阿密)",
     "context": "H组第二轮, 双方首轮均0-0闷平(U vs CV)和1-1平(Saudi vs U), 都需要赢球才能保留晋级悬念。",
     "form": "乌拉圭 1平0负, 0进球 1失球, 锋线哑火 / 佛得角 0平1平, 0进球 0失球, 拼劲十足",
     "key_factors": [
@@ -30,7 +30,7 @@ PREDICTIONS = {
     "teams": ("Spain", "Saudi Arabia"),
     "powers": (91, 58),
     "venue": "Mercedes-Benz Stadium, 亚特兰大",
-    "time": "6/21 12:00 EDT (北京时间 6/22 00:00)",
+    "time": "6/22 00:00 北京时间 (美国 6/21 12:00 EDT · 亚特兰大)",
     "context": "H组第二轮, 西班牙首轮0-0闷平佛得角暴露锋无力, 沙特1-1战平乌拉圭, 双方都不能输。",
     "form": "西班牙1平0负, 0进球 0失球, 进攻哑火 / 沙特1平0负, 1进球 1失球",
     "key_factors": [
@@ -51,7 +51,7 @@ PREDICTIONS = {
     "teams": ("Belgium", "Iran"),
     "powers": (83, 69),
     "venue": "SoFi Stadium, 洛杉矶",
-    "time": "6/21 12:00 PDT (北京时间 6/22 03:00)",
+    "time": "6/22 03:00 北京时间 (美国 6/21 12:00 PDT · 洛杉矶)",
     "context": "G组第二轮, 比利时首轮1-1平埃及, 黄金一代卢卡库浪费机会, 伊朗首轮2-2平新西兰, 阿兹蒙+塔雷米双枪状态火热。",
     "form": "比利时1平0负, 1进球 1失球, 黄金一代末战 / 伊朗1平0负, 2进球 2失球, 锋线爆发",
     "key_factors": [
@@ -72,7 +72,7 @@ PREDICTIONS = {
     "teams": ("New Zealand", "Egypt"),
     "powers": (45, 65),
     "venue": "BC Place, 温哥华",
-    "time": "6/21 18:00 PDT (北京时间 6/22 09:00)",
+    "time": "6/22 09:00 北京时间 (美国 6/21 18:00 PDT · 温哥华)",
     "context": "G组第二轮, 新西兰首轮2-2平伊朗爆出冷门, 伍德+托马斯双核给力, 埃及首轮1-1平比利时, 萨拉赫状态成疑。",
     "form": "新西兰1平0负, 2进球 2失球, 大黑马气质 / 埃及1平0负, 1进球 1失球",
     "key_factors": [

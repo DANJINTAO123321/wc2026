@@ -171,11 +171,12 @@ footer a { color:#ffb700; }
     <span>🏟 16城市</span>
     <span>⚽ 104场</span>
     <span>⏱ 数据: 6/20</span>
+    <span style="background:rgba(255,180,0,0.15);border-color:#ffb700;color:#ffd966">CN 全部时间均为北京时间</span>
   </div>
 </div>
 <div class="nav">
   <button class="active" onclick="goTo('overview')">总览</button>
-  <button onclick="goTo('mpred')">⭐ 6/21预测</button>
+  <button onclick="goTo('mpred')">⭐ 6/22凌晨预测</button>
   <button onclick="goTo('r3pred')">R3预测</button>
   <button onclick="goTo('power')">武力榜</button>
   <button onclick="goTo('groups')">分组赛</button>
@@ -372,7 +373,7 @@ def overview_stats():
       <div class="stat"><div class="v">🥇 {top3[0]["zh"]}</div><div class="l">武力王者 · {top3[0]["power"]}</div></div>
       <div class="stat"><div class="v">🥈 {top3[1]["zh"]}</div><div class="l">第二把交椅 · {top3[1]["power"]}</div></div>
       <div class="stat"><div class="v">🥉 {top3[2]["zh"]}</div><div class="l">第三极 · {top3[2]["power"]}</div></div>
-      <div class="stat"><div class="v">📅 6/21</div><div class="l">4场比分预测</div></div>
+      <div class="stat"><div class="v">📅 6/22凌晨</div><div class="l">4场比分预测(北京时间)</div></div>
     </div>'''
 
 out = HTML_HEAD
@@ -382,7 +383,7 @@ out += overview_stats()
 out += '</div>'
 
 # 6/21 详细预测(顶部置顶)
-out += '<div class="section" id="mpred"><div class="section-title">⭐ 6/21 4场比赛详细预测 (含3组比分)</div>'
+out += '<div class="section" id="mpred"><div class="section-title">⭐ 6/22凌晨-上午 4场比赛详细预测 (北京时间, 含3组比分)</div>'
 for key in ["M37_6/21","M38_6/21","M39_6/21","M40_6/21"]:
     out += match_prediction_html(key, PREDICTIONS[key])
 out += '</div>'
