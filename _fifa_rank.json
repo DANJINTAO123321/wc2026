@@ -1,0 +1,82 @@
+{
+  "Argentina": {
+    "rank": 1,
+    "points": 1877.27
+  },
+  "Spain": {
+    "rank": 2,
+    "points": 1874.71
+  },
+  "France": {
+    "rank": 3,
+    "points": 1870.7
+  },
+  "England": {
+    "rank": 4,
+    "points": 1828.02
+  },
+  "Portugal": {
+    "rank": 5,
+    "points": 1767.85
+  },
+  "Brazil": {
+    "rank": 6,
+    "points": 1765.86
+  },
+  "Morocco": {
+    "rank": 7,
+    "points": 1755.1
+  },
+  "Netherlands": {
+    "rank": 8,
+    "points": 1753.57
+  },
+  "Belgium": {
+    "rank": 9,
+    "points": 1742.24
+  },
+  "Germany": {
+    "rank": 10,
+    "points": 1735.77
+  },
+  "Croatia": {
+    "rank": 11,
+    "points": 1714.87
+  },
+  "Italy": {
+    "rank": 12,
+    "points": 1704.73
+  },
+  "Colombia": {
+    "rank": 13,
+    "points": 1698.35
+  },
+  "Mexico": {
+    "rank": 14,
+    "points": 1687.48
+  },
+  "Senegal": {
+    "rank": 15,
+    "points": 1684.07
+  },
+  "Uruguay": {
+    "rank": 16,
+    "points": 1673.07
+  },
+  "United States": {
+    "rank": 17,
+    "points": 1671.23
+  },
+  "Japan": {
+    "rank": 18,
+    "points": 1661.58
+  },
+  "Switzerland": {
+    "rank": 19,
+    "points": 1650.06
+  },
+  "Iran": {
+    "rank": 20,
+    "points": 1619.58
+  }
+}

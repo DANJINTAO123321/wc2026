@@ -1,0 +1,498 @@
+{
+  "A": {
+    "played": [
+      {
+        "home": "Mexico",
+        "score": "2-0",
+        "away": "South Africa",
+        "home_goals": "Quiñones 9' Jiménez 67'",
+        "away_goals": ""
+      },
+      {
+        "home": "South Korea",
+        "score": "2-1",
+        "away": "Czech Republic",
+        "home_goals": "Hwang In-beom 67' Oh Hyeon-gyu 80'",
+        "away_goals": "Krejčí 59'"
+      },
+      {
+        "home": "Czech Republic",
+        "score": "1-1",
+        "away": "South Africa",
+        "home_goals": "Sadílek 6'",
+        "away_goals": "Mokoena 83' ( pen. )"
+      },
+      {
+        "home": "Mexico",
+        "score": "1-0",
+        "away": "South Korea",
+        "home_goals": "Romo 50'",
+        "away_goals": ""
+      }
+    ],
+    "remaining": [
+      {
+        "home": "Czech Republic",
+        "match": "Match 53",
+        "away": "Mexico"
+      },
+      {
+        "home": "South Africa",
+        "match": "Match 54",
+        "away": "South Korea"
+      }
+    ]
+  },
+  "B": {
+    "played": [
+      {
+        "home": "Canada",
+        "score": "1-1",
+        "away": "Bosnia and Herzegovina",
+        "home_goals": "Larin 78'",
+        "away_goals": "Lukić 21'"
+      },
+      {
+        "home": "Qatar",
+        "score": "1-1",
+        "away": "Switzerland",
+        "home_goals": "Muheim 90+4' ( o.g. )",
+        "away_goals": "Embolo 17' ( pen. )"
+      },
+      {
+        "home": "Switzerland",
+        "score": "4-1",
+        "away": "Bosnia and Herzegovina",
+        "home_goals": "Manzambi 74' , 90' Vargas 84' Xhaka 90+7' ( pen. )",
+        "away_goals": "Mahmić 90+3'"
+      },
+      {
+        "home": "Canada",
+        "score": "6-0",
+        "away": "Qatar",
+        "home_goals": "Larin 16' J. David 29' , 45+3' , 90+2' Saliba 64' Manai 75' ( o.g. )",
+        "away_goals": ""
+      }
+    ],
+    "remaining": [
+      {
+        "home": "Switzerland",
+        "match": "Match 51",
+        "away": "Canada"
+      },
+      {
+        "home": "Bosnia and Herzegovina",
+        "match": "Match 52",
+        "away": "Qatar"
+      }
+    ]
+  },
+  "C": {
+    "played": [
+      {
+        "home": "Brazil",
+        "score": "1-1",
+        "away": "Morocco",
+        "home_goals": "Vinícius 32'",
+        "away_goals": "Saibari 21'"
+      },
+      {
+        "home": "Haiti",
+        "score": "0-1",
+        "away": "Scotland",
+        "home_goals": "",
+        "away_goals": "McGinn 28'"
+      },
+      {
+        "home": "Scotland",
+        "score": "0-1",
+        "away": "Morocco",
+        "home_goals": "",
+        "away_goals": "Saibari 2'"
+      },
+      {
+        "home": "Brazil",
+        "score": "3-0",
+        "away": "Haiti",
+        "home_goals": "Cunha 23' , 36' Vinícius 45+3'",
+        "away_goals": ""
+      }
+    ],
+    "remaining": [
+      {
+        "home": "Scotland",
+        "match": "Match 49",
+        "away": "Brazil"
+      },
+      {
+        "home": "Morocco",
+        "match": "Match 50",
+        "away": "Haiti"
+      }
+    ]
+  },
+  "D": {
+    "played": [
+      {
+        "home": "United States",
+        "score": "4-1",
+        "away": "Paraguay",
+        "home_goals": "Bobadilla 7' ( o.g. ) Balogun 31' , 45+5' Reyna 90+8'",
+        "away_goals": "Maurício 73'"
+      },
+      {
+        "home": "Australia",
+        "score": "2-0",
+        "away": "Turkey",
+        "home_goals": "Irankunda 27' Metcalfe 75'",
+        "away_goals": ""
+      },
+      {
+        "home": "United States",
+        "score": "2-0",
+        "away": "Australia",
+        "home_goals": "Burgess 11' ( o.g. ) Freeman 43'",
+        "away_goals": ""
+      },
+      {
+        "home": "Turkey",
+        "score": "0-1",
+        "away": "Paraguay",
+        "home_goals": "",
+        "away_goals": "Galarza 2'"
+      }
+    ],
+    "remaining": [
+      {
+        "home": "Turkey",
+        "match": "Match 59",
+        "away": "United States"
+      },
+      {
+        "home": "Paraguay",
+        "match": "Match 60",
+        "away": "Australia"
+      }
+    ]
+  },
+  "E": {
+    "played": [
+      {
+        "home": "Germany",
+        "score": "7-1",
+        "away": "Curaçao",
+        "home_goals": "Nmecha 6' Schlotterbeck 38' Havertz 45+5' ( pen. ) , 88' Musiala 47' Brown 68' Undav 78'",
+        "away_goals": "Comenencia 21'"
+      },
+      {
+        "home": "Ivory Coast",
+        "score": "1-0",
+        "away": "Ecuador",
+        "home_goals": "Diallo 90'",
+        "away_goals": ""
+      }
+    ],
+    "remaining": [
+      {
+        "home": "Germany",
+        "match": "Match 33",
+        "away": "Ivory Coast"
+      },
+      {
+        "home": "Ecuador",
+        "match": "Match 34",
+        "away": "Curaçao"
+      },
+      {
+        "home": "Curaçao",
+        "match": "Match 55",
+        "away": "Ivory Coast"
+      },
+      {
+        "home": "Ecuador",
+        "match": "Match 56",
+        "away": "Germany"
+      }
+    ]
+  },
+  "F": {
+    "played": [
+      {
+        "home": "Netherlands",
+        "score": "2-2",
+        "away": "Japan",
+        "home_goals": "Van Dijk 50' Summerville 64'",
+        "away_goals": "Nakamura 57' Kamada 88'"
+      },
+      {
+        "home": "Sweden",
+        "score": "5-1",
+        "away": "Tunisia",
+        "home_goals": "Ayari 7' , 90+6' Isak 30' Gyökeres 59' Svanberg 84'",
+        "away_goals": "Rekik 43'"
+      }
+    ],
+    "remaining": [
+      {
+        "home": "Netherlands",
+        "match": "Match 35",
+        "away": "Sweden"
+      },
+      {
+        "home": "Tunisia",
+        "match": "Match 36",
+        "away": "Japan"
+      },
+      {
+        "home": "Japan",
+        "match": "Match 57",
+        "away": "Sweden"
+      },
+      {
+        "home": "Tunisia",
+        "match": "Match 58",
+        "away": "Netherlands"
+      }
+    ]
+  },
+  "G": {
+    "played": [
+      {
+        "home": "Belgium",
+        "score": "1-1",
+        "away": "Egypt",
+        "home_goals": "Hany 66' ( o.g. )",
+        "away_goals": "Ashour 19'"
+      },
+      {
+        "home": "Iran",
+        "score": "2-2",
+        "away": "New Zealand",
+        "home_goals": "Rezaeian 32' Mohebi 64'",
+        "away_goals": "Just 7' , 54'"
+      }
+    ],
+    "remaining": [
+      {
+        "home": "Belgium",
+        "match": "Match 39",
+        "away": "Iran"
+      },
+      {
+        "home": "New Zealand",
+        "match": "Match 40",
+        "away": "Egypt"
+      },
+      {
+        "home": "Egypt",
+        "match": "Match 63",
+        "away": "Iran"
+      },
+      {
+        "home": "New Zealand",
+        "match": "Match 64",
+        "away": "Belgium"
+      }
+    ]
+  },
+  "H": {
+    "played": [
+      {
+        "home": "Spain",
+        "score": "0-0",
+        "away": "Cape Verde",
+        "home_goals": "",
+        "away_goals": ""
+      },
+      {
+        "home": "Saudi Arabia",
+        "score": "1-1",
+        "away": "Uruguay",
+        "home_goals": "Al-Amri 41'",
+        "away_goals": "M. Araújo 80'"
+      }
+    ],
+    "remaining": [
+      {
+        "home": "Spain",
+        "match": "Match 38",
+        "away": "Saudi Arabia"
+      },
+      {
+        "home": "Uruguay",
+        "match": "Match 37",
+        "away": "Cape Verde"
+      },
+      {
+        "home": "Cape Verde",
+        "match": "Match 65",
+        "away": "Saudi Arabia"
+      },
+      {
+        "home": "Uruguay",
+        "match": "Match 66",
+        "away": "Spain"
+      }
+    ]
+  },
+  "I": {
+    "played": [
+      {
+        "home": "France",
+        "score": "3-1",
+        "away": "Senegal",
+        "home_goals": "Mbappé 66' , 90+6' Barcola 82'",
+        "away_goals": "Mbaye 90+5'"
+      },
+      {
+        "home": "Iraq",
+        "score": "1-4",
+        "away": "Norway",
+        "home_goals": "Hussein 39'",
+        "away_goals": "Haaland 29' , 43' Østigård 76' Hussein 90+6' ( o.g. )"
+      }
+    ],
+    "remaining": [
+      {
+        "home": "France",
+        "match": "Match 42",
+        "away": "Iraq"
+      },
+      {
+        "home": "Norway",
+        "match": "Match 41",
+        "away": "Senegal"
+      },
+      {
+        "home": "Norway",
+        "match": "Match 61",
+        "away": "France"
+      },
+      {
+        "home": "Senegal",
+        "match": "Match 62",
+        "away": "Iraq"
+      }
+    ]
+  },
+  "J": {
+    "played": [
+      {
+        "home": "Argentina",
+        "score": "3-0",
+        "away": "Algeria",
+        "home_goals": "Messi 17' , 60' , 76'",
+        "away_goals": ""
+      },
+      {
+        "home": "Austria",
+        "score": "3-1",
+        "away": "Jordan",
+        "home_goals": "Schmid 20' Al-Arab 76' ( o.g. ) Arnautović 90+12' ( pen. )",
+        "away_goals": "Olwan 50'"
+      }
+    ],
+    "remaining": [
+      {
+        "home": "Argentina",
+        "match": "Match 43",
+        "away": "Austria"
+      },
+      {
+        "home": "Jordan",
+        "match": "Match 44",
+        "away": "Algeria"
+      },
+      {
+        "home": "Algeria",
+        "match": "Match 69",
+        "away": "Austria"
+      },
+      {
+        "home": "Jordan",
+        "match": "Match 70",
+        "away": "Argentina"
+      }
+    ]
+  },
+  "K": {
+    "played": [
+      {
+        "home": "Portugal",
+        "score": "1-1",
+        "away": "DR Congo",
+        "home_goals": "J. Neves 6'",
+        "away_goals": "Wissa 45+5'"
+      },
+      {
+        "home": "Uzbekistan",
+        "score": "1-3",
+        "away": "Colombia",
+        "home_goals": "Fayzullaev 60'",
+        "away_goals": "Muñoz 40' Díaz 65' Campaz 90+9'"
+      }
+    ],
+    "remaining": [
+      {
+        "home": "Portugal",
+        "match": "Match 47",
+        "away": "Uzbekistan"
+      },
+      {
+        "home": "Colombia",
+        "match": "Match 48",
+        "away": "DR Congo"
+      },
+      {
+        "home": "Colombia",
+        "match": "Match 71",
+        "away": "Portugal"
+      },
+      {
+        "home": "DR Congo",
+        "match": "Match 72",
+        "away": "Uzbekistan"
+      }
+    ]
+  },
+  "L": {
+    "played": [
+      {
+        "home": "England",
+        "score": "4-2",
+        "away": "Croatia",
+        "home_goals": "Kane 12' ( pen. ) , 42' Bellingham 47' Rashford 85'",
+        "away_goals": "Baturina 36' Musa 45+5'"
+      },
+      {
+        "home": "Ghana",
+        "score": "1-0",
+        "away": "Panama",
+        "home_goals": "Yirenkyi 90+5'",
+        "away_goals": ""
+      }
+    ],
+    "remaining": [
+      {
+        "home": "England",
+        "match": "Match 45",
+        "away": "Ghana"
+      },
+      {
+        "home": "Panama",
+        "match": "Match 46",
+        "away": "Croatia"
+      },
+      {
+        "home": "Panama",
+        "match": "Match 67",
+        "away": "England"
+      },
+      {
+        "home": "Croatia",
+        "match": "Match 68",
+        "away": "Ghana"
+      }
+    ]
+  }
+}

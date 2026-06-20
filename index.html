@@ -61,6 +61,20 @@ a { color:inherit; text-decoration:none; }
 .match-card .m-score.top { background:linear-gradient(180deg, rgba(255,180,0,0.2), rgba(255,180,0,0.05)); border:1.5px solid #ffb700; }
 .match-card .m-score.top .sc { font-size:20px; color:#ffb700; }
 .match-card .m-score.top .pc { color:#ffb700; font-weight:700; }
+
+/* === 冠军赔率 === */
+.odds-table { width:100%; border-collapse:collapse; font-size:12px; margin-top:6px; }
+.odds-table th { background:rgba(255,180,0,0.1); color:#ffb700; font-weight:600; padding:6px 5px; text-align:center; border-bottom:2px solid rgba(255,180,0,0.3); font-size:10px; }
+.odds-table td { padding:5px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.06); }
+.odds-table tr:hover td { background:rgba(255,180,0,0.04); }
+.odds-table .t { text-align:left; }
+.odds-table .top3 td { color:#ffb700; font-weight:700; }
+.odds-sup { font-size:10px; color:#8aa3bd; margin-bottom:8px; }
+
+.combo-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:10px; display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; }
+.combo-card .teams { font-size:13px; font-weight:600; }
+.combo-card .odds { font-size:18px; font-weight:800; color:#ffb700; }
+.combo-card .desc { font-size:10px; color:#8aa3bd; }
 .match-card .m-advice { background:linear-gradient(90deg, rgba(255,180,0,0.18), rgba(255,180,0,0.05)); padding:8px 10px; border-radius:8px; font-size:13px; font-weight:700; text-align:center; color:#ffd966; border:1px solid rgba(255,180,0,0.25); }
 
 /* === 球队卡片网格(2-6列) === */
@@ -161,6 +175,7 @@ footer a { color:#ffb700; }
   <button onclick="goTo('overview')">总览</button>
   <button onclick="goTo('power')">武力榜</button>
   <button onclick="goTo('groups')">分组赛况</button>
+  <button onclick="goTo('odds')">冠军赔率</button>
   <button onclick="goTo('teams')">48强详情</button>
 </div>
 <div class="container"><div class="section" id="mpred"><div class="section-title">⭐ 今日预测 (北京时间 6/21 凌晨-上午)</div><div class="matches-grid"><div class="match-card">
@@ -180,11 +195,11 @@ footer a { color:#ffb700; }
       <div class="pwr" style="background:#3ec46d33;color:#3ec46d">武力 70 · C级</div>
     </div>
   </div>
-  <div class="m-info">📋 F组第二轮, 荷兰首轮2-2战平日本(萨默维尔补时绝平), 范戴克+德容领衔但锋线把握能力堪忧, 加克波错失良机; 瑞典首轮5-1横扫突尼斯, 伊萨克+哲凯赖什+阿亚里(2球)锋线三叉戟状态爆表!</div>
-  <div class="m-form">📊 荷兰0胜1平0负 进2失2 / 瑞典1胜0平0负 进5失1</div>
-  <ul class="m-factors"><li>瑞典锋线极度凶猛: 5球由4人攻入, 伊萨克+哲凯赖什+阿亚里多点开花, 难以防死</li><li>荷兰后防核心范戴克速度回追偏慢, 怕伊萨克+哲凯赖什这种高大快速前锋</li><li>荷兰中场双核德容+赖因德斯掌控力强, 但首场暴露攻防转换慢</li><li>德佩(31岁)状态下滑, 加克波+哈克波效率不足, 锋线乏力</li><li>瑞典主帅托马森442防守反击, 中场福斯贝里(34岁)体能隐患</li></ul>
-  <div class="m-scores"><div class="m-score top"><div class="sc">1-1</div><div class="pc">30%</div><div class="desc">常规: 双方各一球平分秋色</div></div><div class="m-score"><div class="sc">2-1</div><div class="pc">25%</div><div class="desc">可能: 荷兰险胜, 加克波绝杀</div></div><div class="m-score"><div class="sc">1-2</div><div class="pc">20%</div><div class="desc">冷门: 瑞典双塔连线破门, 爆冷赢球</div></div></div>
-  <div class="m-advice">💎 主推 **1-1** 平分秋色(警惕瑞典冷门)</div>
+  <div class="m-info">📋 F组第二轮, 荷兰首轮2-2被日本补时绝平 (范戴克50' / 萨默维尔64'), 阵容豪华但防线不稳, 科曼急需一胜; 瑞典首轮5-1横扫突尼斯 (阿亚里7'90+6' / 伊萨克30' / 哲凯赖什 / 雷基克43'), 伊萨克+哲凯赖什锋线状态爆表, F组净胜球领跑.</div>
+  <div class="m-form">📊 FIFA排名: 荷兰#8 (1754分) vs 瑞典#45 (1400分). R1: 荷兰2-2日本 / 瑞典5-1突尼斯</div>
+  <ul class="m-factors"><li>**4家AI一致首推 荷兰 2-1 瑞典** (千问/豆包/Kimi/Deepseek, 腾讯新闻6/20 17:00)</li><li>次选分歧: 千问2-0 / 豆包1-1 / Kimi1-1 / Deepseek2-2</li><li>荷兰阵容厚度占优 (德佩接近复出), 但核心后卫年龄偏大</li><li>瑞典首轮净胜球+4优势, 心态不慌, 稳守反击 (5-3-2)</li><li>双方均为客场作战 (休斯敦), 历史上交锋多小比分胶着</li><li>FIFA排名差 354 分, 中国体彩赔率 1 赔 1.65 vs 4.50 (隐含 60% vs 22%)</li></ul>
+  <div class="m-scores"><div class="m-score top"><div class="sc">2-1</div><div class="pc">46%</div><div class="desc">最佳推荐 - 4家AI一致首推 + 体彩赔率隐含</div></div><div class="m-score"><div class="sc">1-1</div><div class="pc">22%</div><div class="desc">次选 - 豆包/Kimi 模型, 瑞典反击+荷兰次轮不稳</div></div><div class="m-score"><div class="sc">2-0</div><div class="pc">14%</div><div class="desc">次选 - 千问次选, 荷兰完胜</div></div><div class="m-score"><div class="sc">2-2</div><div class="pc">10%</div><div class="desc">冷门 - Deepseek 次选, 进球大战</div></div><div class="m-score"><div class="sc">1-2</div><div class="pc">8%</div><div class="desc">冷门 - 瑞典 5-1 状态延续, 爆冷赢球</div></div></div>
+  <div class="m-advice">💎 最佳推荐 **2-1** (荷兰小胜, 4家AI一致, 概率 46%) | 警惕 1-1 (22%, 双方都接受平局的心态可能胶着)</div>
 </div><div class="match-card">
   <div class="m-head">
     <span class="m-id">⚽ M33</span>
@@ -202,37 +217,37 @@ footer a { color:#ffb700; }
       <div class="pwr" style="background:#3ec46d33;color:#3ec46d">武力 67 · C级</div>
     </div>
   </div>
-  <div class="m-info">📋 E组第二轮, 德国首轮7-1屠杀库拉索, 穆西亚拉+维尔茨+哈弗茨三叉戟全面爆发, 7个进球7人破门。科特迪瓦首轮1-0小胜厄瓜多尔, 迪亚洛90分钟绝杀, 凯西调度稳健。</div>
-  <div class="m-form">📊 德国1胜0平0负 进7失1 / 科特迪瓦1胜0平0负 进1失0</div>
-  <ul class="m-factors"><li>德国火力分散: 7球由7人攻入, 科特迪瓦难以针对性布防</li><li>哈弗茨15分钟21场俱乐部国家队场场进球, 状态生涯巅峰</li><li>德国中场厚度世界顶级: 穆西亚拉+维尔茨+京多安全面压制</li><li>科特迪瓦只能防守+反击: 凯西+拜利+佩佩三老领衔, 30+体能崩盘</li><li>德国主帅纳格尔斯曼高位逼抢+边路突击体系已成型</li></ul>
-  <div class="m-scores"><div class="m-score top"><div class="sc">3-0</div><div class="pc">35%</div><div class="desc">常规: 德国下半场连下两城, 哈弗茨+穆西亚拉破门</div></div><div class="m-score"><div class="sc">4-1</div><div class="pc">25%</div><div class="desc">可能: 德国火力全开, 科特迪瓦偷一球</div></div><div class="m-score"><div class="sc">2-0</div><div class="pc">20%</div><div class="desc">可能: 德国稍显松懈, 稳健小胜</div></div></div>
-  <div class="m-advice">💎 主推 **3-0** 德国完胜</div>
+  <div class="m-info">📋 E组第二轮, 德国首轮7-1屠杀库拉索 (恩梅查6' / 施洛特贝克38' / 哈弗茨45+5'点, 88' / 穆西亚拉47' / 布朗68' / 温达夫78'), 8次vs非洲队5胜2平1负 (只在1982输给阿尔及利亚); 科特迪瓦首轮1-0小胜厄瓜多尔, 迪亚洛第90分钟替补绝杀, 身价非洲区最高.</div>
+  <div class="m-form">📊 FIFA排名: 德国#10 (1736分) vs 科特迪瓦#46 (1390分). R1: 德国7-1库拉索 / 科特迪瓦1-0厄瓜多尔</div>
+  <ul class="m-factors"><li>**5家AI全部预测德国胜** (Whoscored/sportsmole/腾讯等), Whoscored 2-1 / sportsmole 3-2</li><li>德国R1 7球7人破门, 火力分散, 哈福茨状态生猛 (本场关键先生)</li><li>科特迪瓦中卫恩迪卡伤情存疑, 可能影响后防</li><li>德国 8次 vs 非洲队 5胜2平1负, 唯一败给 1982 年的阿尔及利亚</li><li>**德国近2次世界杯小组出局 (2018/2022), 次轮历来不稳**</li><li>腾讯体育吐槽君观点: 看好科特迪瓦拿1分 (平局)</li><li>FIFA排名差 346 分, 体彩隐含德国胜概率约 80%</li></ul>
+  <div class="m-scores"><div class="m-score top"><div class="sc">2-1</div><div class="pc">34%</div><div class="desc">最佳推荐 - Whoscored 首推 / 5家AI 多数</div></div><div class="m-score"><div class="sc">3-1</div><div class="pc">24%</div><div class="desc">次选 - 德国 R1 火力延续, 多点开花</div></div><div class="m-score"><div class="sc">1-1</div><div class="pc">18%</div><div class="desc">次选 (冷门) - 腾讯吐槽君看好 + 德国次轮魔咒 + 科特迪瓦死守</div></div><div class="m-score"><div class="sc">2-0</div><div class="pc">14%</div><div class="desc">次选 - 稳健小胜, 纳格尔斯曼控场</div></div><div class="m-score"><div class="sc">3-2</div><div class="pc">10%</div><div class="desc">冷门 - sportsmole 预测, 德国大胜但科特迪瓦偷一球</div></div></div>
+  <div class="m-advice">💎 最佳推荐 **2-1** (5家AI一致, 概率 34%) | 次推 **3-1** (24%, 德国延续 R1 火力) | 警惕 1-1 (18%, 德国次轮历来不稳, 科特迪瓦身体+反击威胁)</div>
 </div><div class="match-card">
   <div class="m-head">
     <span class="m-id">⚽ M34</span>
-    <span class="m-time">🕒 6/21 07:00 北京时间</span>
+    <span class="m-time">🕒 6/21 08:00 北京时间</span>
   </div>
   <div class="m-title">厄瓜多尔 vs 库拉索</div>
   <div class="m-teams">
     <div class="m-team">
       <div class="nm">厄瓜多尔</div>
-      <div class="pwr" style="background:#3ec46d33;color:#3ec46d">武力 68 · C级</div>
+      <div class="pwr" style="background:#ffb70033;color:#ffb700">武力 75 · B级</div>
     </div>
     <div class="m-vs">VS</div>
     <div class="m-team">
       <div class="nm">库拉索</div>
-      <div class="pwr" style="background:#4a515833;color:#4a5158">武力 35 · F级</div>
+      <div class="pwr" style="background:#4a515833;color:#4a5158">武力 40 · F级</div>
     </div>
   </div>
-  <div class="m-info">📋 E组第二轮, 厄瓜多尔首轮0-1惜败科特迪瓦, 恩纳·瓦伦西亚错失点球; 库拉索首轮1-7惨败德国, 首次参赛经验不足。</div>
-  <div class="m-form">📊 厄瓜多尔0胜0平1负 进0失1 / 库拉索0胜0平1负 进1失7</div>
-  <ul class="m-factors"><li>厄瓜多尔实力碾压: 武力值68 vs 35, 差距33分, 必胜之局</li><li>恩纳·瓦伦西亚(33岁)须找回状态, 上场被零封+失点, 心理压力大</li><li>库拉索防守崩塌: 上一场7人破门, 后防业余级; 艾德沃卡特(70岁)难调</li><li>高原球队: 厄瓜多尔世预赛主场2400米高原优势, 平原作战反而一般</li><li>库拉索核心巴克(中场)需独自对抗厄瓜多尔三中场, 必败无疑</li></ul>
-  <div class="m-scores"><div class="m-score top"><div class="sc">3-0</div><div class="pc">40%</div><div class="desc">常规: 厄瓜多尔大胜, 恩纳·瓦伦西亚+替补破门</div></div><div class="m-score"><div class="sc">2-0</div><div class="pc">30%</div><div class="desc">可能: 厄瓜多尔稳守, 小胜即可</div></div><div class="m-score"><div class="sc">4-0</div><div class="pc">20%</div><div class="desc">可能: 厄瓜多尔火力全开, 库拉索崩盘</div></div></div>
-  <div class="m-advice">💎 主推 **3-0** 厄瓜多尔大胜</div>
+  <div class="m-info">📋 E组第二轮, 厄瓜多尔首轮0-1被科特迪瓦补时绝杀, 身价3.69亿欧, 5大联赛6人, 凯塞多+因卡皮耶+恩纳-瓦伦西亚领衔; 库拉索首轮1-7惨败德国, 身价仅2578万欧, 归化国足的华裔陈达毅值得关注. 本场马宁领衔中国3裁判亮相.</div>
+  <div class="m-form">📊 FIFA排名: 厄瓜多尔#28 vs 库拉索#83. R1: 厄瓜多尔0-1科特迪瓦 / 库拉索1-7德国</div>
+  <ul class="m-factors"><li>**5家AI一致看好厄瓜多尔大胜**, 3家首推 3-0, 2家其他大比分</li><li>库拉索热身赛 0-2 不敌国足 (赛前鱼腩信号)</li><li>厄瓜多尔世界排名28, 库拉索排名83, **身价差 14 倍** (3.69亿 vs 2578万欧)</li><li>双方历史首次交锋, 厄瓜多尔急需首胜争出线</li><li>马宁主裁判 + 腾讯体育认定: 厄瓜多尔化身最强之矛, 拿足净胜球</li><li>凯塞多+因卡皮耶五大联赛主力, 库拉索 5 大联赛 0 人</li></ul>
+  <div class="m-scores"><div class="m-score top"><div class="sc">3-0</div><div class="pc">42%</div><div class="desc">最佳推荐 - 3家AI首推, 厄瓜多尔化身最强之矛</div></div><div class="m-score"><div class="sc">2-0</div><div class="pc">26%</div><div class="desc">次选 - 2家AI次选, 稳健小胜</div></div><div class="m-score"><div class="sc">4-0</div><div class="pc">16%</div><div class="desc">次选 - 厄瓜多尔刷净胜球 (F组净胜球战)</div></div><div class="m-score"><div class="sc">4-1</div><div class="pc">10%</div><div class="desc">冷门 - 库拉索偷一球 (马宁主裁判尺度可能放大对抗)</div></div><div class="m-score"><div class="sc">5-0</div><div class="pc">6%</div><div class="desc">冷门 - 大屠杀, 库拉索再现 R1 崩盘</div></div></div>
+  <div class="m-advice">💎 最佳推荐 **3-0** (5家AI一致, 概率 42%) | 次推 2-0 (26%, 稳健小胜) | 进球数大概率 >= 2.5 (厄瓜多尔火力 + 库拉索防线崩塌)</div>
 </div><div class="match-card">
   <div class="m-head">
     <span class="m-id">⚽ M36</span>
-    <span class="m-time">🕒 6/21 11:00 北京时间</span>
+    <span class="m-time">🕒 6/21 12:00 北京时间</span>
   </div>
   <div class="m-title">突尼斯 vs 日本</div>
   <div class="m-teams">
@@ -246,11 +261,11 @@ footer a { color:#ffb700; }
       <div class="pwr" style="background:#ffb70033;color:#ffb700">武力 78 · B级</div>
     </div>
   </div>
-  <div class="m-info">📋 F组第二轮, 突尼斯首轮1-5惨败瑞典, 后防5次被破; 日本首轮2-2战平荷兰, 中村敬斗+镰田大地破门, 三笘薰+久保建英表现出色。</div>
-  <div class="m-form">📊 突尼斯0胜0平1负 进1失5 / 日本0胜1平0负 进2失2</div>
-  <ul class="m-factors"><li>日本旅欧球员群实力碾压: 三笘薰+久保建英+远藤航+富安健洋</li><li>突尼斯后防业余级: 上一场5次被破, 难以抵挡日本</li><li>日本主帅森保一调度能力强, 关键时刻换上进攻球员</li><li>突尼斯核心姆萨克尼(38岁)状态成疑, 连续作战体能必出问题</li><li>日本边路突击: 三笘薰+伊东纯也速度压制突尼斯老迈边后卫</li></ul>
-  <div class="m-scores"><div class="m-score top"><div class="sc">0-2</div><div class="pc">35%</div><div class="desc">常规: 日本完胜, 三笘薰+久保建英破门</div></div><div class="m-score"><div class="sc">1-3</div><div class="pc">25%</div><div class="desc">可能: 突尼斯偷一球, 日本火力全开</div></div><div class="m-score"><div class="sc">0-1</div><div class="pc">20%</div><div class="desc">可能: 日本小胜, 突尼斯摆大巴死守</div></div></div>
-  <div class="m-advice">💎 主推 **0-2** 日本完胜</div>
+  <div class="m-info">📋 F组第二轮 (**本场是世界杯史上第1000场**), 突尼斯首轮1-5惨败瑞典后**火速换帅** (拉穆奇被解雇, 雷纳接任), 非洲劲旅出线压力巨大; 日本首轮2-2逼平荷兰 (中村敬斗57' / 镰田大地88' 补时), 三笘薰+久保建英+远藤航+富安健洋多点开花, 反击效率恐怖.</div>
+  <div class="m-form">📊 FIFA排名: 突尼斯#41 vs 日本#15. R1: 突尼斯1-5瑞典 / 日本2-2荷兰</div>
+  <ul class="m-factors"><li>**4大AI中 3家预测日本胜**: Deepseek 3-1 / Kimi 1-3 / 豆包 1-1 (独树一帜)</li><li>豆包独树一帜预测 **1-1 平局** (认为两队实力差距不大, 走势胶着)</li><li>日本 旅欧球员群冠绝亚洲, FIFA 排名 15 vs 突尼斯 41</li><li>突尼斯**首轮后换帅** (Lamouchi -> Renard), 战术动荡但防守纪律仍在</li><li>日本2度领先荷兰+补时扳平, 反击效率高 (三笘薰+久保建英突破犀利)</li><li>Deepseek 给出突尼斯仅 **15.8%** 赢球概率</li><li>腾讯吐槽君观点: 日本短板暴露 (防线) 难赢北非劲旅</li></ul>
+  <div class="m-scores"><div class="m-score top"><div class="sc">1-2</div><div class="pc">32%</div><div class="desc">最佳推荐 - Kimi 首推, 日本反客为主小胜</div></div><div class="m-score"><div class="sc">0-2</div><div class="pc">22%</div><div class="desc">次选 - Deepseek 首推, 日本完胜</div></div><div class="m-score"><div class="sc">1-1</div><div class="pc">18%</div><div class="desc">次选 (冷门) - 豆包独推, 突尼斯换帅后拼平</div></div><div class="m-score"><div class="sc">0-1</div><div class="pc">12%</div><div class="desc">冷门 - 日本小胜, 突尼斯死守</div></div><div class="m-score"><div class="sc">1-3</div><div class="pc">10%</div><div class="desc">冷门 - 日本大胜, 突尼斯换帅崩盘</div></div><div class="m-score"><div class="sc">0-0</div><div class="pc">6%</div><div class="desc">冷门 - 闷平, 双方都不冒险</div></div></div>
+  <div class="m-advice">💎 最佳推荐 **1-2** (日本反客为主小胜, 概率 32%) | 次推 0-2 (22%) | 警惕 1-1 (18%, 豆包模型独推, 突尼斯换帅后可能爆平局)</div>
 </div></div></div><div class="section" id="overview"><div class="section-title">📊 总览</div>
     <div class="overview">
       <div class="stat"><div class="v">48</div><div class="l">参赛球队</div></div>
@@ -262,13 +277,13 @@ footer a { color:#ffb700; }
   <div class="venue">📍 墨西哥城/瓜达拉哈拉</div>
   <table class="stand">
     <thead><tr><th>#</th><th style="text-align:left">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>分</th><th>晋级</th></tr></thead>
-    <tbody><tr><td class="rank1">1</td><td class="t">墨西哥</td><td>2</td><td>2</td><td>0</td><td>0</td><td>3</td><td>0</td><td>6</td><td><span class="adv">晋级</span></td></tr><tr><td class="">2</td><td class="t">韩国</td><td>2</td><td>1</td><td>0</td><td>1</td><td>2</td><td>2</td><td>3</td><td></td></tr><tr><td class="">3</td><td class="t">捷克</td><td>2</td><td>0</td><td>1</td><td>1</td><td>2</td><td>3</td><td>1</td><td></td></tr><tr><td class="">4</td><td class="t">南非</td><td>2</td><td>0</td><td>1</td><td>1</td><td>1</td><td>3</td><td>1</td><td></td></tr></tbody>
+    <tbody><tr><td class="rank1">1</td><td class="t">墨西哥</td><td>3</td><td>3</td><td>0</td><td>0</td><td>4</td><td>0</td><td>9</td><td></td></tr><tr><td class="">2</td><td class="t">韩国</td><td>3</td><td>2</td><td>0</td><td>1</td><td>3</td><td>2</td><td>6</td><td></td></tr><tr><td class="">3</td><td class="t">捷克</td><td>3</td><td>0</td><td>1</td><td>2</td><td>2</td><td>4</td><td>1</td><td></td></tr><tr><td class="">4</td><td class="t">南非</td><td>3</td><td>0</td><td>1</td><td>2</td><td>1</td><td>4</td><td>1</td><td></td></tr></tbody>
   </table>
   <div style="margin-top:8px;padding-top:6px;border-top:1px dashed rgba(255,255,255,0.1)">
     <div style="font-size:10px;color:#8aa3bd;margin-bottom:4px">已结束</div>
-    <div class="match-row"><span class="team left">墨西哥</span><span class="score">2-0</span><span class="team">南非</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 基尼奥内斯 9', 希门尼斯 67'</div><div class="match-row"><span class="team left">韩国</span><span class="score">2-1</span><span class="team">捷克</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 黄仁范 67', 吴贤揆 80' / 克雷伊奇 59'</div><div class="match-row"><span class="team left">捷克</span><span class="score">1-1</span><span class="team">南非</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 萨迪莱克 6' / 莫科纳 83'(点)</div><div class="match-row"><span class="team left">墨西哥</span><span class="score">1-0</span><span class="team">韩国</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 罗莫 50'</div>
+    <div class="match-row"><span class="team left">墨西哥</span><span class="score">2-0</span><span class="team">南非</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Quiñones 9' Jiménez 67' / </div><div class="match-row"><span class="team left">韩国</span><span class="score">2-1</span><span class="team">捷克</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Hwang In-beom 67' Oh Hyeon-gyu 80' / Krejčí 59'</div><div class="match-row"><span class="team left">捷克</span><span class="score">1-1</span><span class="team">南非</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Sadílek 6' / Mokoena 83' ( pen. )</div><div class="match-row"><span class="team left">墨西哥</span><span class="score">1-0</span><span class="team">韩国</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Romo 50' / </div>
     <div style="font-size:10px;color:#8aa3bd;margin:6px 0 4px">未踢</div>
-    <div class="match-row future"><span class="team left">捷克</span><span class="score">VS</span><span class="team">墨西哥</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事53 6/24</div><div class="match-row future"><span class="team left">南非</span><span class="score">VS</span><span class="team">韩国</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事54 6/24</div>
+    <div class="match-row future"><span class="team left">捷克</span><span class="score">VS</span><span class="team">墨西哥</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 53 6/24</div><div class="match-row future"><span class="team left">南非</span><span class="score">VS</span><span class="team">韩国</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 54 6/24</div>
   </div>
   <div class="group-pred">💡 晋级: <b>墨西哥</b> · 次席: <b>韩国</b> · 附加: <b>捷克</b></div>
 </div><div class="group">
@@ -276,27 +291,27 @@ footer a { color:#ffb700; }
   <div class="venue">📍 多伦多/旧金山湾区</div>
   <table class="stand">
     <thead><tr><th>#</th><th style="text-align:left">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>分</th><th>晋级</th></tr></thead>
-    <tbody><tr><td class="rank1">1</td><td class="t">加拿大</td><td>2</td><td>1</td><td>1</td><td>0</td><td>7</td><td>1</td><td>4</td><td><span class="adv">晋级</span></td></tr><tr><td class="">2</td><td class="t">瑞士</td><td>2</td><td>1</td><td>1</td><td>0</td><td>5</td><td>2</td><td>4</td><td></td></tr><tr><td class="">3</td><td class="t">波黑</td><td>2</td><td>0</td><td>1</td><td>1</td><td>2</td><td>5</td><td>1</td><td></td></tr><tr><td class="">4</td><td class="t">卡塔尔</td><td>2</td><td>0</td><td>1</td><td>1</td><td>1</td><td>7</td><td>1</td><td></td></tr></tbody>
+    <tbody><tr><td class="rank1">1</td><td class="t">瑞士</td><td>3</td><td>2</td><td>1</td><td>0</td><td>6</td><td>2</td><td>7</td><td></td></tr><tr><td class="">2</td><td class="t">加拿大</td><td>3</td><td>1</td><td>1</td><td>1</td><td>7</td><td>2</td><td>4</td><td></td></tr><tr><td class="">3</td><td class="t">卡塔尔</td><td>3</td><td>1</td><td>1</td><td>1</td><td>2</td><td>7</td><td>4</td><td></td></tr><tr><td class="">4</td><td class="t">波黑</td><td>3</td><td>0</td><td>1</td><td>2</td><td>2</td><td>6</td><td>1</td><td></td></tr></tbody>
   </table>
   <div style="margin-top:8px;padding-top:6px;border-top:1px dashed rgba(255,255,255,0.1)">
     <div style="font-size:10px;color:#8aa3bd;margin-bottom:4px">已结束</div>
-    <div class="match-row"><span class="team left">加拿大</span><span class="score">1-1</span><span class="team">波黑</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 拉林 78' / 卢基奇 21'</div><div class="match-row"><span class="team left">卡塔尔</span><span class="score">1-1</span><span class="team">瑞士</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 穆海姆 90+4'(乌龙) / 恩博洛 17'(点)</div><div class="match-row"><span class="team left">瑞士</span><span class="score">4-1</span><span class="team">波黑</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 曼赞比 74',90' 巴尔加斯 84' 扎卡 90+7'(点) / 马赫米奇 90+3'</div><div class="match-row"><span class="team left">加拿大</span><span class="score">6-0</span><span class="team">卡塔尔</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 拉林 16' J·戴维 29',45+3',90+2' 萨利巴 64' 马奈 75'(乌龙)</div>
+    <div class="match-row"><span class="team left">加拿大</span><span class="score">1-1</span><span class="team">波黑</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Larin 78' / Lukić 21'</div><div class="match-row"><span class="team left">卡塔尔</span><span class="score">1-1</span><span class="team">瑞士</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Muheim 90+4' ( o.g. ) / Embolo 17' ( pen. )</div><div class="match-row"><span class="team left">瑞士</span><span class="score">4-1</span><span class="team">波黑</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Manzambi 74' , 90' Vargas 84' Xhaka 90+7' ( pen. ) / Mahmić 90+3'</div><div class="match-row"><span class="team left">加拿大</span><span class="score">6-0</span><span class="team">卡塔尔</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Larin 16' J. David 29' , 45+3' , 90+2' Saliba 64' Manai 75' ( o.g. ) / </div>
     <div style="font-size:10px;color:#8aa3bd;margin:6px 0 4px">未踢</div>
-    <div class="match-row future"><span class="team left">瑞士</span><span class="score">VS</span><span class="team">加拿大</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事51 6/24</div><div class="match-row future"><span class="team left">波黑</span><span class="score">VS</span><span class="team">卡塔尔</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事52 6/24</div>
+    <div class="match-row future"><span class="team left">瑞士</span><span class="score">VS</span><span class="team">加拿大</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 51 6/24</div><div class="match-row future"><span class="team left">波黑</span><span class="score">VS</span><span class="team">卡塔尔</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 52 6/24</div>
   </div>
-  <div class="group-pred">💡 晋级: <b>加拿大</b> · 次席: <b>瑞士</b> · 附加: <b>波黑</b></div>
+  <div class="group-pred">💡 晋级: <b>瑞士</b> · 次席: <b>加拿大</b> · 附加: <b>卡塔尔</b></div>
 </div><div class="group">
   <h3>第 C 组</h3>
   <div class="venue">📍 迈阿密/纽约</div>
   <table class="stand">
     <thead><tr><th>#</th><th style="text-align:left">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>分</th><th>晋级</th></tr></thead>
-    <tbody><tr><td class="rank1">1</td><td class="t">巴西</td><td>2</td><td>1</td><td>1</td><td>0</td><td>4</td><td>1</td><td>4</td><td><span class="adv">晋级</span></td></tr><tr><td class="">2</td><td class="t">摩洛哥</td><td>2</td><td>1</td><td>1</td><td>0</td><td>2</td><td>1</td><td>4</td><td></td></tr><tr><td class="">3</td><td class="t">苏格兰</td><td>2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>3</td><td></td></tr><tr><td class="">4</td><td class="t">海地</td><td>2</td><td>0</td><td>0</td><td>2</td><td>0</td><td>4</td><td>0</td><td></td></tr></tbody>
+    <tbody><tr><td class="rank1">1</td><td class="t">巴西</td><td>3</td><td>2</td><td>1</td><td>0</td><td>5</td><td>1</td><td>7</td><td></td></tr><tr><td class="">2</td><td class="t">摩洛哥</td><td>3</td><td>2</td><td>1</td><td>0</td><td>3</td><td>1</td><td>7</td><td></td></tr><tr><td class="">3</td><td class="t">苏格兰</td><td>3</td><td>1</td><td>0</td><td>2</td><td>1</td><td>2</td><td>3</td><td></td></tr><tr><td class="">4</td><td class="t">海地</td><td>3</td><td>0</td><td>0</td><td>3</td><td>0</td><td>5</td><td>0</td><td></td></tr></tbody>
   </table>
   <div style="margin-top:8px;padding-top:6px;border-top:1px dashed rgba(255,255,255,0.1)">
     <div style="font-size:10px;color:#8aa3bd;margin-bottom:4px">已结束</div>
-    <div class="match-row"><span class="team left">巴西</span><span class="score">1-1</span><span class="team">摩洛哥</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 维尼修斯 32' / 塞巴里 21'</div><div class="match-row"><span class="team left">海地</span><span class="score">0-1</span><span class="team">苏格兰</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ / 麦金 28'</div><div class="match-row"><span class="team left">苏格兰</span><span class="score">0-1</span><span class="team">摩洛哥</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ / 塞巴里 2'</div><div class="match-row"><span class="team left">巴西</span><span class="score">3-0</span><span class="team">海地</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 库尼亚 23',36' 维尼修斯 45+3'</div>
+    <div class="match-row"><span class="team left">巴西</span><span class="score">1-1</span><span class="team">摩洛哥</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Vinícius 32' / Saibari 21'</div><div class="match-row"><span class="team left">海地</span><span class="score">0-1</span><span class="team">苏格兰</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽  / McGinn 28'</div><div class="match-row"><span class="team left">苏格兰</span><span class="score">0-1</span><span class="team">摩洛哥</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽  / Saibari 2'</div><div class="match-row"><span class="team left">巴西</span><span class="score">3-0</span><span class="team">海地</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Cunha 23' , 36' Vinícius 45+3' / </div>
     <div style="font-size:10px;color:#8aa3bd;margin:6px 0 4px">未踢</div>
-    <div class="match-row future"><span class="team left">苏格兰</span><span class="score">VS</span><span class="team">巴西</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事49 6/24</div><div class="match-row future"><span class="team left">摩洛哥</span><span class="score">VS</span><span class="team">海地</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事50 6/24</div>
+    <div class="match-row future"><span class="team left">苏格兰</span><span class="score">VS</span><span class="team">巴西</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 49 6/24</div><div class="match-row future"><span class="team left">摩洛哥</span><span class="score">VS</span><span class="team">海地</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 50 6/24</div>
   </div>
   <div class="group-pred">💡 晋级: <b>巴西</b> · 次席: <b>摩洛哥</b> · 附加: <b>苏格兰</b></div>
 </div><div class="group">
@@ -304,13 +319,13 @@ footer a { color:#ffb700; }
   <div class="venue">📍 洛杉矶/达拉斯</div>
   <table class="stand">
     <thead><tr><th>#</th><th style="text-align:left">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>分</th><th>晋级</th></tr></thead>
-    <tbody><tr><td class="rank1">1</td><td class="t">美国</td><td>2</td><td>2</td><td>0</td><td>0</td><td>6</td><td>1</td><td>6</td><td><span class="adv">晋级</span></td></tr><tr><td class="">2</td><td class="t">巴拉圭</td><td>2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>4</td><td>3</td><td></td></tr><tr><td class="">3</td><td class="t">澳大利亚</td><td>2</td><td>1</td><td>0</td><td>1</td><td>2</td><td>2</td><td>3</td><td></td></tr><tr><td class="">4</td><td class="t">土耳其</td><td>2</td><td>0</td><td>0</td><td>2</td><td>0</td><td>3</td><td>0</td><td></td></tr></tbody>
+    <tbody><tr><td class="rank1">1</td><td class="t">美国</td><td>3</td><td>3</td><td>0</td><td>0</td><td>7</td><td>1</td><td>9</td><td></td></tr><tr><td class="">2</td><td class="t">巴拉圭</td><td>3</td><td>2</td><td>0</td><td>1</td><td>3</td><td>4</td><td>6</td><td></td></tr><tr><td class="">3</td><td class="t">澳大利亚</td><td>3</td><td>1</td><td>0</td><td>2</td><td>2</td><td>3</td><td>3</td><td></td></tr><tr><td class="">4</td><td class="t">土耳其</td><td>3</td><td>0</td><td>0</td><td>3</td><td>0</td><td>4</td><td>0</td><td></td></tr></tbody>
   </table>
   <div style="margin-top:8px;padding-top:6px;border-top:1px dashed rgba(255,255,255,0.1)">
     <div style="font-size:10px;color:#8aa3bd;margin-bottom:4px">已结束</div>
-    <div class="match-row"><span class="team left">美国</span><span class="score">4-1</span><span class="team">巴拉圭</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 博瓦迪利亚 7'(乌龙) 巴洛贡 31',45+5' 雷纳 90+8' / 毛里西奥 73'</div><div class="match-row"><span class="team left">澳大利亚</span><span class="score">2-0</span><span class="team">土耳其</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 伊兰昆达 27' 梅特卡夫 75'</div><div class="match-row"><span class="team left">美国</span><span class="score">2-0</span><span class="team">澳大利亚</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 伯吉斯 11'(乌龙) 弗里曼 43'</div><div class="match-row"><span class="team left">土耳其</span><span class="score">0-1</span><span class="team">巴拉圭</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ / 馬迪亞斯·加拉扎 2'</div>
+    <div class="match-row"><span class="team left">美国</span><span class="score">4-1</span><span class="team">巴拉圭</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Bobadilla 7' ( o.g. ) Balogun 31' , 45+5' Reyna 90+8' / Maurício 73'</div><div class="match-row"><span class="team left">澳大利亚</span><span class="score">2-0</span><span class="team">土耳其</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Irankunda 27' Metcalfe 75' / </div><div class="match-row"><span class="team left">美国</span><span class="score">2-0</span><span class="team">澳大利亚</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Burgess 11' ( o.g. ) Freeman 43' / </div><div class="match-row"><span class="team left">土耳其</span><span class="score">0-1</span><span class="team">巴拉圭</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽  / Galarza 2'</div>
     <div style="font-size:10px;color:#8aa3bd;margin:6px 0 4px">未踢</div>
-    <div class="match-row future"><span class="team left">土耳其</span><span class="score">VS</span><span class="team">美国</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事59 6/25</div><div class="match-row future"><span class="team left">巴拉圭</span><span class="score">VS</span><span class="team">澳大利亚</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事60 6/25</div>
+    <div class="match-row future"><span class="team left">土耳其</span><span class="score">VS</span><span class="team">美国</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 59 6/25</div><div class="match-row future"><span class="team left">巴拉圭</span><span class="score">VS</span><span class="team">澳大利亚</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 60 6/25</div>
   </div>
   <div class="group-pred">💡 晋级: <b>美国</b> · 次席: <b>巴拉圭</b> · 附加: <b>澳大利亚</b></div>
 </div><div class="group">
@@ -318,13 +333,13 @@ footer a { color:#ffb700; }
   <div class="venue">📍 达拉斯/休斯敦</div>
   <table class="stand">
     <thead><tr><th>#</th><th style="text-align:left">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>分</th><th>晋级</th></tr></thead>
-    <tbody><tr><td class="rank1">1</td><td class="t">德国</td><td>1</td><td>1</td><td>0</td><td>0</td><td>7</td><td>1</td><td>3</td><td><span class="adv">晋级(少赛1)</span></td></tr><tr><td class="">2</td><td class="t">科特迪瓦</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>3</td><td></td></tr><tr><td class="">3</td><td class="t">厄瓜多尔</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td></td></tr><tr><td class="">4</td><td class="t">库拉索</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td></td></tr></tbody>
+    <tbody><tr><td class="rank1">1</td><td class="t">德国</td><td>2</td><td>2</td><td>0</td><td>0</td><td>8</td><td>1</td><td>6</td><td></td></tr><tr><td class="">2</td><td class="t">科特迪瓦</td><td>2</td><td>2</td><td>0</td><td>0</td><td>2</td><td>0</td><td>6</td><td></td></tr><tr><td class="">3</td><td class="t">厄瓜多尔</td><td>2</td><td>0</td><td>0</td><td>2</td><td>0</td><td>2</td><td>0</td><td></td></tr><tr><td class="">4</td><td class="t">库拉索</td><td>2</td><td>0</td><td>0</td><td>2</td><td>1</td><td>8</td><td>0</td><td></td></tr></tbody>
   </table>
   <div style="margin-top:8px;padding-top:6px;border-top:1px dashed rgba(255,255,255,0.1)">
     <div style="font-size:10px;color:#8aa3bd;margin-bottom:4px">已结束</div>
-    <div class="match-row"><span class="team left">德国</span><span class="score">7-1</span><span class="team">库拉索</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 恩梅查 6' 施洛特贝克 38' 哈弗茨 45+5'(点),88' 穆西亚拉 47' 布朗 68' 温达夫 78' / 科梅嫩西亚 21'</div><div class="match-row"><span class="team left">科特迪瓦</span><span class="score">1-0</span><span class="team">厄瓜多尔</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 迪亚洛 90'</div>
+    <div class="match-row"><span class="team left">德国</span><span class="score">7-1</span><span class="team">库拉索</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Nmecha 6' Schlotterbeck 38' Havertz 45+5' ( pen. ) , 88' Musiala 47' Brown 68' Undav 78' / Comenencia 21'</div><div class="match-row"><span class="team left">科特迪瓦</span><span class="score">1-0</span><span class="team">厄瓜多尔</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Diallo 90' / </div>
     <div style="font-size:10px;color:#8aa3bd;margin:6px 0 4px">未踢</div>
-    <div class="match-row future"><span class="team left">德国</span><span class="score">VS</span><span class="team">科特迪瓦</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事33 6/24</div><div class="match-row future"><span class="team left">厄瓜多尔</span><span class="score">VS</span><span class="team">库拉索</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事34 6/24</div><div class="match-row future"><span class="team left">库拉索</span><span class="score">VS</span><span class="team">科特迪瓦</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事55 6/25</div><div class="match-row future"><span class="team left">厄瓜多尔</span><span class="score">VS</span><span class="team">德国</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事56 6/25</div>
+    <div class="match-row future"><span class="team left">德国</span><span class="score">VS</span><span class="team">科特迪瓦</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 33 6/25</div><div class="match-row future"><span class="team left">厄瓜多尔</span><span class="score">VS</span><span class="team">库拉索</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 34 6/25</div><div class="match-row future"><span class="team left">库拉索</span><span class="score">VS</span><span class="team">科特迪瓦</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 55 6/25</div><div class="match-row future"><span class="team left">厄瓜多尔</span><span class="score">VS</span><span class="team">德国</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 56 6/25</div>
   </div>
   <div class="group-pred">💡 晋级: <b>德国</b> · 次席: <b>科特迪瓦</b> · 附加: <b>厄瓜多尔</b></div>
 </div><div class="group">
@@ -332,55 +347,55 @@ footer a { color:#ffb700; }
   <div class="venue">📍 纽约/新泽西</div>
   <table class="stand">
     <thead><tr><th>#</th><th style="text-align:left">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>分</th><th>晋级</th></tr></thead>
-    <tbody><tr><td class="rank1">1</td><td class="t">瑞典</td><td>1</td><td>1</td><td>0</td><td>0</td><td>5</td><td>1</td><td>3</td><td><span class="adv">晋级(少赛1)</span></td></tr><tr><td class="">2</td><td class="t">荷兰</td><td>1</td><td>0</td><td>1</td><td>0</td><td>2</td><td>2</td><td>1</td><td></td></tr><tr><td class="">3</td><td class="t">日本</td><td>1</td><td>0</td><td>1</td><td>0</td><td>2</td><td>2</td><td>1</td><td></td></tr><tr><td class="">4</td><td class="t">突尼斯</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>5</td><td>0</td><td></td></tr></tbody>
+    <tbody><tr><td class="rank1">1</td><td class="t">荷兰</td><td>2</td><td>1</td><td>1</td><td>0</td><td>3</td><td>2</td><td>4</td><td></td></tr><tr><td class="">2</td><td class="t">日本</td><td>2</td><td>1</td><td>1</td><td>0</td><td>3</td><td>2</td><td>4</td><td></td></tr><tr><td class="">3</td><td class="t">瑞典</td><td>2</td><td>1</td><td>0</td><td>1</td><td>5</td><td>2</td><td>3</td><td></td></tr><tr><td class="">4</td><td class="t">突尼斯</td><td>2</td><td>0</td><td>0</td><td>2</td><td>1</td><td>6</td><td>0</td><td></td></tr></tbody>
   </table>
   <div style="margin-top:8px;padding-top:6px;border-top:1px dashed rgba(255,255,255,0.1)">
     <div style="font-size:10px;color:#8aa3bd;margin-bottom:4px">已结束</div>
-    <div class="match-row"><span class="team left">荷兰</span><span class="score">2-2</span><span class="team">日本</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 范戴克 51' 萨默维尔 64' / 中村敬斗 57' 鎌田大地 89'</div><div class="match-row"><span class="team left">瑞典</span><span class="score">5-1</span><span class="team">突尼斯</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 阿亚里 7',90+6' 伊萨克 30' 哲凯赖什 59' 斯万贝里 84' / 雷基克 43'</div>
+    <div class="match-row"><span class="team left">荷兰</span><span class="score">2-2</span><span class="team">日本</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Van Dijk 50' Summerville 64' / Nakamura 57' Kamada 88'</div><div class="match-row"><span class="team left">瑞典</span><span class="score">5-1</span><span class="team">突尼斯</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Ayari 7' , 90+6' Isak 30' Gyökeres 59' Svanberg 84' / Rekik 43'</div>
     <div style="font-size:10px;color:#8aa3bd;margin:6px 0 4px">未踢</div>
-    <div class="match-row future"><span class="team left">荷兰</span><span class="score">VS</span><span class="team">瑞典</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事35 6/24</div><div class="match-row future"><span class="team left">突尼斯</span><span class="score">VS</span><span class="team">日本</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事36 6/24</div><div class="match-row future"><span class="team left">日本</span><span class="score">VS</span><span class="team">瑞典</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事57 6/25</div><div class="match-row future"><span class="team left">突尼斯</span><span class="score">VS</span><span class="team">荷兰</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事58 6/25</div>
+    <div class="match-row future"><span class="team left">荷兰</span><span class="score">VS</span><span class="team">瑞典</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 35 6/25</div><div class="match-row future"><span class="team left">突尼斯</span><span class="score">VS</span><span class="team">日本</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 36 6/25</div><div class="match-row future"><span class="team left">日本</span><span class="score">VS</span><span class="team">瑞典</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 57 6/25</div><div class="match-row future"><span class="team left">突尼斯</span><span class="score">VS</span><span class="team">荷兰</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 58 6/25</div>
   </div>
-  <div class="group-pred">💡 晋级: <b>荷兰</b> · 次席: <b>瑞典</b> · 附加: <b>日本</b></div>
+  <div class="group-pred">💡 晋级: <b>荷兰</b> · 次席: <b>日本</b> · 附加: <b>瑞典</b></div>
 </div><div class="group">
   <h3>第 G 组</h3>
-  <div class="venue">📍 亚特兰大/波士顿</div>
+  <div class="venue">📍 波士顿/亚特兰大</div>
   <table class="stand">
     <thead><tr><th>#</th><th style="text-align:left">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>分</th><th>晋级</th></tr></thead>
-    <tbody><tr><td class="rank1">1</td><td class="t">伊朗</td><td>1</td><td>0</td><td>1</td><td>0</td><td>2</td><td>2</td><td>1</td><td></td></tr><tr><td class="">2</td><td class="t">新西兰</td><td>1</td><td>0</td><td>1</td><td>0</td><td>2</td><td>2</td><td>1</td><td></td></tr><tr><td class="">3</td><td class="t">比利时</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td></td></tr><tr><td class="">4</td><td class="t">埃及</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td></td></tr></tbody>
+    <tbody><tr><td class="rank1">1</td><td class="t">比利时</td><td>2</td><td>1</td><td>1</td><td>0</td><td>2</td><td>1</td><td>4</td><td></td></tr><tr><td class="">2</td><td class="t">埃及</td><td>2</td><td>1</td><td>1</td><td>0</td><td>2</td><td>1</td><td>4</td><td></td></tr><tr><td class="">3</td><td class="t">伊朗</td><td>2</td><td>0</td><td>1</td><td>1</td><td>2</td><td>3</td><td>1</td><td></td></tr><tr><td class="">4</td><td class="t">新西兰</td><td>2</td><td>0</td><td>1</td><td>1</td><td>2</td><td>3</td><td>1</td><td></td></tr></tbody>
   </table>
   <div style="margin-top:8px;padding-top:6px;border-top:1px dashed rgba(255,255,255,0.1)">
     <div style="font-size:10px;color:#8aa3bd;margin-bottom:4px">已结束</div>
-    <div class="match-row"><span class="team left">比利时</span><span class="score">1-1</span><span class="team">埃及</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 汉尼 66'(乌龙) / 阿舒尔 20'</div><div class="match-row"><span class="team left">伊朗</span><span class="score">2-2</span><span class="team">新西兰</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 雷扎伊安 32' 莫赫比 64' / 贾斯特 7',54'</div>
+    <div class="match-row"><span class="team left">比利时</span><span class="score">1-1</span><span class="team">埃及</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Hany 66' ( o.g. ) / Ashour 19'</div><div class="match-row"><span class="team left">伊朗</span><span class="score">2-2</span><span class="team">新西兰</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Rezaeian 32' Mohebi 64' / Just 7' , 54'</div>
     <div style="font-size:10px;color:#8aa3bd;margin:6px 0 4px">未踢</div>
-    <div class="match-row future"><span class="team left">比利时</span><span class="score">VS</span><span class="team">伊朗</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事39 6/24</div><div class="match-row future"><span class="team left">新西兰</span><span class="score">VS</span><span class="team">埃及</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事40 6/24</div><div class="match-row future"><span class="team left">埃及</span><span class="score">VS</span><span class="team">伊朗</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事63 6/25</div><div class="match-row future"><span class="team left">新西兰</span><span class="score">VS</span><span class="team">比利时</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事64 6/25</div>
+    <div class="match-row future"><span class="team left">比利时</span><span class="score">VS</span><span class="team">伊朗</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 39 6/26</div><div class="match-row future"><span class="team left">新西兰</span><span class="score">VS</span><span class="team">埃及</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 40 6/26</div><div class="match-row future"><span class="team left">埃及</span><span class="score">VS</span><span class="team">伊朗</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 63 6/26</div><div class="match-row future"><span class="team left">新西兰</span><span class="score">VS</span><span class="team">比利时</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 64 6/26</div>
   </div>
-  <div class="group-pred">💡 晋级: <b>比利时</b> · 次席: <b>伊朗</b> · 附加: <b>埃及</b></div>
+  <div class="group-pred">💡 晋级: <b>比利时</b> · 次席: <b>埃及</b> · 附加: <b>伊朗</b></div>
 </div><div class="group">
   <h3>第 H 组</h3>
   <div class="venue">📍 西雅图/温哥华</div>
   <table class="stand">
     <thead><tr><th>#</th><th style="text-align:left">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>分</th><th>晋级</th></tr></thead>
-    <tbody><tr><td class="rank1">1</td><td class="t">乌拉圭</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td></td></tr><tr><td class="">2</td><td class="t">西班牙</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td></td></tr><tr><td class="">3</td><td class="t">沙特阿拉伯</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td></td></tr><tr><td class="">4</td><td class="t">佛得角</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td></td></tr></tbody>
+    <tbody><tr><td class="rank1">1</td><td class="t">乌拉圭</td><td>2</td><td>1</td><td>1</td><td>0</td><td>2</td><td>1</td><td>4</td><td></td></tr><tr><td class="">2</td><td class="t">西班牙</td><td>2</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>4</td><td></td></tr><tr><td class="">3</td><td class="t">沙特阿拉伯</td><td>2</td><td>0</td><td>1</td><td>1</td><td>1</td><td>2</td><td>1</td><td></td></tr><tr><td class="">4</td><td class="t">佛得角</td><td>2</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td></td></tr></tbody>
   </table>
   <div style="margin-top:8px;padding-top:6px;border-top:1px dashed rgba(255,255,255,0.1)">
     <div style="font-size:10px;color:#8aa3bd;margin-bottom:4px">已结束</div>
-    <div class="match-row"><span class="team left">西班牙</span><span class="score">0-0</span><span class="team">佛得角</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ /</div><div class="match-row"><span class="team left">沙特阿拉伯</span><span class="score">1-1</span><span class="team">乌拉圭</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 阿姆里 41' / M·阿劳霍 80'</div>
+    <div class="match-row"><span class="team left">西班牙</span><span class="score">0-0</span><span class="team">佛得角</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽  / </div><div class="match-row"><span class="team left">沙特阿拉伯</span><span class="score">1-1</span><span class="team">乌拉圭</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Al-Amri 41' / M. Araújo 80'</div>
     <div style="font-size:10px;color:#8aa3bd;margin:6px 0 4px">未踢</div>
-    <div class="match-row future"><span class="team left">西班牙</span><span class="score">VS</span><span class="team">沙特阿拉伯</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事38 6/24</div><div class="match-row future"><span class="team left">乌拉圭</span><span class="score">VS</span><span class="team">佛得角</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事37 6/24</div><div class="match-row future"><span class="team left">佛得角</span><span class="score">VS</span><span class="team">沙特阿拉伯</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事65 6/25</div><div class="match-row future"><span class="team left">乌拉圭</span><span class="score">VS</span><span class="team">西班牙</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事66 6/25</div>
+    <div class="match-row future"><span class="team left">西班牙</span><span class="score">VS</span><span class="team">沙特阿拉伯</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 38 6/26</div><div class="match-row future"><span class="team left">乌拉圭</span><span class="score">VS</span><span class="team">佛得角</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 37 6/26</div><div class="match-row future"><span class="team left">佛得角</span><span class="score">VS</span><span class="team">沙特阿拉伯</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 65 6/26</div><div class="match-row future"><span class="team left">乌拉圭</span><span class="score">VS</span><span class="team">西班牙</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 66 6/26</div>
   </div>
-  <div class="group-pred">💡 晋级: <b>西班牙</b> · 次席: <b>乌拉圭</b> · 附加: <b>沙特阿拉伯</b></div>
+  <div class="group-pred">💡 晋级: <b>乌拉圭</b> · 次席: <b>西班牙</b> · 附加: <b>沙特阿拉伯</b></div>
 </div><div class="group">
   <h3>第 I 组</h3>
   <div class="venue">📍 迈阿密/费城</div>
   <table class="stand">
     <thead><tr><th>#</th><th style="text-align:left">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>分</th><th>晋级</th></tr></thead>
-    <tbody><tr><td class="rank1">1</td><td class="t">挪威</td><td>1</td><td>1</td><td>0</td><td>0</td><td>4</td><td>1</td><td>3</td><td><span class="adv">晋级(少赛1)</span></td></tr><tr><td class="">2</td><td class="t">法国</td><td>1</td><td>1</td><td>0</td><td>0</td><td>3</td><td>1</td><td>3</td><td></td></tr><tr><td class="">3</td><td class="t">塞内加尔</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>4</td><td>0</td><td></td></tr><tr><td class="">4</td><td class="t">伊拉克</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>4</td><td>0</td><td></td></tr></tbody>
+    <tbody><tr><td class="rank1">1</td><td class="t">法国</td><td>2</td><td>2</td><td>0</td><td>0</td><td>4</td><td>1</td><td>6</td><td></td></tr><tr><td class="">2</td><td class="t">挪威</td><td>2</td><td>1</td><td>0</td><td>1</td><td>4</td><td>2</td><td>3</td><td></td></tr><tr><td class="">3</td><td class="t">塞内加尔</td><td>2</td><td>1</td><td>0</td><td>1</td><td>2</td><td>3</td><td>3</td><td></td></tr><tr><td class="">4</td><td class="t">伊拉克</td><td>2</td><td>0</td><td>0</td><td>2</td><td>1</td><td>5</td><td>0</td><td></td></tr></tbody>
   </table>
   <div style="margin-top:8px;padding-top:6px;border-top:1px dashed rgba(255,255,255,0.1)">
     <div style="font-size:10px;color:#8aa3bd;margin-bottom:4px">已结束</div>
-    <div class="match-row"><span class="team left">法国</span><span class="score">3-1</span><span class="team">塞内加尔</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 姆巴佩 66',90+6' 巴尔科拉 82' / 姆巴耶 90+5'</div><div class="match-row"><span class="team left">伊拉克</span><span class="score">1-4</span><span class="team">挪威</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 侯赛因 39' / 哈兰德 29',43' 厄斯蒂高 76' 侯赛因 90+6'(乌龙)</div>
+    <div class="match-row"><span class="team left">法国</span><span class="score">3-1</span><span class="team">塞内加尔</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Mbappé 66' , 90+6' Barcola 82' / Mbaye 90+5'</div><div class="match-row"><span class="team left">伊拉克</span><span class="score">1-4</span><span class="team">挪威</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Hussein 39' / Haaland 29' , 43' Østigård 76' Hussein 90+6' ( o.g. )</div>
     <div style="font-size:10px;color:#8aa3bd;margin:6px 0 4px">未踢</div>
-    <div class="match-row future"><span class="team left">法国</span><span class="score">VS</span><span class="team">伊拉克</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事42 6/24</div><div class="match-row future"><span class="team left">挪威</span><span class="score">VS</span><span class="team">塞内加尔</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事41 6/24</div><div class="match-row future"><span class="team left">挪威</span><span class="score">VS</span><span class="team">法国</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事61 6/25</div><div class="match-row future"><span class="team left">塞内加尔</span><span class="score">VS</span><span class="team">伊拉克</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事62 6/25</div>
+    <div class="match-row future"><span class="team left">法国</span><span class="score">VS</span><span class="team">伊拉克</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 42 6/26</div><div class="match-row future"><span class="team left">挪威</span><span class="score">VS</span><span class="team">塞内加尔</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 41 6/26</div><div class="match-row future"><span class="team left">挪威</span><span class="score">VS</span><span class="team">法国</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 61 6/26</div><div class="match-row future"><span class="team left">塞内加尔</span><span class="score">VS</span><span class="team">伊拉克</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 62 6/26</div>
   </div>
   <div class="group-pred">💡 晋级: <b>法国</b> · 次席: <b>挪威</b> · 附加: <b>塞内加尔</b></div>
 </div><div class="group">
@@ -388,44 +403,44 @@ footer a { color:#ffb700; }
   <div class="venue">📍 布宜诺斯艾利斯/洛杉矶</div>
   <table class="stand">
     <thead><tr><th>#</th><th style="text-align:left">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>分</th><th>晋级</th></tr></thead>
-    <tbody><tr><td class="rank1">1</td><td class="t">阿根廷</td><td>1</td><td>1</td><td>0</td><td>0</td><td>3</td><td>0</td><td>3</td><td><span class="adv">晋级(少赛1)</span></td></tr><tr><td class="">2</td><td class="t">奥地利</td><td>1</td><td>1</td><td>0</td><td>0</td><td>3</td><td>1</td><td>3</td><td></td></tr><tr><td class="">3</td><td class="t">阿尔及利亚</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>3</td><td>0</td><td></td></tr><tr><td class="">4</td><td class="t">约旦</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>3</td><td>0</td><td></td></tr></tbody>
+    <tbody><tr><td class="rank1">1</td><td class="t">阿根廷</td><td>2</td><td>2</td><td>0</td><td>0</td><td>4</td><td>0</td><td>6</td><td></td></tr><tr><td class="">2</td><td class="t">奥地利</td><td>2</td><td>2</td><td>0</td><td>0</td><td>4</td><td>1</td><td>6</td><td></td></tr><tr><td class="">3</td><td class="t">约旦</td><td>2</td><td>0</td><td>0</td><td>2</td><td>1</td><td>4</td><td>0</td><td></td></tr><tr><td class="">4</td><td class="t">阿尔及利亚</td><td>2</td><td>0</td><td>0</td><td>2</td><td>0</td><td>4</td><td>0</td><td></td></tr></tbody>
   </table>
   <div style="margin-top:8px;padding-top:6px;border-top:1px dashed rgba(255,255,255,0.1)">
     <div style="font-size:10px;color:#8aa3bd;margin-bottom:4px">已结束</div>
-    <div class="match-row"><span class="team left">阿根廷</span><span class="score">3-0</span><span class="team">阿尔及利亚</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 梅西 17',60',76'</div><div class="match-row"><span class="team left">奥地利</span><span class="score">3-1</span><span class="team">约旦</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 施密德 21' 阿拉伯 76'(乌龙) 阿瑙托维奇 90+12'(点) / 奥尔万 50'</div>
+    <div class="match-row"><span class="team left">阿根廷</span><span class="score">3-0</span><span class="team">阿尔及利亚</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Messi 17' , 60' , 76' / </div><div class="match-row"><span class="team left">奥地利</span><span class="score">3-1</span><span class="team">约旦</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Schmid 20' Al-Arab 76' ( o.g. ) Arnautović 90+12' ( pen. ) / Olwan 50'</div>
     <div style="font-size:10px;color:#8aa3bd;margin:6px 0 4px">未踢</div>
-    <div class="match-row future"><span class="team left">阿根廷</span><span class="score">VS</span><span class="team">奥地利</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事43 6/24</div><div class="match-row future"><span class="team left">约旦</span><span class="score">VS</span><span class="team">阿尔及利亚</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事44 6/24</div><div class="match-row future"><span class="team left">阿尔及利亚</span><span class="score">VS</span><span class="team">奥地利</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事69 6/25</div><div class="match-row future"><span class="team left">约旦</span><span class="score">VS</span><span class="team">阿根廷</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事70 6/25</div>
+    <div class="match-row future"><span class="team left">阿根廷</span><span class="score">VS</span><span class="team">奥地利</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 43 6/27</div><div class="match-row future"><span class="team left">约旦</span><span class="score">VS</span><span class="team">阿尔及利亚</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 44 6/27</div><div class="match-row future"><span class="team left">阿尔及利亚</span><span class="score">VS</span><span class="team">奥地利</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 69 6/27</div><div class="match-row future"><span class="team left">约旦</span><span class="score">VS</span><span class="team">阿根廷</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 70 6/27</div>
   </div>
-  <div class="group-pred">💡 晋级: <b>阿根廷</b> · 次席: <b>奥地利</b> · 附加: <b>阿尔及利亚</b></div>
+  <div class="group-pred">💡 晋级: <b>阿根廷</b> · 次席: <b>奥地利</b> · 附加: <b>约旦</b></div>
 </div><div class="group">
   <h3>第 K 组</h3>
-  <div class="venue">📍 休斯敦/堪萨斯城</div>
+  <div class="venue">📍 休斯敦/堮萨斯城</div>
   <table class="stand">
     <thead><tr><th>#</th><th style="text-align:left">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>分</th><th>晋级</th></tr></thead>
-    <tbody><tr><td class="rank1">1</td><td class="t">哥伦比亚</td><td>1</td><td>1</td><td>0</td><td>0</td><td>3</td><td>1</td><td>3</td><td><span class="adv">晋级(少赛1)</span></td></tr><tr><td class="">2</td><td class="t">葡萄牙</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td></td></tr><tr><td class="">3</td><td class="t">刚果(金)</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td></td></tr><tr><td class="">4</td><td class="t">乌兹别克斯坦</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>3</td><td>0</td><td></td></tr></tbody>
+    <tbody><tr><td class="rank1">1</td><td class="t">哥伦比亚</td><td>2</td><td>2</td><td>0</td><td>0</td><td>4</td><td>1</td><td>6</td><td></td></tr><tr><td class="">2</td><td class="t">葡萄牙</td><td>2</td><td>1</td><td>1</td><td>0</td><td>2</td><td>1</td><td>4</td><td></td></tr><tr><td class="">3</td><td class="t">刚果(金)</td><td>2</td><td>0</td><td>1</td><td>1</td><td>1</td><td>2</td><td>1</td><td></td></tr><tr><td class="">4</td><td class="t">乌兹别克斯坦</td><td>2</td><td>0</td><td>0</td><td>2</td><td>1</td><td>4</td><td>0</td><td></td></tr></tbody>
   </table>
   <div style="margin-top:8px;padding-top:6px;border-top:1px dashed rgba(255,255,255,0.1)">
     <div style="font-size:10px;color:#8aa3bd;margin-bottom:4px">已结束</div>
-    <div class="match-row"><span class="team left">葡萄牙</span><span class="score">1-1</span><span class="team">刚果(金)</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ J·内维斯 6' / 维萨 45+5'</div><div class="match-row"><span class="team left">乌兹别克斯坦</span><span class="score">1-3</span><span class="team">哥伦比亚</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 法伊拉祖耶夫 60' / 穆尼奥斯 41' 迪亚斯 65' 坎帕斯 90+9'</div>
+    <div class="match-row"><span class="team left">葡萄牙</span><span class="score">1-1</span><span class="team">刚果(金)</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ J. Neves 6' / Wissa 45+5'</div><div class="match-row"><span class="team left">乌兹别克斯坦</span><span class="score">1-3</span><span class="team">哥伦比亚</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Fayzullaev 60' / Muñoz 40' Díaz 65' Campaz 90+9'</div>
     <div style="font-size:10px;color:#8aa3bd;margin:6px 0 4px">未踢</div>
-    <div class="match-row future"><span class="team left">葡萄牙</span><span class="score">VS</span><span class="team">乌兹别克斯坦</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事47 6/24</div><div class="match-row future"><span class="team left">哥伦比亚</span><span class="score">VS</span><span class="team">刚果(金)</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事48 6/24</div><div class="match-row future"><span class="team left">哥伦比亚</span><span class="score">VS</span><span class="team">葡萄牙</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事71 6/25</div><div class="match-row future"><span class="team left">刚果(金)</span><span class="score">VS</span><span class="team">乌兹别克斯坦</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事72 6/25</div>
+    <div class="match-row future"><span class="team left">葡萄牙</span><span class="score">VS</span><span class="team">乌兹别克斯坦</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 47 6/27</div><div class="match-row future"><span class="team left">哥伦比亚</span><span class="score">VS</span><span class="team">刚果(金)</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 48 6/27</div><div class="match-row future"><span class="team left">哥伦比亚</span><span class="score">VS</span><span class="team">葡萄牙</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 71 6/27</div><div class="match-row future"><span class="team left">刚果(金)</span><span class="score">VS</span><span class="team">乌兹别克斯坦</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 72 6/27</div>
   </div>
-  <div class="group-pred">💡 晋级: <b>葡萄牙</b> · 次席: <b>哥伦比亚</b> · 附加: <b>刚果(金)</b></div>
+  <div class="group-pred">💡 晋级: <b>哥伦比亚</b> · 次席: <b>葡萄牙</b> · 附加: <b>刚果(金)</b></div>
 </div><div class="group">
   <h3>第 L 组</h3>
   <div class="venue">📍 多伦多/纽约/新泽西</div>
   <table class="stand">
     <thead><tr><th>#</th><th style="text-align:left">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>分</th><th>晋级</th></tr></thead>
-    <tbody><tr><td class="rank1">1</td><td class="t">英格兰</td><td>1</td><td>1</td><td>0</td><td>0</td><td>4</td><td>2</td><td>3</td><td><span class="adv">晋级(少赛1)</span></td></tr><tr><td class="">2</td><td class="t">加纳</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>3</td><td></td></tr><tr><td class="">3</td><td class="t">克罗地亚</td><td>1</td><td>0</td><td>0</td><td>1</td><td>2</td><td>4</td><td>0</td><td></td></tr><tr><td class="">4</td><td class="t">巴拿马</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td></td></tr></tbody>
+    <tbody><tr><td class="rank1">1</td><td class="t">英格兰</td><td>2</td><td>2</td><td>0</td><td>0</td><td>5</td><td>2</td><td>6</td><td></td></tr><tr><td class="">2</td><td class="t">加纳</td><td>2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>3</td><td></td></tr><tr><td class="">3</td><td class="t">克罗地亚</td><td>2</td><td>1</td><td>0</td><td>1</td><td>3</td><td>4</td><td>3</td><td></td></tr><tr><td class="">4</td><td class="t">巴拿马</td><td>2</td><td>0</td><td>0</td><td>2</td><td>0</td><td>2</td><td>0</td><td></td></tr></tbody>
   </table>
   <div style="margin-top:8px;padding-top:6px;border-top:1px dashed rgba(255,255,255,0.1)">
     <div style="font-size:10px;color:#8aa3bd;margin-bottom:4px">已结束</div>
-    <div class="match-row"><span class="team left">英格兰</span><span class="score">4-2</span><span class="team">克罗地亚</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 凯恩 12'(点),42' 贝林厄姆 47' 拉什福德 85' / 巴图里纳 36' 穆萨 45+5'</div><div class="match-row"><span class="team left">加纳</span><span class="score">1-0</span><span class="team">巴拿马</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ 伊伦基 90+5'</div>
+    <div class="match-row"><span class="team left">英格兰</span><span class="score">4-2</span><span class="team">克罗地亚</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Kane 12' ( pen. ) , 42' Bellingham 47' Rashford 85' / Baturina 36' Musa 45+5'</div><div class="match-row"><span class="team left">加纳</span><span class="score">1-0</span><span class="team">巴拿马</span></div><div class="meta" style="padding-left:6px;padding-right:6px">⚽ Yirenkyi 90+5' / </div>
     <div style="font-size:10px;color:#8aa3bd;margin:6px 0 4px">未踢</div>
-    <div class="match-row future"><span class="team left">英格兰</span><span class="score">VS</span><span class="team">加纳</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事45 6/24</div><div class="match-row future"><span class="team left">巴拿马</span><span class="score">VS</span><span class="team">克罗地亚</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事46 6/24</div><div class="match-row future"><span class="team left">巴拿马</span><span class="score">VS</span><span class="team">英格兰</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事67 6/25</div><div class="match-row future"><span class="team left">克罗地亚</span><span class="score">VS</span><span class="team">加纳</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 赛事68 6/25</div>
+    <div class="match-row future"><span class="team left">英格兰</span><span class="score">VS</span><span class="team">加纳</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 45 6/27</div><div class="match-row future"><span class="team left">巴拿马</span><span class="score">VS</span><span class="team">克罗地亚</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 46 6/27</div><div class="match-row future"><span class="team left">巴拿马</span><span class="score">VS</span><span class="team">英格兰</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 67 6/27</div><div class="match-row future"><span class="team left">克罗地亚</span><span class="score">VS</span><span class="team">加纳</span></div><div class="meta" style="padding-left:6px;padding-right:6px">🕒 Match 68 6/27</div>
   </div>
-  <div class="group-pred">💡 晋级: <b>英格兰</b> · 次席: <b>克罗地亚</b> · 附加: <b>加纳</b></div>
-</div></div></div><div class="section" id="teams"><div class="section-title">🏟 48强 · 点击查看分析</div><div class="teams"><div class="team-card" onclick="showTeam('Mexico')" style="border-top:3px solid #ffb700">
+  <div class="group-pred">💡 晋级: <b>英格兰</b> · 次席: <b>加纳</b> · 附加: <b>克罗地亚</b></div>
+</div></div></div><div class="section" id="odds"><div class="section-title">🏆 世界杯冠军赔率 (中国体彩 6/2 开售)</div><div class="odds-sup">赔率来源: 中国体育彩票官方 · 隐含概率 = 1/赔率 × 100% · 高盛 AI = Goldman Sachs 蒙特卡洛 5 万次模拟</div><table class="odds-table"><thead><tr><th>排名</th><th style="text-align:left">球队</th><th>1赔X</th><th>隐含概率</th><th>高盛AI</th><th>6/2排名</th></tr></thead><tbody><tr class="top3"><td>1</td><td class="t">西班牙 <span style="color:#8aa3bd;font-size:10px">(Spain)</span></td><td><b>4.5</b></td><td>18.2%</td><td>26.0%</td><td>#1</td></tr><tr class="top3"><td>2</td><td class="t">法国 <span style="color:#8aa3bd;font-size:10px">(France)</span></td><td><b>5.5</b></td><td>15.4%</td><td>-</td><td>#2</td></tr><tr class="top3"><td>3</td><td class="t">巴西 <span style="color:#8aa3bd;font-size:10px">(Brazil)</span></td><td><b>6.25</b></td><td>13.8%</td><td>-</td><td>#6</td></tr><tr class=""><td>4</td><td class="t">英格兰 <span style="color:#8aa3bd;font-size:10px">(England)</span></td><td><b>6.75</b></td><td>12.9%</td><td>-</td><td>#4</td></tr><tr class=""><td>5</td><td class="t">葡萄牙 <span style="color:#8aa3bd;font-size:10px">(Portugal)</span></td><td><b>6.75</b></td><td>12.9%</td><td>-</td><td>-</td></tr><tr class=""><td>6</td><td class="t">阿根廷 <span style="color:#8aa3bd;font-size:10px">(Argentina)</span></td><td><b>7.25</b></td><td>12.1%</td><td>-</td><td>#3</td></tr><tr class=""><td>7</td><td class="t">德国 <span style="color:#8aa3bd;font-size:10px">(Germany)</span></td><td><b>5.0</b></td><td>16.7%</td><td>-</td><td>-</td></tr><tr class=""><td>8</td><td class="t">荷兰 <span style="color:#8aa3bd;font-size:10px">(Netherlands)</span></td><td><b>-</b></td><td>-</td><td>-</td><td>-</td></tr><tr class=""><td>9</td><td class="t">日本 <span style="color:#8aa3bd;font-size:10px">(Japan)</span></td><td><b>-</b></td><td>-</td><td>-</td><td>-</td></tr></tbody></table></div><div class="section" id="combo"><div class="section-title">🔗 决赛对阵组合赔率</div><div class="odds-sup">预测哪两支球队会师决赛 (中国体彩官方赔率)</div><div class="combo-card"><div class="teams">Spain vs Argentina</div><div class="odds">1赔17.0</div><div class="desc">最低赔率: 决赛最可能场景</div></div><div class="combo-card"><div class="teams">Spain vs England</div><div class="odds">1赔21.0</div><div class="desc">次低</div></div><div class="combo-card"><div class="teams">Spain vs Portugal</div><div class="odds">1赔21.0</div><div class="desc">次低</div></div><div class="combo-card"><div class="teams">France vs England</div><div class="odds">1赔26.0</div><div class="desc">第四</div></div></div><div class="section" id="teams"><div class="section-title">🏟 48强 · 点击查看分析</div><div class="teams"><div class="team-card" onclick="showTeam('Mexico')" style="border-top:3px solid #ffb700">
   <div class="rank">#14</div>
   <div class="name">墨西哥</div>
   <div class="name-en">Mexico</div>
@@ -687,7 +702,7 @@ footer a { color:#ffb700; }
     <span class="power-v" style="color:#ffb700">78</span>
   </div>
   <div class="power-meta" style="margin-top:6px">
-    <span style="font-size:10px;color:#8aa3bd">⭐ <span style="color:#ffd966">久保建英</span></span>
+    <span style="font-size:10px;color:#8aa3bd">⭐ <span style="color:#ffd966">三笘薰</span></span>
   </div>
 </div><div class="team-card" onclick="showTeam('Sweden')" style="border-top:3px solid #3ec46d">
   <div class="rank">#43</div>
@@ -807,7 +822,7 @@ footer a { color:#ffb700; }
     <span class="power-v" style="color:#ff8a00">81</span>
   </div>
   <div class="power-meta" style="margin-top:6px">
-    <span style="font-size:10px;color:#8aa3bd">⭐ <span style="color:#ffd966">苏亚雷斯</span></span>
+    <span style="font-size:10px;color:#8aa3bd">⭐ <span style="color:#ffd966">努涅斯</span></span>
   </div>
 </div><div class="team-card" onclick="showTeam('France')" style="border-top:3px solid #ff3a3a">
   <div class="rank">#3</div>
@@ -1008,20 +1023,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ffb700">74 <span style="font-size:13px;color:#8aa3bd">/ 100 · B级</span></div>
     <div class="row"><span>所属分组</span><b>A组</b></div>
     <div class="row"><span>分档</span><b>第1档</b></div>
-    <div class="row"><span>主教练</span><b>海因策(阿)</b></div>
+    <div class="row"><span>主教练</span><b>Javier Aguirre</b></div>
     <div class="row"><span>队长</span><b>瓜尔达多</b></div>
     <div class="row"><span>平均年龄</span><b>28.2 岁</b></div>
     <div class="row"><span>战术风格</span><b>主场作战+技术型</b></div>
     <div class="row"><span>历史最佳</span><b>3次8强(1970/1986已无)</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>洛萨诺(前锋)</b></div><div class="item">★ <b>埃德松·阿尔瓦雷斯(中场)</b></div><div class="item">★ <b>奥乔亚(门将)</b></div>
+      <div class="item">★ <b>洛萨诺(前锋)</b></div><div class="item">★ <b>阿尔瓦雷斯(中场)</b></div><div class="item">★ <b>希门尼斯(前锋)</b></div><div class="item">★ <b>奥乔亚(门将)</b></div><div class="item">★ <b>拉莫斯(中场)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>东道主首战气氛</p></div>
     <div class="section-mini"><h4>短板</h4><p>锋线把握能力</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">墨西哥 <span class="sc">2-0</span> 南非<br><span style="color:#8aa3bd">基尼奥内斯 9', 希门尼斯 67'</span></div><div class="item">墨西哥 <span class="sc">1-0</span> 韩国<br><span style="color:#8aa3bd">罗莫 50'</span></div><div class="item" style="color:#a8b9c9">⏳ 墨西哥 <span class="sc" style="color:#2bbfd3">VS</span> 捷克 <span style="color:#8aa3bd">赛事53 6/24</span></div>
+      <div class="item">墨西哥 <span class="sc">2-0</span> 南非<br><span style="color:#8aa3bd">Quiñones 9' Jiménez 67' / </span></div><div class="item">墨西哥 <span class="sc">1-0</span> 韩国<br><span style="color:#8aa3bd">Romo 50' / </span></div><div class="item" style="color:#a8b9c9">⏳ 墨西哥 <span class="sc" style="color:#2bbfd3">VS</span> 捷克 <span style="color:#8aa3bd">Match 53 6/24</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-South Africa">
@@ -1044,7 +1059,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>大赛经验不足</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">南非 <span class="sc">0-2</span> 墨西哥<br><span style="color:#8aa3bd">基尼奥内斯 9', 希门尼斯 67'</span></div><div class="item">南非 <span class="sc">1-1</span> 捷克<br><span style="color:#8aa3bd">萨迪莱克 6' / 莫科纳 83'(点)</span></div><div class="item" style="color:#a8b9c9">⏳ 南非 <span class="sc" style="color:#2bbfd3">VS</span> 韩国 <span style="color:#8aa3bd">赛事54 6/24</span></div>
+      <div class="item">南非 <span class="sc">0-2</span> 墨西哥<br><span style="color:#8aa3bd">Quiñones 9' Jiménez 67' / </span></div><div class="item">南非 <span class="sc">1-1</span> 捷克<br><span style="color:#8aa3bd">Sadílek 6' / Mokoena 83' ( pen. )</span></div><div class="item" style="color:#a8b9c9">⏳ 南非 <span class="sc" style="color:#2bbfd3">VS</span> 韩国 <span style="color:#8aa3bd">Match 54 6/24</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-South Korea">
@@ -1054,20 +1069,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#3ec46d">71 <span style="font-size:13px;color:#8aa3bd">/ 100 · C级</span></div>
     <div class="row"><span>所属分组</span><b>A组</b></div>
     <div class="row"><span>分档</span><b>第2档</b></div>
-    <div class="row"><span>主教练</span><b>洪明甫</b></div>
+    <div class="row"><span>主教练</span><b>Hong Myung-bo</b></div>
     <div class="row"><span>队长</span><b>孙兴慜</b></div>
     <div class="row"><span>平均年龄</span><b>27.0 岁</b></div>
     <div class="row"><span>战术风格</span><b>高位逼抢+快速反击</b></div>
     <div class="row"><span>历史最佳</span><b>2002四强</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>孙兴慜(前锋)</b></div><div class="item">★ <b>李刚仁(中场)</b></div><div class="item">★ <b>金玟哉(后卫)</b></div>
+      <div class="item">★ <b>孙兴慜(前锋)</b></div><div class="item">★ <b>李刚仁(中场)</b></div><div class="item">★ <b>金玟哉(后卫)</b></div><div class="item">★ <b>黄仁范(中场)</b></div><div class="item">★ <b>吴贤揆(前锋)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>孙兴慜状态</p></div>
     <div class="section-mini"><h4>短板</h4><p>对抗欧洲球队</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">韩国 <span class="sc">2-1</span> 捷克<br><span style="color:#8aa3bd">黄仁范 67', 吴贤揆 80' / 克雷伊奇 59'</span></div><div class="item">韩国 <span class="sc">0-1</span> 墨西哥<br><span style="color:#8aa3bd">罗莫 50'</span></div><div class="item" style="color:#a8b9c9">⏳ 韩国 <span class="sc" style="color:#2bbfd3">VS</span> 南非 <span style="color:#8aa3bd">赛事54 6/24</span></div>
+      <div class="item">韩国 <span class="sc">2-1</span> 捷克<br><span style="color:#8aa3bd">Hwang In-beom 67' Oh Hyeon-gyu 80' / Krejčí 59'</span></div><div class="item">韩国 <span class="sc">0-1</span> 墨西哥<br><span style="color:#8aa3bd">Romo 50' / </span></div><div class="item" style="color:#a8b9c9">⏳ 韩国 <span class="sc" style="color:#2bbfd3">VS</span> 南非 <span style="color:#8aa3bd">Match 54 6/24</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Czech">
@@ -1090,7 +1105,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>缺少绝对核心</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">捷克 <span class="sc">1-2</span> 韩国<br><span style="color:#8aa3bd">黄仁范 67', 吴贤揆 80' / 克雷伊奇 59'</span></div><div class="item">捷克 <span class="sc">1-1</span> 南非<br><span style="color:#8aa3bd">萨迪莱克 6' / 莫科纳 83'(点)</span></div><div class="item" style="color:#a8b9c9">⏳ 捷克 <span class="sc" style="color:#2bbfd3">VS</span> 墨西哥 <span style="color:#8aa3bd">赛事53 6/24</span></div>
+      <div class="item">捷克 <span class="sc">1-2</span> 韩国<br><span style="color:#8aa3bd">Hwang In-beom 67' Oh Hyeon-gyu 80' / Krejčí 59'</span></div><div class="item">捷克 <span class="sc">1-1</span> 南非<br><span style="color:#8aa3bd">Sadílek 6' / Mokoena 83' ( pen. )</span></div><div class="item" style="color:#a8b9c9">⏳ 捷克 <span class="sc" style="color:#2bbfd3">VS</span> 墨西哥 <span style="color:#8aa3bd">Match 53 6/24</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Canada">
@@ -1100,20 +1115,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#3ec46d">69 <span style="font-size:13px;color:#8aa3bd">/ 100 · C级</span></div>
     <div class="row"><span>所属分组</span><b>B组</b></div>
     <div class="row"><span>分档</span><b>第1档</b></div>
-    <div class="row"><span>主教练</span><b>马什</b></div>
+    <div class="row"><span>主教练</span><b>Jesse Marsch</b></div>
     <div class="row"><span>队长</span><b>哈钦森</b></div>
     <div class="row"><span>平均年龄</span><b>26.4 岁</b></div>
     <div class="row"><span>战术风格</span><b>身体+速度型</b></div>
     <div class="row"><span>历史最佳</span><b>1986/2022参赛</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>戴维(前锋)</b></div><div class="item">★ <b>拉林(中场)</b></div><div class="item">★ <b>阿迪尔伯特(后卫)</b></div>
+      <div class="item">★ <b>戴维(前锋)</b></div><div class="item">★ <b>拉林(前锋)</b></div><div class="item">★ <b>尤斯塔基奥(中场)</b></div><div class="item">★ <b>布坎南(后卫)</b></div><div class="item">★ <b>克里普尔(门将)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>戴维火力</p></div>
     <div class="section-mini"><h4>短板</h4><p>大赛经验少</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">加拿大 <span class="sc">1-1</span> 波黑<br><span style="color:#8aa3bd">拉林 78' / 卢基奇 21'</span></div><div class="item">加拿大 <span class="sc">6-0</span> 卡塔尔<br><span style="color:#8aa3bd">拉林 16' J·戴维 29',45+3',90+2' 萨利巴 64' 马奈 75'(乌龙)</span></div><div class="item" style="color:#a8b9c9">⏳ 加拿大 <span class="sc" style="color:#2bbfd3">VS</span> 瑞士 <span style="color:#8aa3bd">赛事51 6/24</span></div>
+      <div class="item">加拿大 <span class="sc">1-1</span> 波黑<br><span style="color:#8aa3bd">Larin 78' / Lukić 21'</span></div><div class="item">加拿大 <span class="sc">6-0</span> 卡塔尔<br><span style="color:#8aa3bd">Larin 16' J. David 29' , 45+3' , 90+2' Saliba 64' Manai 75' ( o.g. ) / </span></div><div class="item" style="color:#a8b9c9">⏳ 加拿大 <span class="sc" style="color:#2bbfd3">VS</span> 瑞士 <span style="color:#8aa3bd">Match 51 6/24</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Bosnia">
@@ -1136,7 +1151,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>老化</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">波黑 <span class="sc">1-1</span> 加拿大<br><span style="color:#8aa3bd">拉林 78' / 卢基奇 21'</span></div><div class="item">波黑 <span class="sc">1-4</span> 瑞士<br><span style="color:#8aa3bd">曼赞比 74',90' 巴尔加斯 84' 扎卡 90+7'(点) / 马赫米奇 90+3'</span></div><div class="item" style="color:#a8b9c9">⏳ 波黑 <span class="sc" style="color:#2bbfd3">VS</span> 卡塔尔 <span style="color:#8aa3bd">赛事52 6/24</span></div>
+      <div class="item">波黑 <span class="sc">1-1</span> 加拿大<br><span style="color:#8aa3bd">Larin 78' / Lukić 21'</span></div><div class="item">波黑 <span class="sc">1-4</span> 瑞士<br><span style="color:#8aa3bd">Manzambi 74' , 90' Vargas 84' Xhaka 90+7' ( pen. ) / Mahmić 90+3'</span></div><div class="item" style="color:#a8b9c9">⏳ 波黑 <span class="sc" style="color:#2bbfd3">VS</span> 卡塔尔 <span style="color:#8aa3bd">Match 52 6/24</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Qatar">
@@ -1159,7 +1174,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>对抗顶级队</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">卡塔尔 <span class="sc">1-1</span> 瑞士<br><span style="color:#8aa3bd">穆海姆 90+4'(乌龙) / 恩博洛 17'(点)</span></div><div class="item">卡塔尔 <span class="sc">0-6</span> 加拿大<br><span style="color:#8aa3bd">拉林 16' J·戴维 29',45+3',90+2' 萨利巴 64' 马奈 75'(乌龙)</span></div><div class="item" style="color:#a8b9c9">⏳ 卡塔尔 <span class="sc" style="color:#2bbfd3">VS</span> 波黑 <span style="color:#8aa3bd">赛事52 6/24</span></div>
+      <div class="item">卡塔尔 <span class="sc">1-1</span> 瑞士<br><span style="color:#8aa3bd">Muheim 90+4' ( o.g. ) / Embolo 17' ( pen. )</span></div><div class="item">卡塔尔 <span class="sc">0-6</span> 加拿大<br><span style="color:#8aa3bd">Larin 16' J. David 29' , 45+3' , 90+2' Saliba 64' Manai 75' ( o.g. ) / </span></div><div class="item" style="color:#a8b9c9">⏳ 卡塔尔 <span class="sc" style="color:#2bbfd3">VS</span> 波黑 <span style="color:#8aa3bd">Match 52 6/24</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Switzerland">
@@ -1169,20 +1184,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ffb700">75 <span style="font-size:13px;color:#8aa3bd">/ 100 · B级</span></div>
     <div class="row"><span>所属分组</span><b>B组</b></div>
     <div class="row"><span>分档</span><b>第2档</b></div>
-    <div class="row"><span>主教练</span><b>雅金</b></div>
+    <div class="row"><span>主教练</span><b>Murat Yakin</b></div>
     <div class="row"><span>队长</span><b>扎卡</b></div>
     <div class="row"><span>平均年龄</span><b>27.5 岁</b></div>
     <div class="row"><span>战术风格</span><b>整体+纪律性</b></div>
     <div class="row"><span>历史最佳</span><b>3届16强</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>扎卡(中场)</b></div><div class="item">★ <b>恩博洛(前锋)</b></div><div class="item">★ <b>阿坎吉(后卫)</b></div><div class="item">★ <b>索默(门将)</b></div>
+      <div class="item">★ <b>扎卡(中场)</b></div><div class="item">★ <b>恩博洛(前锋)</b></div><div class="item">★ <b>阿坎吉(后卫)</b></div><div class="item">★ <b>索默(门将)</b></div><div class="item">★ <b>巴尔加斯(前锋)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>扎卡组织</p></div>
     <div class="section-mini"><h4>短板</h4><p>缺少超级球星</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">瑞士 <span class="sc">1-1</span> 卡塔尔<br><span style="color:#8aa3bd">穆海姆 90+4'(乌龙) / 恩博洛 17'(点)</span></div><div class="item">瑞士 <span class="sc">4-1</span> 波黑<br><span style="color:#8aa3bd">曼赞比 74',90' 巴尔加斯 84' 扎卡 90+7'(点) / 马赫米奇 90+3'</span></div><div class="item" style="color:#a8b9c9">⏳ 瑞士 <span class="sc" style="color:#2bbfd3">VS</span> 加拿大 <span style="color:#8aa3bd">赛事51 6/24</span></div>
+      <div class="item">瑞士 <span class="sc">1-1</span> 卡塔尔<br><span style="color:#8aa3bd">Muheim 90+4' ( o.g. ) / Embolo 17' ( pen. )</span></div><div class="item">瑞士 <span class="sc">4-1</span> 波黑<br><span style="color:#8aa3bd">Manzambi 74' , 90' Vargas 84' Xhaka 90+7' ( pen. ) / Mahmić 90+3'</span></div><div class="item" style="color:#a8b9c9">⏳ 瑞士 <span class="sc" style="color:#2bbfd3">VS</span> 加拿大 <span style="color:#8aa3bd">Match 51 6/24</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Brazil">
@@ -1192,7 +1207,7 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ff3a3a">92 <span style="font-size:13px;color:#8aa3bd">/ 100 · S级</span></div>
     <div class="row"><span>所属分组</span><b>C组</b></div>
     <div class="row"><span>分档</span><b>第1档</b></div>
-    <div class="row"><span>主教练</span><b>多里瓦尔</b></div>
+    <div class="row"><span>主教练</span><b>Carlo Ancelotti(意)</b></div>
     <div class="row"><span>队长</span><b>维尼修斯</b></div>
     <div class="row"><span>平均年龄</span><b>27.0 岁</b></div>
     <div class="row"><span>战术风格</span><b>华丽进攻</b></div>
@@ -1205,7 +1220,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>中场硬度</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">巴西 <span class="sc">1-1</span> 摩洛哥<br><span style="color:#8aa3bd">维尼修斯 32' / 塞巴里 21'</span></div><div class="item">巴西 <span class="sc">3-0</span> 海地<br><span style="color:#8aa3bd">库尼亚 23',36' 维尼修斯 45+3'</span></div><div class="item" style="color:#a8b9c9">⏳ 巴西 <span class="sc" style="color:#2bbfd3">VS</span> 苏格兰 <span style="color:#8aa3bd">赛事49 6/24</span></div>
+      <div class="item">巴西 <span class="sc">1-1</span> 摩洛哥<br><span style="color:#8aa3bd">Vinícius 32' / Saibari 21'</span></div><div class="item">巴西 <span class="sc">3-0</span> 海地<br><span style="color:#8aa3bd">Cunha 23' , 36' Vinícius 45+3' / </span></div><div class="item" style="color:#a8b9c9">⏳ 巴西 <span class="sc" style="color:#2bbfd3">VS</span> 苏格兰 <span style="color:#8aa3bd">Match 49 6/24</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Morocco">
@@ -1215,20 +1230,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ff8a00">80 <span style="font-size:13px;color:#8aa3bd">/ 100 · A级</span></div>
     <div class="row"><span>所属分组</span><b>C组</b></div>
     <div class="row"><span>分档</span><b>第2档</b></div>
-    <div class="row"><span>主教练</span><b>雷格拉吉</b></div>
+    <div class="row"><span>主教练</span><b>Mohamed Ouahbi</b></div>
     <div class="row"><span>队长</span><b>赛斯</b></div>
     <div class="row"><span>平均年龄</span><b>27.0 岁</b></div>
     <div class="row"><span>战术风格</span><b>防守+反击</b></div>
     <div class="row"><span>历史最佳</span><b>2022四强</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>阿什拉夫(后卫)</b></div><div class="item">★ <b>塞巴里(中场)</b></div><div class="item">★ <b>恩内斯里(前锋)</b></div><div class="item">★ <b>布努(门将)</b></div>
+      <div class="item">★ <b>阿什拉夫(后卫)</b></div><div class="item">★ <b>塞巴里(中场)</b></div><div class="item">★ <b>恩内斯里(前锋)</b></div><div class="item">★ <b>布努(门将)</b></div><div class="item">★ <b>阿姆拉巴特(中场)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>门将+整体</p></div>
     <div class="section-mini"><h4>短板</h4><p>锋线把握</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">摩洛哥 <span class="sc">1-1</span> 巴西<br><span style="color:#8aa3bd">维尼修斯 32' / 塞巴里 21'</span></div><div class="item">摩洛哥 <span class="sc">1-0</span> 苏格兰<br><span style="color:#8aa3bd">/ 塞巴里 2'</span></div><div class="item" style="color:#a8b9c9">⏳ 摩洛哥 <span class="sc" style="color:#2bbfd3">VS</span> 海地 <span style="color:#8aa3bd">赛事50 6/24</span></div>
+      <div class="item">摩洛哥 <span class="sc">1-1</span> 巴西<br><span style="color:#8aa3bd">Vinícius 32' / Saibari 21'</span></div><div class="item">摩洛哥 <span class="sc">1-0</span> 苏格兰<br><span style="color:#8aa3bd"> / Saibari 2'</span></div><div class="item" style="color:#a8b9c9">⏳ 摩洛哥 <span class="sc" style="color:#2bbfd3">VS</span> 海地 <span style="color:#8aa3bd">Match 50 6/24</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Haiti">
@@ -1251,7 +1266,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>阵容深度</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">海地 <span class="sc">0-1</span> 苏格兰<br><span style="color:#8aa3bd">/ 麦金 28'</span></div><div class="item">海地 <span class="sc">0-3</span> 巴西<br><span style="color:#8aa3bd">库尼亚 23',36' 维尼修斯 45+3'</span></div><div class="item" style="color:#a8b9c9">⏳ 海地 <span class="sc" style="color:#2bbfd3">VS</span> 摩洛哥 <span style="color:#8aa3bd">赛事50 6/24</span></div>
+      <div class="item">海地 <span class="sc">0-1</span> 苏格兰<br><span style="color:#8aa3bd"> / McGinn 28'</span></div><div class="item">海地 <span class="sc">0-3</span> 巴西<br><span style="color:#8aa3bd">Cunha 23' , 36' Vinícius 45+3' / </span></div><div class="item" style="color:#a8b9c9">⏳ 海地 <span class="sc" style="color:#2bbfd3">VS</span> 摩洛哥 <span style="color:#8aa3bd">Match 50 6/24</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Scotland">
@@ -1274,7 +1289,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>缺少明星前锋</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">苏格兰 <span class="sc">1-0</span> 海地<br><span style="color:#8aa3bd">/ 麦金 28'</span></div><div class="item">苏格兰 <span class="sc">0-1</span> 摩洛哥<br><span style="color:#8aa3bd">/ 塞巴里 2'</span></div><div class="item" style="color:#a8b9c9">⏳ 苏格兰 <span class="sc" style="color:#2bbfd3">VS</span> 巴西 <span style="color:#8aa3bd">赛事49 6/24</span></div>
+      <div class="item">苏格兰 <span class="sc">1-0</span> 海地<br><span style="color:#8aa3bd"> / McGinn 28'</span></div><div class="item">苏格兰 <span class="sc">0-1</span> 摩洛哥<br><span style="color:#8aa3bd"> / Saibari 2'</span></div><div class="item" style="color:#a8b9c9">⏳ 苏格兰 <span class="sc" style="color:#2bbfd3">VS</span> 巴西 <span style="color:#8aa3bd">Match 49 6/24</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-USA">
@@ -1284,7 +1299,7 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ffb700">75 <span style="font-size:13px;color:#8aa3bd">/ 100 · B级</span></div>
     <div class="row"><span>所属分组</span><b>D组</b></div>
     <div class="row"><span>分档</span><b>第1档</b></div>
-    <div class="row"><span>主教练</span><b>波切蒂诺</b></div>
+    <div class="row"><span>主教练</span><b>Mauricio Pochettino(阿)</b></div>
     <div class="row"><span>队长</span><b>普利西奇</b></div>
     <div class="row"><span>平均年龄</span><b>25.5 岁</b></div>
     <div class="row"><span>战术风格</span><b>身体+青春风暴</b></div>
@@ -1297,7 +1312,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>大赛经验</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">美国 <span class="sc">4-1</span> 巴拉圭<br><span style="color:#8aa3bd">博瓦迪利亚 7'(乌龙) 巴洛贡 31',45+5' 雷纳 90+8' / 毛里西奥 73'</span></div><div class="item">美国 <span class="sc">2-0</span> 澳大利亚<br><span style="color:#8aa3bd">伯吉斯 11'(乌龙) 弗里曼 43'</span></div><div class="item" style="color:#a8b9c9">⏳ 美国 <span class="sc" style="color:#2bbfd3">VS</span> 土耳其 <span style="color:#8aa3bd">赛事59 6/25</span></div>
+      <div class="item">美国 <span class="sc">4-1</span> 巴拉圭<br><span style="color:#8aa3bd">Bobadilla 7' ( o.g. ) Balogun 31' , 45+5' Reyna 90+8' / Maurício 73'</span></div><div class="item">美国 <span class="sc">2-0</span> 澳大利亚<br><span style="color:#8aa3bd">Burgess 11' ( o.g. ) Freeman 43' / </span></div><div class="item" style="color:#a8b9c9">⏳ 美国 <span class="sc" style="color:#2bbfd3">VS</span> 土耳其 <span style="color:#8aa3bd">Match 59 6/25</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Paraguay">
@@ -1320,7 +1335,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>锋线乏力</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">巴拉圭 <span class="sc">1-4</span> 美国<br><span style="color:#8aa3bd">博瓦迪利亚 7'(乌龙) 巴洛贡 31',45+5' 雷纳 90+8' / 毛里西奥 73'</span></div><div class="item">巴拉圭 <span class="sc">1-0</span> 土耳其<br><span style="color:#8aa3bd">/ 馬迪亞斯·加拉扎 2'</span></div><div class="item" style="color:#a8b9c9">⏳ 巴拉圭 <span class="sc" style="color:#2bbfd3">VS</span> 澳大利亚 <span style="color:#8aa3bd">赛事60 6/25</span></div>
+      <div class="item">巴拉圭 <span class="sc">1-4</span> 美国<br><span style="color:#8aa3bd">Bobadilla 7' ( o.g. ) Balogun 31' , 45+5' Reyna 90+8' / Maurício 73'</span></div><div class="item">巴拉圭 <span class="sc">1-0</span> 土耳其<br><span style="color:#8aa3bd"> / Galarza 2'</span></div><div class="item" style="color:#a8b9c9">⏳ 巴拉圭 <span class="sc" style="color:#2bbfd3">VS</span> 澳大利亚 <span style="color:#8aa3bd">Match 60 6/25</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Australia">
@@ -1343,7 +1358,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>技术细腻度</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">澳大利亚 <span class="sc">2-0</span> 土耳其<br><span style="color:#8aa3bd">伊兰昆达 27' 梅特卡夫 75'</span></div><div class="item">澳大利亚 <span class="sc">0-2</span> 美国<br><span style="color:#8aa3bd">伯吉斯 11'(乌龙) 弗里曼 43'</span></div><div class="item" style="color:#a8b9c9">⏳ 澳大利亚 <span class="sc" style="color:#2bbfd3">VS</span> 巴拉圭 <span style="color:#8aa3bd">赛事60 6/25</span></div>
+      <div class="item">澳大利亚 <span class="sc">2-0</span> 土耳其<br><span style="color:#8aa3bd">Irankunda 27' Metcalfe 75' / </span></div><div class="item">澳大利亚 <span class="sc">0-2</span> 美国<br><span style="color:#8aa3bd">Burgess 11' ( o.g. ) Freeman 43' / </span></div><div class="item" style="color:#a8b9c9">⏳ 澳大利亚 <span class="sc" style="color:#2bbfd3">VS</span> 巴拉圭 <span style="color:#8aa3bd">Match 60 6/25</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Turkey">
@@ -1366,7 +1381,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>防线不稳</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">土耳其 <span class="sc">0-2</span> 澳大利亚<br><span style="color:#8aa3bd">伊兰昆达 27' 梅特卡夫 75'</span></div><div class="item">土耳其 <span class="sc">0-1</span> 巴拉圭<br><span style="color:#8aa3bd">/ 馬迪亞斯·加拉扎 2'</span></div><div class="item" style="color:#a8b9c9">⏳ 土耳其 <span class="sc" style="color:#2bbfd3">VS</span> 美国 <span style="color:#8aa3bd">赛事59 6/25</span></div>
+      <div class="item">土耳其 <span class="sc">0-2</span> 澳大利亚<br><span style="color:#8aa3bd">Irankunda 27' Metcalfe 75' / </span></div><div class="item">土耳其 <span class="sc">0-1</span> 巴拉圭<br><span style="color:#8aa3bd"> / Galarza 2'</span></div><div class="item" style="color:#a8b9c9">⏳ 土耳其 <span class="sc" style="color:#2bbfd3">VS</span> 美国 <span style="color:#8aa3bd">Match 59 6/25</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Germany">
@@ -1376,20 +1391,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ff3a3a">88 <span style="font-size:13px;color:#8aa3bd">/ 100 · S级</span></div>
     <div class="row"><span>所属分组</span><b>E组</b></div>
     <div class="row"><span>分档</span><b>第1档</b></div>
-    <div class="row"><span>主教练</span><b>纳格尔斯曼</b></div>
-    <div class="row"><span>队长</span><b>京多安</b></div>
+    <div class="row"><span>主教练</span><b>Julian Nagelsmann</b></div>
+    <div class="row"><span>队长</span><b>基米希</b></div>
     <div class="row"><span>平均年龄</span><b>26.4 岁</b></div>
     <div class="row"><span>战术风格</span><b>高位逼抢+整体</b></div>
     <div class="row"><span>历史最佳</span><b>4次冠军</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>穆西亚拉(中场)</b></div><div class="item">★ <b>哈弗茨(前锋)</b></div><div class="item">★ <b>维尔茨(中场)</b></div><div class="item">★ <b>吕迪格(后卫)</b></div><div class="item">★ <b>诺伊尔(门将)</b></div>
+      <div class="item">★ <b>穆西亚拉(中场)</b></div><div class="item">★ <b>维尔茨(中场)</b></div><div class="item">★ <b>哈弗茨(前锋)</b></div><div class="item">★ <b>基米希(中场)</b></div><div class="item">★ <b>施洛特贝克(后卫)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>穆西亚拉+维尔茨</p></div>
     <div class="section-mini"><h4>短板</h4><p>中锋缺乏</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">德国 <span class="sc">7-1</span> 库拉索<br><span style="color:#8aa3bd">恩梅查 6' 施洛特贝克 38' 哈弗茨 45+5'(点),88' 穆西亚拉 47' 布朗 68' 温达夫 78' / 科梅嫩西亚 21'</span></div><div class="item" style="color:#a8b9c9">⏳ 德国 <span class="sc" style="color:#2bbfd3">VS</span> 科特迪瓦 <span style="color:#8aa3bd">赛事33 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 德国 <span class="sc" style="color:#2bbfd3">VS</span> 厄瓜多尔 <span style="color:#8aa3bd">赛事56 6/25</span></div>
+      <div class="item">德国 <span class="sc">7-1</span> 库拉索<br><span style="color:#8aa3bd">Nmecha 6' Schlotterbeck 38' Havertz 45+5' ( pen. ) , 88' Musiala 47' Brown 68' U</span></div><div class="item" style="color:#a8b9c9">⏳ 德国 <span class="sc" style="color:#2bbfd3">VS</span> 科特迪瓦 <span style="color:#8aa3bd">Match 33 6/25</span></div><div class="item" style="color:#a8b9c9">⏳ 德国 <span class="sc" style="color:#2bbfd3">VS</span> 厄瓜多尔 <span style="color:#8aa3bd">Match 56 6/25</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Curacao">
@@ -1412,7 +1427,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>实力差距</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">库拉索 <span class="sc">1-7</span> 德国<br><span style="color:#8aa3bd">恩梅查 6' 施洛特贝克 38' 哈弗茨 45+5'(点),88' 穆西亚拉 47' 布朗 68' 温达夫 78' / 科梅嫩西亚 21'</span></div><div class="item" style="color:#a8b9c9">⏳ 库拉索 <span class="sc" style="color:#2bbfd3">VS</span> 厄瓜多尔 <span style="color:#8aa3bd">赛事34 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 库拉索 <span class="sc" style="color:#2bbfd3">VS</span> 科特迪瓦 <span style="color:#8aa3bd">赛事55 6/25</span></div>
+      <div class="item">库拉索 <span class="sc">1-7</span> 德国<br><span style="color:#8aa3bd">Nmecha 6' Schlotterbeck 38' Havertz 45+5' ( pen. ) , 88' Musiala 47' Brown 68' U</span></div><div class="item" style="color:#a8b9c9">⏳ 库拉索 <span class="sc" style="color:#2bbfd3">VS</span> 厄瓜多尔 <span style="color:#8aa3bd">Match 34 6/25</span></div><div class="item" style="color:#a8b9c9">⏳ 库拉索 <span class="sc" style="color:#2bbfd3">VS</span> 科特迪瓦 <span style="color:#8aa3bd">Match 55 6/25</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Ivory Coast">
@@ -1435,7 +1450,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>稳定性</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">科特迪瓦 <span class="sc">1-0</span> 厄瓜多尔<br><span style="color:#8aa3bd">迪亚洛 90'</span></div><div class="item" style="color:#a8b9c9">⏳ 科特迪瓦 <span class="sc" style="color:#2bbfd3">VS</span> 德国 <span style="color:#8aa3bd">赛事33 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 科特迪瓦 <span class="sc" style="color:#2bbfd3">VS</span> 库拉索 <span style="color:#8aa3bd">赛事55 6/25</span></div>
+      <div class="item">科特迪瓦 <span class="sc">1-0</span> 厄瓜多尔<br><span style="color:#8aa3bd">Diallo 90' / </span></div><div class="item" style="color:#a8b9c9">⏳ 科特迪瓦 <span class="sc" style="color:#2bbfd3">VS</span> 德国 <span style="color:#8aa3bd">Match 33 6/25</span></div><div class="item" style="color:#a8b9c9">⏳ 科特迪瓦 <span class="sc" style="color:#2bbfd3">VS</span> 库拉索 <span style="color:#8aa3bd">Match 55 6/25</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Ecuador">
@@ -1458,7 +1473,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>高原优势不再</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">厄瓜多尔 <span class="sc">0-1</span> 科特迪瓦<br><span style="color:#8aa3bd">迪亚洛 90'</span></div><div class="item" style="color:#a8b9c9">⏳ 厄瓜多尔 <span class="sc" style="color:#2bbfd3">VS</span> 库拉索 <span style="color:#8aa3bd">赛事34 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 厄瓜多尔 <span class="sc" style="color:#2bbfd3">VS</span> 德国 <span style="color:#8aa3bd">赛事56 6/25</span></div>
+      <div class="item">厄瓜多尔 <span class="sc">0-1</span> 科特迪瓦<br><span style="color:#8aa3bd">Diallo 90' / </span></div><div class="item" style="color:#a8b9c9">⏳ 厄瓜多尔 <span class="sc" style="color:#2bbfd3">VS</span> 库拉索 <span style="color:#8aa3bd">Match 34 6/25</span></div><div class="item" style="color:#a8b9c9">⏳ 厄瓜多尔 <span class="sc" style="color:#2bbfd3">VS</span> 德国 <span style="color:#8aa3bd">Match 56 6/25</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Netherlands">
@@ -1468,20 +1483,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ff8a00">86 <span style="font-size:13px;color:#8aa3bd">/ 100 · A级</span></div>
     <div class="row"><span>所属分组</span><b>F组</b></div>
     <div class="row"><span>分档</span><b>第1档</b></div>
-    <div class="row"><span>主教练</span><b>科曼</b></div>
+    <div class="row"><span>主教练</span><b>Ronald Koeman</b></div>
     <div class="row"><span>队长</span><b>范戴克</b></div>
     <div class="row"><span>平均年龄</span><b>27.0 岁</b></div>
     <div class="row"><span>战术风格</span><b>全攻全守</b></div>
     <div class="row"><span>历史最佳</span><b>3次亚军</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>范戴克(后卫)</b></div><div class="item">★ <b>德容(中场)</b></div><div class="item">★ <b>加克波(前锋)</b></div><div class="item">★ <b>邓弗里斯(后卫)</b></div><div class="item">★ <b>德佩(前锋)</b></div>
+      <div class="item">★ <b>范戴克(后卫)</b></div><div class="item">★ <b>加克波(前锋)</b></div><div class="item">★ <b>德容(中场)</b></div><div class="item">★ <b>哈克波(前锋)</b></div><div class="item">★ <b>德佩(前锋)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>范戴克+德容</p></div>
     <div class="section-mini"><h4>短板</h4><p>锋线老化</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">荷兰 <span class="sc">2-2</span> 日本<br><span style="color:#8aa3bd">范戴克 51' 萨默维尔 64' / 中村敬斗 57' 鎌田大地 89'</span></div><div class="item" style="color:#a8b9c9">⏳ 荷兰 <span class="sc" style="color:#2bbfd3">VS</span> 瑞典 <span style="color:#8aa3bd">赛事35 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 荷兰 <span class="sc" style="color:#2bbfd3">VS</span> 突尼斯 <span style="color:#8aa3bd">赛事58 6/25</span></div>
+      <div class="item">荷兰 <span class="sc">2-2</span> 日本<br><span style="color:#8aa3bd">Van Dijk 50' Summerville 64' / Nakamura 57' Kamada 88'</span></div><div class="item" style="color:#a8b9c9">⏳ 荷兰 <span class="sc" style="color:#2bbfd3">VS</span> 瑞典 <span style="color:#8aa3bd">Match 35 6/25</span></div><div class="item" style="color:#a8b9c9">⏳ 荷兰 <span class="sc" style="color:#2bbfd3">VS</span> 突尼斯 <span style="color:#8aa3bd">Match 58 6/25</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Japan">
@@ -1491,20 +1506,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ffb700">78 <span style="font-size:13px;color:#8aa3bd">/ 100 · B级</span></div>
     <div class="row"><span>所属分组</span><b>F组</b></div>
     <div class="row"><span>分档</span><b>第2档</b></div>
-    <div class="row"><span>主教练</span><b>森保一</b></div>
+    <div class="row"><span>主教练</span><b>Hajime Moriyasu</b></div>
     <div class="row"><span>队长</span><b>远藤航</b></div>
     <div class="row"><span>平均年龄</span><b>27.5 岁</b></div>
     <div class="row"><span>战术风格</span><b>技术+速度</b></div>
     <div class="row"><span>历史最佳</span><b>2002/2010/2018十六强</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>久保建英(中场)</b></div><div class="item">★ <b>三笘薰(前锋)</b></div><div class="item">★ <b>远藤航(中场)</b></div><div class="item">★ <b>富安健洋(后卫)</b></div>
+      <div class="item">★ <b>三笘薰(前锋)</b></div><div class="item">★ <b>久保建英(中场)</b></div><div class="item">★ <b>远藤航(中场)</b></div><div class="item">★ <b>富安健洋(后卫)</b></div><div class="item">★ <b>伊东纯也(前锋)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>旅欧球员群</p></div>
     <div class="section-mini"><h4>短板</h4><p>身体对抗</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">日本 <span class="sc">2-2</span> 荷兰<br><span style="color:#8aa3bd">范戴克 51' 萨默维尔 64' / 中村敬斗 57' 鎌田大地 89'</span></div><div class="item" style="color:#a8b9c9">⏳ 日本 <span class="sc" style="color:#2bbfd3">VS</span> 突尼斯 <span style="color:#8aa3bd">赛事36 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 日本 <span class="sc" style="color:#2bbfd3">VS</span> 瑞典 <span style="color:#8aa3bd">赛事57 6/25</span></div>
+      <div class="item">日本 <span class="sc">2-2</span> 荷兰<br><span style="color:#8aa3bd">Van Dijk 50' Summerville 64' / Nakamura 57' Kamada 88'</span></div><div class="item" style="color:#a8b9c9">⏳ 日本 <span class="sc" style="color:#2bbfd3">VS</span> 突尼斯 <span style="color:#8aa3bd">Match 36 6/25</span></div><div class="item" style="color:#a8b9c9">⏳ 日本 <span class="sc" style="color:#2bbfd3">VS</span> 瑞典 <span style="color:#8aa3bd">Match 57 6/25</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Sweden">
@@ -1514,20 +1529,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#3ec46d">70 <span style="font-size:13px;color:#8aa3bd">/ 100 · C级</span></div>
     <div class="row"><span>所属分组</span><b>F组</b></div>
     <div class="row"><span>分档</span><b>第3档</b></div>
-    <div class="row"><span>主教练</span><b>托马森</b></div>
+    <div class="row"><span>主教练</span><b>Graham Potter</b></div>
     <div class="row"><span>队长</span><b>埃克达尔</b></div>
     <div class="row"><span>平均年龄</span><b>27.5 岁</b></div>
     <div class="row"><span>战术风格</span><b>高大+定位球</b></div>
     <div class="row"><span>历史最佳</span><b>1958亚军/1994季军</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>伊萨克(前锋)</b></div><div class="item">★ <b>哲凯赖什(前锋)</b></div><div class="item">★ <b>福斯贝里(中场)</b></div><div class="item">★ <b>林德洛夫(后卫)</b></div>
+      <div class="item">★ <b>伊萨克(前锋)</b></div><div class="item">★ <b>哲凯赖什(前锋)</b></div><div class="item">★ <b>福斯贝里(中场)</b></div><div class="item">★ <b>埃克达尔(中场)</b></div><div class="item">★ <b>奥尔森(门将)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>锋线双塔</p></div>
     <div class="section-mini"><h4>短板</h4><p>中场创造</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">瑞典 <span class="sc">5-1</span> 突尼斯<br><span style="color:#8aa3bd">阿亚里 7',90+6' 伊萨克 30' 哲凯赖什 59' 斯万贝里 84' / 雷基克 43'</span></div><div class="item" style="color:#a8b9c9">⏳ 瑞典 <span class="sc" style="color:#2bbfd3">VS</span> 荷兰 <span style="color:#8aa3bd">赛事35 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 瑞典 <span class="sc" style="color:#2bbfd3">VS</span> 日本 <span style="color:#8aa3bd">赛事57 6/25</span></div>
+      <div class="item">瑞典 <span class="sc">5-1</span> 突尼斯<br><span style="color:#8aa3bd">Ayari 7' , 90+6' Isak 30' Gyökeres 59' Svanberg 84' / Rekik 43'</span></div><div class="item" style="color:#a8b9c9">⏳ 瑞典 <span class="sc" style="color:#2bbfd3">VS</span> 荷兰 <span style="color:#8aa3bd">Match 35 6/25</span></div><div class="item" style="color:#a8b9c9">⏳ 瑞典 <span class="sc" style="color:#2bbfd3">VS</span> 日本 <span style="color:#8aa3bd">Match 57 6/25</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Tunisia">
@@ -1550,7 +1565,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>进攻乏力</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">突尼斯 <span class="sc">1-5</span> 瑞典<br><span style="color:#8aa3bd">阿亚里 7',90+6' 伊萨克 30' 哲凯赖什 59' 斯万贝里 84' / 雷基克 43'</span></div><div class="item" style="color:#a8b9c9">⏳ 突尼斯 <span class="sc" style="color:#2bbfd3">VS</span> 日本 <span style="color:#8aa3bd">赛事36 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 突尼斯 <span class="sc" style="color:#2bbfd3">VS</span> 荷兰 <span style="color:#8aa3bd">赛事58 6/25</span></div>
+      <div class="item">突尼斯 <span class="sc">1-5</span> 瑞典<br><span style="color:#8aa3bd">Ayari 7' , 90+6' Isak 30' Gyökeres 59' Svanberg 84' / Rekik 43'</span></div><div class="item" style="color:#a8b9c9">⏳ 突尼斯 <span class="sc" style="color:#2bbfd3">VS</span> 日本 <span style="color:#8aa3bd">Match 36 6/25</span></div><div class="item" style="color:#a8b9c9">⏳ 突尼斯 <span class="sc" style="color:#2bbfd3">VS</span> 荷兰 <span style="color:#8aa3bd">Match 58 6/25</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Belgium">
@@ -1560,20 +1575,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ff8a00">83 <span style="font-size:13px;color:#8aa3bd">/ 100 · A级</span></div>
     <div class="row"><span>所属分组</span><b>G组</b></div>
     <div class="row"><span>分档</span><b>第1档</b></div>
-    <div class="row"><span>主教练</span><b>特德斯科</b></div>
+    <div class="row"><span>主教练</span><b>Rudi Garcia</b></div>
     <div class="row"><span>队长</span><b>德布劳内</b></div>
     <div class="row"><span>平均年龄</span><b>28.5 岁</b></div>
     <div class="row"><span>战术风格</span><b>反击+球星</b></div>
     <div class="row"><span>历史最佳</span><b>2018季军/2022小组出局</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>德布劳内(中场)</b></div><div class="item">★ <b>卢卡库(前锋)</b></div><div class="item">★ <b>库尔图瓦(门将)</b></div><div class="item">★ <b>阿扎尔(中场)</b></div><div class="item">★ <b>蒂勒曼斯(中场)</b></div>
+      <div class="item">★ <b>德布劳内(中场)</b></div><div class="item">★ <b>卢卡库(前锋)</b></div><div class="item">★ <b>阿扎尔(中场)</b></div><div class="item">★ <b>库尔图瓦(门将)</b></div><div class="item">★ <b>廷贝尔(后卫)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>德布劳内爆发</p></div>
     <div class="section-mini"><h4>短板</h4><p>黄金一代末期</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">比利时 <span class="sc">1-1</span> 埃及<br><span style="color:#8aa3bd">汉尼 66'(乌龙) / 阿舒尔 20'</span></div><div class="item" style="color:#a8b9c9">⏳ 比利时 <span class="sc" style="color:#2bbfd3">VS</span> 伊朗 <span style="color:#8aa3bd">赛事39 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 比利时 <span class="sc" style="color:#2bbfd3">VS</span> 新西兰 <span style="color:#8aa3bd">赛事64 6/25</span></div>
+      <div class="item">比利时 <span class="sc">1-1</span> 埃及<br><span style="color:#8aa3bd">Hany 66' ( o.g. ) / Ashour 19'</span></div><div class="item" style="color:#a8b9c9">⏳ 比利时 <span class="sc" style="color:#2bbfd3">VS</span> 伊朗 <span style="color:#8aa3bd">Match 39 6/26</span></div><div class="item" style="color:#a8b9c9">⏳ 比利时 <span class="sc" style="color:#2bbfd3">VS</span> 新西兰 <span style="color:#8aa3bd">Match 64 6/26</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Egypt">
@@ -1596,7 +1611,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>整体深度</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">埃及 <span class="sc">1-1</span> 比利时<br><span style="color:#8aa3bd">汉尼 66'(乌龙) / 阿舒尔 20'</span></div><div class="item" style="color:#a8b9c9">⏳ 埃及 <span class="sc" style="color:#2bbfd3">VS</span> 新西兰 <span style="color:#8aa3bd">赛事40 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 埃及 <span class="sc" style="color:#2bbfd3">VS</span> 伊朗 <span style="color:#8aa3bd">赛事63 6/25</span></div>
+      <div class="item">埃及 <span class="sc">1-1</span> 比利时<br><span style="color:#8aa3bd">Hany 66' ( o.g. ) / Ashour 19'</span></div><div class="item" style="color:#a8b9c9">⏳ 埃及 <span class="sc" style="color:#2bbfd3">VS</span> 新西兰 <span style="color:#8aa3bd">Match 40 6/26</span></div><div class="item" style="color:#a8b9c9">⏳ 埃及 <span class="sc" style="color:#2bbfd3">VS</span> 伊朗 <span style="color:#8aa3bd">Match 63 6/26</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Iran">
@@ -1619,7 +1634,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>大赛心理</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">伊朗 <span class="sc">2-2</span> 新西兰<br><span style="color:#8aa3bd">雷扎伊安 32' 莫赫比 64' / 贾斯特 7',54'</span></div><div class="item" style="color:#a8b9c9">⏳ 伊朗 <span class="sc" style="color:#2bbfd3">VS</span> 比利时 <span style="color:#8aa3bd">赛事39 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 伊朗 <span class="sc" style="color:#2bbfd3">VS</span> 埃及 <span style="color:#8aa3bd">赛事63 6/25</span></div>
+      <div class="item">伊朗 <span class="sc">2-2</span> 新西兰<br><span style="color:#8aa3bd">Rezaeian 32' Mohebi 64' / Just 7' , 54'</span></div><div class="item" style="color:#a8b9c9">⏳ 伊朗 <span class="sc" style="color:#2bbfd3">VS</span> 比利时 <span style="color:#8aa3bd">Match 39 6/26</span></div><div class="item" style="color:#a8b9c9">⏳ 伊朗 <span class="sc" style="color:#2bbfd3">VS</span> 埃及 <span style="color:#8aa3bd">Match 63 6/26</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-New Zealand">
@@ -1642,7 +1657,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>对抗顶级强队</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">新西兰 <span class="sc">2-2</span> 伊朗<br><span style="color:#8aa3bd">雷扎伊安 32' 莫赫比 64' / 贾斯特 7',54'</span></div><div class="item" style="color:#a8b9c9">⏳ 新西兰 <span class="sc" style="color:#2bbfd3">VS</span> 埃及 <span style="color:#8aa3bd">赛事40 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 新西兰 <span class="sc" style="color:#2bbfd3">VS</span> 比利时 <span style="color:#8aa3bd">赛事64 6/25</span></div>
+      <div class="item">新西兰 <span class="sc">2-2</span> 伊朗<br><span style="color:#8aa3bd">Rezaeian 32' Mohebi 64' / Just 7' , 54'</span></div><div class="item" style="color:#a8b9c9">⏳ 新西兰 <span class="sc" style="color:#2bbfd3">VS</span> 埃及 <span style="color:#8aa3bd">Match 40 6/26</span></div><div class="item" style="color:#a8b9c9">⏳ 新西兰 <span class="sc" style="color:#2bbfd3">VS</span> 比利时 <span style="color:#8aa3bd">Match 64 6/26</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Spain">
@@ -1652,20 +1667,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ff3a3a">91 <span style="font-size:13px;color:#8aa3bd">/ 100 · S级</span></div>
     <div class="row"><span>所属分组</span><b>H组</b></div>
     <div class="row"><span>分档</span><b>第1档</b></div>
-    <div class="row"><span>主教练</span><b>德拉富恩特</b></div>
+    <div class="row"><span>主教练</span><b>Luis de la Fuente</b></div>
     <div class="row"><span>队长</span><b>莫拉塔</b></div>
     <div class="row"><span>平均年龄</span><b>26.5 岁</b></div>
     <div class="row"><span>战术风格</span><b>极致传控</b></div>
     <div class="row"><span>历史最佳</span><b>2010冠军</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>罗德里(中场)</b></div><div class="item">★ <b>佩德里(中场)</b></div><div class="item">★ <b>加维(中场)</b></div><div class="item">★ <b>尼科·威廉姆斯(前锋)</b></div><div class="item">★ <b>亚马尔(前锋,17)</b></div><div class="item">★ <b>乌奈·西蒙(门将)</b></div>
+      <div class="item">★ <b>罗德里(中场)</b></div><div class="item">★ <b>佩德里(中场)</b></div><div class="item">★ <b>尼科·威廉斯(前锋)</b></div><div class="item">★ <b>亚马尔(前锋)</b></div><div class="item">★ <b>拉波尔特(后卫)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>中场厚度</p></div>
     <div class="section-mini"><h4>短板</h4><p>中锋乏力</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">西班牙 <span class="sc">0-0</span> 佛得角<br><span style="color:#8aa3bd">/</span></div><div class="item" style="color:#a8b9c9">⏳ 西班牙 <span class="sc" style="color:#2bbfd3">VS</span> 沙特阿拉伯 <span style="color:#8aa3bd">赛事38 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 西班牙 <span class="sc" style="color:#2bbfd3">VS</span> 乌拉圭 <span style="color:#8aa3bd">赛事66 6/25</span></div>
+      <div class="item">西班牙 <span class="sc">0-0</span> 佛得角<br><span style="color:#8aa3bd"> / </span></div><div class="item" style="color:#a8b9c9">⏳ 西班牙 <span class="sc" style="color:#2bbfd3">VS</span> 沙特阿拉伯 <span style="color:#8aa3bd">Match 38 6/26</span></div><div class="item" style="color:#a8b9c9">⏳ 西班牙 <span class="sc" style="color:#2bbfd3">VS</span> 乌拉圭 <span style="color:#8aa3bd">Match 66 6/26</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Cabo Verde">
@@ -1688,7 +1703,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>实力差距</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">佛得角 <span class="sc">0-0</span> 西班牙<br><span style="color:#8aa3bd">/</span></div><div class="item" style="color:#a8b9c9">⏳ 佛得角 <span class="sc" style="color:#2bbfd3">VS</span> 乌拉圭 <span style="color:#8aa3bd">赛事37 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 佛得角 <span class="sc" style="color:#2bbfd3">VS</span> 沙特阿拉伯 <span style="color:#8aa3bd">赛事65 6/25</span></div>
+      <div class="item">佛得角 <span class="sc">0-0</span> 西班牙<br><span style="color:#8aa3bd"> / </span></div><div class="item" style="color:#a8b9c9">⏳ 佛得角 <span class="sc" style="color:#2bbfd3">VS</span> 乌拉圭 <span style="color:#8aa3bd">Match 37 6/26</span></div><div class="item" style="color:#a8b9c9">⏳ 佛得角 <span class="sc" style="color:#2bbfd3">VS</span> 沙特阿拉伯 <span style="color:#8aa3bd">Match 65 6/26</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Saudi Arabia">
@@ -1711,7 +1726,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>整体实力</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">沙特阿拉伯 <span class="sc">1-1</span> 乌拉圭<br><span style="color:#8aa3bd">阿姆里 41' / M·阿劳霍 80'</span></div><div class="item" style="color:#a8b9c9">⏳ 沙特阿拉伯 <span class="sc" style="color:#2bbfd3">VS</span> 西班牙 <span style="color:#8aa3bd">赛事38 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 沙特阿拉伯 <span class="sc" style="color:#2bbfd3">VS</span> 佛得角 <span style="color:#8aa3bd">赛事65 6/25</span></div>
+      <div class="item">沙特阿拉伯 <span class="sc">1-1</span> 乌拉圭<br><span style="color:#8aa3bd">Al-Amri 41' / M. Araújo 80'</span></div><div class="item" style="color:#a8b9c9">⏳ 沙特阿拉伯 <span class="sc" style="color:#2bbfd3">VS</span> 西班牙 <span style="color:#8aa3bd">Match 38 6/26</span></div><div class="item" style="color:#a8b9c9">⏳ 沙特阿拉伯 <span class="sc" style="color:#2bbfd3">VS</span> 佛得角 <span style="color:#8aa3bd">Match 65 6/26</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Uruguay">
@@ -1721,20 +1736,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ff8a00">81 <span style="font-size:13px;color:#8aa3bd">/ 100 · A级</span></div>
     <div class="row"><span>所属分组</span><b>H组</b></div>
     <div class="row"><span>分档</span><b>第2档</b></div>
-    <div class="row"><span>主教练</span><b>比埃尔萨</b></div>
+    <div class="row"><span>主教练</span><b>Marcelo Bielsa</b></div>
     <div class="row"><span>队长</span><b>戈丁</b></div>
     <div class="row"><span>平均年龄</span><b>27.0 岁</b></div>
     <div class="row"><span>战术风格</span><b>拼抢+进攻</b></div>
     <div class="row"><span>历史最佳</span><b>2次冠军(1930/1950)</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>苏亚雷斯(前锋,39)</b></div><div class="item">★ <b>努涅斯(前锋)</b></div><div class="item">★ <b>巴尔韦德(中场)</b></div><div class="item">★ <b>阿劳霍(后卫)</b></div>
+      <div class="item">★ <b>努涅斯(前锋)</b></div><div class="item">★ <b>巴尔韦德(中场)</b></div><div class="item">★ <b>本坦库尔(中场)</b></div><div class="item">★ <b>阿劳霍(后卫)</b></div><div class="item">★ <b>罗切特(门将)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>苏牙+努涅斯</p></div>
     <div class="section-mini"><h4>短板</h4><p>苏牙老化</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">乌拉圭 <span class="sc">1-1</span> 沙特阿拉伯<br><span style="color:#8aa3bd">阿姆里 41' / M·阿劳霍 80'</span></div><div class="item" style="color:#a8b9c9">⏳ 乌拉圭 <span class="sc" style="color:#2bbfd3">VS</span> 佛得角 <span style="color:#8aa3bd">赛事37 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 乌拉圭 <span class="sc" style="color:#2bbfd3">VS</span> 西班牙 <span style="color:#8aa3bd">赛事66 6/25</span></div>
+      <div class="item">乌拉圭 <span class="sc">1-1</span> 沙特阿拉伯<br><span style="color:#8aa3bd">Al-Amri 41' / M. Araújo 80'</span></div><div class="item" style="color:#a8b9c9">⏳ 乌拉圭 <span class="sc" style="color:#2bbfd3">VS</span> 佛得角 <span style="color:#8aa3bd">Match 37 6/26</span></div><div class="item" style="color:#a8b9c9">⏳ 乌拉圭 <span class="sc" style="color:#2bbfd3">VS</span> 西班牙 <span style="color:#8aa3bd">Match 66 6/26</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-France">
@@ -1744,20 +1759,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ff3a3a">90 <span style="font-size:13px;color:#8aa3bd">/ 100 · S级</span></div>
     <div class="row"><span>所属分组</span><b>I组</b></div>
     <div class="row"><span>分档</span><b>第1档</b></div>
-    <div class="row"><span>主教练</span><b>德尚</b></div>
+    <div class="row"><span>主教练</span><b>Didier Deschamps</b></div>
     <div class="row"><span>队长</span><b>姆巴佩</b></div>
     <div class="row"><span>平均年龄</span><b>26.5 岁</b></div>
     <div class="row"><span>战术风格</span><b>反击+技术</b></div>
     <div class="row"><span>历史最佳</span><b>2018冠军/2022亚军</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>姆巴佩(前锋)</b></div><div class="item">★ <b>登贝莱(中场)</b></div><div class="item">★ <b>格列兹曼(中场)</b></div><div class="item">★ <b>楚阿梅尼(中场)</b></div><div class="item">★ <b>萨利巴(后卫)</b></div><div class="item">★ <b>迈尼昂(门将)</b></div>
+      <div class="item">★ <b>姆巴佩(前锋)</b></div><div class="item">★ <b>巴尔科拉(前锋)</b></div><div class="item">★ <b>格列兹曼(中场)</b></div><div class="item">★ <b>卡马文加(中场)</b></div><div class="item">★ <b>于帕梅卡诺(后卫)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>姆巴佩冲击</p></div>
     <div class="section-mini"><h4>短板</h4><p>锋线替补</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">法国 <span class="sc">3-1</span> 塞内加尔<br><span style="color:#8aa3bd">姆巴佩 66',90+6' 巴尔科拉 82' / 姆巴耶 90+5'</span></div><div class="item" style="color:#a8b9c9">⏳ 法国 <span class="sc" style="color:#2bbfd3">VS</span> 伊拉克 <span style="color:#8aa3bd">赛事42 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 法国 <span class="sc" style="color:#2bbfd3">VS</span> 挪威 <span style="color:#8aa3bd">赛事61 6/25</span></div>
+      <div class="item">法国 <span class="sc">3-1</span> 塞内加尔<br><span style="color:#8aa3bd">Mbappé 66' , 90+6' Barcola 82' / Mbaye 90+5'</span></div><div class="item" style="color:#a8b9c9">⏳ 法国 <span class="sc" style="color:#2bbfd3">VS</span> 伊拉克 <span style="color:#8aa3bd">Match 42 6/26</span></div><div class="item" style="color:#a8b9c9">⏳ 法国 <span class="sc" style="color:#2bbfd3">VS</span> 挪威 <span style="color:#8aa3bd">Match 61 6/26</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Senegal">
@@ -1780,7 +1795,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>马内老化</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">塞内加尔 <span class="sc">1-3</span> 法国<br><span style="color:#8aa3bd">姆巴佩 66',90+6' 巴尔科拉 82' / 姆巴耶 90+5'</span></div><div class="item" style="color:#a8b9c9">⏳ 塞内加尔 <span class="sc" style="color:#2bbfd3">VS</span> 挪威 <span style="color:#8aa3bd">赛事41 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 塞内加尔 <span class="sc" style="color:#2bbfd3">VS</span> 伊拉克 <span style="color:#8aa3bd">赛事62 6/25</span></div>
+      <div class="item">塞内加尔 <span class="sc">1-3</span> 法国<br><span style="color:#8aa3bd">Mbappé 66' , 90+6' Barcola 82' / Mbaye 90+5'</span></div><div class="item" style="color:#a8b9c9">⏳ 塞内加尔 <span class="sc" style="color:#2bbfd3">VS</span> 挪威 <span style="color:#8aa3bd">Match 41 6/26</span></div><div class="item" style="color:#a8b9c9">⏳ 塞内加尔 <span class="sc" style="color:#2bbfd3">VS</span> 伊拉克 <span style="color:#8aa3bd">Match 62 6/26</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Iraq">
@@ -1803,7 +1818,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>绝对实力</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">伊拉克 <span class="sc">1-4</span> 挪威<br><span style="color:#8aa3bd">侯赛因 39' / 哈兰德 29',43' 厄斯蒂高 76' 侯赛因 90+6'(乌龙)</span></div><div class="item" style="color:#a8b9c9">⏳ 伊拉克 <span class="sc" style="color:#2bbfd3">VS</span> 法国 <span style="color:#8aa3bd">赛事42 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 伊拉克 <span class="sc" style="color:#2bbfd3">VS</span> 塞内加尔 <span style="color:#8aa3bd">赛事62 6/25</span></div>
+      <div class="item">伊拉克 <span class="sc">1-4</span> 挪威<br><span style="color:#8aa3bd">Hussein 39' / Haaland 29' , 43' Østigård 76' Hussein 90+6' ( o.g. )</span></div><div class="item" style="color:#a8b9c9">⏳ 伊拉克 <span class="sc" style="color:#2bbfd3">VS</span> 法国 <span style="color:#8aa3bd">Match 42 6/26</span></div><div class="item" style="color:#a8b9c9">⏳ 伊拉克 <span class="sc" style="color:#2bbfd3">VS</span> 塞内加尔 <span style="color:#8aa3bd">Match 62 6/26</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Norway">
@@ -1813,20 +1828,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ffb700">77 <span style="font-size:13px;color:#8aa3bd">/ 100 · B级</span></div>
     <div class="row"><span>所属分组</span><b>I组</b></div>
     <div class="row"><span>分档</span><b>第3档</b></div>
-    <div class="row"><span>主教练</span><b>索尔巴肯</b></div>
+    <div class="row"><span>主教练</span><b>Ståle Solbakken</b></div>
     <div class="row"><span>队长</span><b>厄斯蒂高</b></div>
     <div class="row"><span>平均年龄</span><b>26.5 岁</b></div>
     <div class="row"><span>战术风格</span><b>反击+球星</b></div>
     <div class="row"><span>历史最佳</span><b>1998小组赛/2000后回归</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>哈兰德(前锋)</b></div><div class="item">★ <b>厄德高(中场)</b></div><div class="item">★ <b>厄斯蒂高(后卫)</b></div><div class="item">★ <b>阿热(中场)</b></div>
+      <div class="item">★ <b>哈兰德(前锋)</b></div><div class="item">★ <b>厄德高(中场)</b></div><div class="item">★ <b>厄斯蒂高(后卫)</b></div><div class="item">★ <b>阿热(中场)</b></div><div class="item">★ <b>尼兰德(门将)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>哈兰德+厄德高</p></div>
     <div class="section-mini"><h4>短板</h4><p>大赛经验少</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">挪威 <span class="sc">4-1</span> 伊拉克<br><span style="color:#8aa3bd">侯赛因 39' / 哈兰德 29',43' 厄斯蒂高 76' 侯赛因 90+6'(乌龙)</span></div><div class="item" style="color:#a8b9c9">⏳ 挪威 <span class="sc" style="color:#2bbfd3">VS</span> 塞内加尔 <span style="color:#8aa3bd">赛事41 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 挪威 <span class="sc" style="color:#2bbfd3">VS</span> 法国 <span style="color:#8aa3bd">赛事61 6/25</span></div>
+      <div class="item">挪威 <span class="sc">4-1</span> 伊拉克<br><span style="color:#8aa3bd">Hussein 39' / Haaland 29' , 43' Østigård 76' Hussein 90+6' ( o.g. )</span></div><div class="item" style="color:#a8b9c9">⏳ 挪威 <span class="sc" style="color:#2bbfd3">VS</span> 塞内加尔 <span style="color:#8aa3bd">Match 41 6/26</span></div><div class="item" style="color:#a8b9c9">⏳ 挪威 <span class="sc" style="color:#2bbfd3">VS</span> 法国 <span style="color:#8aa3bd">Match 61 6/26</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Argentina">
@@ -1836,7 +1851,7 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ff3a3a">93 <span style="font-size:13px;color:#8aa3bd">/ 100 · S级</span></div>
     <div class="row"><span>所属分组</span><b>J组</b></div>
     <div class="row"><span>分档</span><b>第1档</b></div>
-    <div class="row"><span>主教练</span><b>斯卡洛尼</b></div>
+    <div class="row"><span>主教练</span><b>Lionel Scaloni</b></div>
     <div class="row"><span>队长</span><b>梅西</b></div>
     <div class="row"><span>平均年龄</span><b>28.5 岁</b></div>
     <div class="row"><span>战术风格</span><b>控制+反击</b></div>
@@ -1849,7 +1864,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>后防轮换</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">阿根廷 <span class="sc">3-0</span> 阿尔及利亚<br><span style="color:#8aa3bd">梅西 17',60',76'</span></div><div class="item" style="color:#a8b9c9">⏳ 阿根廷 <span class="sc" style="color:#2bbfd3">VS</span> 奥地利 <span style="color:#8aa3bd">赛事43 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 阿根廷 <span class="sc" style="color:#2bbfd3">VS</span> 约旦 <span style="color:#8aa3bd">赛事70 6/25</span></div>
+      <div class="item">阿根廷 <span class="sc">3-0</span> 阿尔及利亚<br><span style="color:#8aa3bd">Messi 17' , 60' , 76' / </span></div><div class="item" style="color:#a8b9c9">⏳ 阿根廷 <span class="sc" style="color:#2bbfd3">VS</span> 奥地利 <span style="color:#8aa3bd">Match 43 6/27</span></div><div class="item" style="color:#a8b9c9">⏳ 阿根廷 <span class="sc" style="color:#2bbfd3">VS</span> 约旦 <span style="color:#8aa3bd">Match 70 6/27</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Algeria">
@@ -1872,7 +1887,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>深度有限</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">阿尔及利亚 <span class="sc">0-3</span> 阿根廷<br><span style="color:#8aa3bd">梅西 17',60',76'</span></div><div class="item" style="color:#a8b9c9">⏳ 阿尔及利亚 <span class="sc" style="color:#2bbfd3">VS</span> 约旦 <span style="color:#8aa3bd">赛事44 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 阿尔及利亚 <span class="sc" style="color:#2bbfd3">VS</span> 奥地利 <span style="color:#8aa3bd">赛事69 6/25</span></div>
+      <div class="item">阿尔及利亚 <span class="sc">0-3</span> 阿根廷<br><span style="color:#8aa3bd">Messi 17' , 60' , 76' / </span></div><div class="item" style="color:#a8b9c9">⏳ 阿尔及利亚 <span class="sc" style="color:#2bbfd3">VS</span> 约旦 <span style="color:#8aa3bd">Match 44 6/27</span></div><div class="item" style="color:#a8b9c9">⏳ 阿尔及利亚 <span class="sc" style="color:#2bbfd3">VS</span> 奥地利 <span style="color:#8aa3bd">Match 69 6/27</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Austria">
@@ -1895,7 +1910,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>缺少头牌</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">奥地利 <span class="sc">3-1</span> 约旦<br><span style="color:#8aa3bd">施密德 21' 阿拉伯 76'(乌龙) 阿瑙托维奇 90+12'(点) / 奥尔万 50'</span></div><div class="item" style="color:#a8b9c9">⏳ 奥地利 <span class="sc" style="color:#2bbfd3">VS</span> 阿根廷 <span style="color:#8aa3bd">赛事43 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 奥地利 <span class="sc" style="color:#2bbfd3">VS</span> 阿尔及利亚 <span style="color:#8aa3bd">赛事69 6/25</span></div>
+      <div class="item">奥地利 <span class="sc">3-1</span> 约旦<br><span style="color:#8aa3bd">Schmid 20' Al-Arab 76' ( o.g. ) Arnautović 90+12' ( pen. ) / Olwan 50'</span></div><div class="item" style="color:#a8b9c9">⏳ 奥地利 <span class="sc" style="color:#2bbfd3">VS</span> 阿根廷 <span style="color:#8aa3bd">Match 43 6/27</span></div><div class="item" style="color:#a8b9c9">⏳ 奥地利 <span class="sc" style="color:#2bbfd3">VS</span> 阿尔及利亚 <span style="color:#8aa3bd">Match 69 6/27</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Jordan">
@@ -1918,7 +1933,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>实力差距</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">约旦 <span class="sc">1-3</span> 奥地利<br><span style="color:#8aa3bd">施密德 21' 阿拉伯 76'(乌龙) 阿瑙托维奇 90+12'(点) / 奥尔万 50'</span></div><div class="item" style="color:#a8b9c9">⏳ 约旦 <span class="sc" style="color:#2bbfd3">VS</span> 阿尔及利亚 <span style="color:#8aa3bd">赛事44 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 约旦 <span class="sc" style="color:#2bbfd3">VS</span> 阿根廷 <span style="color:#8aa3bd">赛事70 6/25</span></div>
+      <div class="item">约旦 <span class="sc">1-3</span> 奥地利<br><span style="color:#8aa3bd">Schmid 20' Al-Arab 76' ( o.g. ) Arnautović 90+12' ( pen. ) / Olwan 50'</span></div><div class="item" style="color:#a8b9c9">⏳ 约旦 <span class="sc" style="color:#2bbfd3">VS</span> 阿尔及利亚 <span style="color:#8aa3bd">Match 44 6/27</span></div><div class="item" style="color:#a8b9c9">⏳ 约旦 <span class="sc" style="color:#2bbfd3">VS</span> 阿根廷 <span style="color:#8aa3bd">Match 70 6/27</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Portugal">
@@ -1928,20 +1943,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ff3a3a">88 <span style="font-size:13px;color:#8aa3bd">/ 100 · S级</span></div>
     <div class="row"><span>所属分组</span><b>K组</b></div>
     <div class="row"><span>分档</span><b>第1档</b></div>
-    <div class="row"><span>主教练</span><b>马丁内斯</b></div>
+    <div class="row"><span>主教练</span><b>Roberto Martínez</b></div>
     <div class="row"><span>队长</span><b>C罗</b></div>
     <div class="row"><span>平均年龄</span><b>27.5 岁</b></div>
     <div class="row"><span>战术风格</span><b>反击+球星</b></div>
     <div class="row"><span>历史最佳</span><b>2016冠军</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>C罗(前锋,41)</b></div><div class="item">★ <b>B费(中场)</b></div><div class="item">★ <b>B席(中场)</b></div><div class="item">★ <b>菲利克斯(前锋)</b></div><div class="item">★ <b>迪亚斯(后卫)</b></div><div class="item">★ <b>科斯塔(门将)</b></div>
+      <div class="item">★ <b>C罗(前锋)</b></div><div class="item">★ <b>B费(中场)</b></div><div class="item">★ <b>B席(中场)</b></div><div class="item">★ <b>菲利克斯(前锋)</b></div><div class="item">★ <b>迪亚斯(后卫)</b></div><div class="item">★ <b>科斯塔(门将)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>C罗最后一战</p></div>
     <div class="section-mini"><h4>短板</h4><p>C罗状态</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">葡萄牙 <span class="sc">1-1</span> 刚果(金)<br><span style="color:#8aa3bd">J·内维斯 6' / 维萨 45+5'</span></div><div class="item" style="color:#a8b9c9">⏳ 葡萄牙 <span class="sc" style="color:#2bbfd3">VS</span> 乌兹别克斯坦 <span style="color:#8aa3bd">赛事47 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 葡萄牙 <span class="sc" style="color:#2bbfd3">VS</span> 哥伦比亚 <span style="color:#8aa3bd">赛事71 6/25</span></div>
+      <div class="item">葡萄牙 <span class="sc">1-1</span> 刚果(金)<br><span style="color:#8aa3bd">J. Neves 6' / Wissa 45+5'</span></div><div class="item" style="color:#a8b9c9">⏳ 葡萄牙 <span class="sc" style="color:#2bbfd3">VS</span> 乌兹别克斯坦 <span style="color:#8aa3bd">Match 47 6/27</span></div><div class="item" style="color:#a8b9c9">⏳ 葡萄牙 <span class="sc" style="color:#2bbfd3">VS</span> 哥伦比亚 <span style="color:#8aa3bd">Match 71 6/27</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Congo DR">
@@ -1964,7 +1979,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>大赛经验</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">刚果(金) <span class="sc">1-1</span> 葡萄牙<br><span style="color:#8aa3bd">J·内维斯 6' / 维萨 45+5'</span></div><div class="item" style="color:#a8b9c9">⏳ 刚果(金) <span class="sc" style="color:#2bbfd3">VS</span> 哥伦比亚 <span style="color:#8aa3bd">赛事48 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 刚果(金) <span class="sc" style="color:#2bbfd3">VS</span> 乌兹别克斯坦 <span style="color:#8aa3bd">赛事72 6/25</span></div>
+      <div class="item">刚果(金) <span class="sc">1-1</span> 葡萄牙<br><span style="color:#8aa3bd">J. Neves 6' / Wissa 45+5'</span></div><div class="item" style="color:#a8b9c9">⏳ 刚果(金) <span class="sc" style="color:#2bbfd3">VS</span> 哥伦比亚 <span style="color:#8aa3bd">Match 48 6/27</span></div><div class="item" style="color:#a8b9c9">⏳ 刚果(金) <span class="sc" style="color:#2bbfd3">VS</span> 乌兹别克斯坦 <span style="color:#8aa3bd">Match 72 6/27</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Uzbekistan">
@@ -1987,7 +2002,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>绝对实力</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">乌兹别克斯坦 <span class="sc">1-3</span> 哥伦比亚<br><span style="color:#8aa3bd">法伊拉祖耶夫 60' / 穆尼奥斯 41' 迪亚斯 65' 坎帕斯 90+9'</span></div><div class="item" style="color:#a8b9c9">⏳ 乌兹别克斯坦 <span class="sc" style="color:#2bbfd3">VS</span> 葡萄牙 <span style="color:#8aa3bd">赛事47 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 乌兹别克斯坦 <span class="sc" style="color:#2bbfd3">VS</span> 刚果(金) <span style="color:#8aa3bd">赛事72 6/25</span></div>
+      <div class="item">乌兹别克斯坦 <span class="sc">1-3</span> 哥伦比亚<br><span style="color:#8aa3bd">Fayzullaev 60' / Muñoz 40' Díaz 65' Campaz 90+9'</span></div><div class="item" style="color:#a8b9c9">⏳ 乌兹别克斯坦 <span class="sc" style="color:#2bbfd3">VS</span> 葡萄牙 <span style="color:#8aa3bd">Match 47 6/27</span></div><div class="item" style="color:#a8b9c9">⏳ 乌兹别克斯坦 <span class="sc" style="color:#2bbfd3">VS</span> 刚果(金) <span style="color:#8aa3bd">Match 72 6/27</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Colombia">
@@ -1997,20 +2012,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ffb700">78 <span style="font-size:13px;color:#8aa3bd">/ 100 · B级</span></div>
     <div class="row"><span>所属分组</span><b>K组</b></div>
     <div class="row"><span>分档</span><b>第2档</b></div>
-    <div class="row"><span>主教练</span><b>洛伦索</b></div>
+    <div class="row"><span>主教练</span><b>Néstor Lorenzo</b></div>
     <div class="row"><span>队长</span><b>萨帕塔</b></div>
     <div class="row"><span>平均年龄</span><b>27.5 岁</b></div>
     <div class="row"><span>战术风格</span><b>技术+身体</b></div>
     <div class="row"><span>历史最佳</span><b>2014八强</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>路易斯·迪亚斯(前锋)</b></div><div class="item">★ <b>J·罗德里格斯(中场)</b></div><div class="item">★ <b>奥斯皮纳(门将)</b></div><div class="item">★ <b>米纳(后卫)</b></div>
+      <div class="item">★ <b>路易斯·迪亚斯(前锋)</b></div><div class="item">★ <b>J·罗德里格斯(中场)</b></div><div class="item">★ <b>奥斯皮纳(门将)</b></div><div class="item">★ <b>米纳(后卫)</b></div><div class="item">★ <b>杜万·萨帕塔(前锋)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>J罗+迪亚斯</p></div>
     <div class="section-mini"><h4>短板</h4><p>后防老化</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">哥伦比亚 <span class="sc">3-1</span> 乌兹别克斯坦<br><span style="color:#8aa3bd">法伊拉祖耶夫 60' / 穆尼奥斯 41' 迪亚斯 65' 坎帕斯 90+9'</span></div><div class="item" style="color:#a8b9c9">⏳ 哥伦比亚 <span class="sc" style="color:#2bbfd3">VS</span> 刚果(金) <span style="color:#8aa3bd">赛事48 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 哥伦比亚 <span class="sc" style="color:#2bbfd3">VS</span> 葡萄牙 <span style="color:#8aa3bd">赛事71 6/25</span></div>
+      <div class="item">哥伦比亚 <span class="sc">3-1</span> 乌兹别克斯坦<br><span style="color:#8aa3bd">Fayzullaev 60' / Muñoz 40' Díaz 65' Campaz 90+9'</span></div><div class="item" style="color:#a8b9c9">⏳ 哥伦比亚 <span class="sc" style="color:#2bbfd3">VS</span> 刚果(金) <span style="color:#8aa3bd">Match 48 6/27</span></div><div class="item" style="color:#a8b9c9">⏳ 哥伦比亚 <span class="sc" style="color:#2bbfd3">VS</span> 葡萄牙 <span style="color:#8aa3bd">Match 71 6/27</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-England">
@@ -2020,7 +2035,7 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ff3a3a">88 <span style="font-size:13px;color:#8aa3bd">/ 100 · S级</span></div>
     <div class="row"><span>所属分组</span><b>L组</b></div>
     <div class="row"><span>分档</span><b>第1档</b></div>
-    <div class="row"><span>主教练</span><b>图赫尔(德)</b></div>
+    <div class="row"><span>主教练</span><b>Thomas Tuchel(德)</b></div>
     <div class="row"><span>队长</span><b>凯恩</b></div>
     <div class="row"><span>平均年龄</span><b>26.5 岁</b></div>
     <div class="row"><span>战术风格</span><b>传控+反击</b></div>
@@ -2033,7 +2048,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>中卫深度</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">英格兰 <span class="sc">4-2</span> 克罗地亚<br><span style="color:#8aa3bd">凯恩 12'(点),42' 贝林厄姆 47' 拉什福德 85' / 巴图里纳 36' 穆萨 45+5'</span></div><div class="item" style="color:#a8b9c9">⏳ 英格兰 <span class="sc" style="color:#2bbfd3">VS</span> 加纳 <span style="color:#8aa3bd">赛事45 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 英格兰 <span class="sc" style="color:#2bbfd3">VS</span> 巴拿马 <span style="color:#8aa3bd">赛事67 6/25</span></div>
+      <div class="item">英格兰 <span class="sc">4-2</span> 克罗地亚<br><span style="color:#8aa3bd">Kane 12' ( pen. ) , 42' Bellingham 47' Rashford 85' / Baturina 36' Musa 45+5'</span></div><div class="item" style="color:#a8b9c9">⏳ 英格兰 <span class="sc" style="color:#2bbfd3">VS</span> 加纳 <span style="color:#8aa3bd">Match 45 6/27</span></div><div class="item" style="color:#a8b9c9">⏳ 英格兰 <span class="sc" style="color:#2bbfd3">VS</span> 巴拿马 <span style="color:#8aa3bd">Match 67 6/27</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Croatia">
@@ -2043,20 +2058,20 @@ footer a { color:#ffb700; }
     <div class="power-big" style="color:#ffb700">78 <span style="font-size:13px;color:#8aa3bd">/ 100 · B级</span></div>
     <div class="row"><span>所属分组</span><b>L组</b></div>
     <div class="row"><span>分档</span><b>第2档</b></div>
-    <div class="row"><span>主教练</span><b>达利奇</b></div>
+    <div class="row"><span>主教练</span><b>Zlatko Dalić</b></div>
     <div class="row"><span>队长</span><b>莫德里奇</b></div>
     <div class="row"><span>平均年龄</span><b>28.0 岁</b></div>
     <div class="row"><span>战术风格</span><b>中场控制</b></div>
     <div class="row"><span>历史最佳</span><b>2018亚军/2022季军</b></div>
     <div class="stars-list">
       <div style="font-size:12px;color:#8aa3bd;margin-bottom:6px">核心球员</div>
-      <div class="item">★ <b>莫德里奇(中场,40)</b></div><div class="item">★ <b>佩里西奇(中场)</b></div><div class="item">★ <b>科瓦西奇(中场)</b></div><div class="item">★ <b>格瓦迪奥尔(后卫)</b></div><div class="item">★ <b>利瓦科维奇(门将)</b></div>
+      <div class="item">★ <b>莫德里奇(中场)</b></div><div class="item">★ <b>佩里西奇(中场)</b></div><div class="item">★ <b>科瓦西奇(中场)</b></div><div class="item">★ <b>格瓦迪奥尔(后卫)</b></div><div class="item">★ <b>利瓦科维奇(门将)</b></div>
     </div>
     <div class="section-mini"><h4>优势</h4><p>魔笛最后一战</p></div>
     <div class="section-mini"><h4>短板</h4><p>锋线换代</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">克罗地亚 <span class="sc">2-4</span> 英格兰<br><span style="color:#8aa3bd">凯恩 12'(点),42' 贝林厄姆 47' 拉什福德 85' / 巴图里纳 36' 穆萨 45+5'</span></div><div class="item" style="color:#a8b9c9">⏳ 克罗地亚 <span class="sc" style="color:#2bbfd3">VS</span> 巴拿马 <span style="color:#8aa3bd">赛事46 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 克罗地亚 <span class="sc" style="color:#2bbfd3">VS</span> 加纳 <span style="color:#8aa3bd">赛事68 6/25</span></div>
+      <div class="item">克罗地亚 <span class="sc">2-4</span> 英格兰<br><span style="color:#8aa3bd">Kane 12' ( pen. ) , 42' Bellingham 47' Rashford 85' / Baturina 36' Musa 45+5'</span></div><div class="item" style="color:#a8b9c9">⏳ 克罗地亚 <span class="sc" style="color:#2bbfd3">VS</span> 巴拿马 <span style="color:#8aa3bd">Match 46 6/27</span></div><div class="item" style="color:#a8b9c9">⏳ 克罗地亚 <span class="sc" style="color:#2bbfd3">VS</span> 加纳 <span style="color:#8aa3bd">Match 68 6/27</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Ghana">
@@ -2079,7 +2094,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>大赛稳定性</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">加纳 <span class="sc">1-0</span> 巴拿马<br><span style="color:#8aa3bd">伊伦基 90+5'</span></div><div class="item" style="color:#a8b9c9">⏳ 加纳 <span class="sc" style="color:#2bbfd3">VS</span> 英格兰 <span style="color:#8aa3bd">赛事45 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 加纳 <span class="sc" style="color:#2bbfd3">VS</span> 克罗地亚 <span style="color:#8aa3bd">赛事68 6/25</span></div>
+      <div class="item">加纳 <span class="sc">1-0</span> 巴拿马<br><span style="color:#8aa3bd">Yirenkyi 90+5' / </span></div><div class="item" style="color:#a8b9c9">⏳ 加纳 <span class="sc" style="color:#2bbfd3">VS</span> 英格兰 <span style="color:#8aa3bd">Match 45 6/27</span></div><div class="item" style="color:#a8b9c9">⏳ 加纳 <span class="sc" style="color:#2bbfd3">VS</span> 克罗地亚 <span style="color:#8aa3bd">Match 68 6/27</span></div>
     </div>
   </div>
 </div><div class="modal" id="m-Panama">
@@ -2102,7 +2117,7 @@ footer a { color:#ffb700; }
     <div class="section-mini"><h4>短板</h4><p>实力差距</p></div>
     <div class="matches-mini">
       <div style="font-size:12px;color:#ffb700;margin-bottom:6px">本届世界杯战绩</div>
-      <div class="item">巴拿马 <span class="sc">0-1</span> 加纳<br><span style="color:#8aa3bd">伊伦基 90+5'</span></div><div class="item" style="color:#a8b9c9">⏳ 巴拿马 <span class="sc" style="color:#2bbfd3">VS</span> 克罗地亚 <span style="color:#8aa3bd">赛事46 6/24</span></div><div class="item" style="color:#a8b9c9">⏳ 巴拿马 <span class="sc" style="color:#2bbfd3">VS</span> 英格兰 <span style="color:#8aa3bd">赛事67 6/25</span></div>
+      <div class="item">巴拿马 <span class="sc">0-1</span> 加纳<br><span style="color:#8aa3bd">Yirenkyi 90+5' / </span></div><div class="item" style="color:#a8b9c9">⏳ 巴拿马 <span class="sc" style="color:#2bbfd3">VS</span> 克罗地亚 <span style="color:#8aa3bd">Match 46 6/27</span></div><div class="item" style="color:#a8b9c9">⏳ 巴拿马 <span class="sc" style="color:#2bbfd3">VS</span> 英格兰 <span style="color:#8aa3bd">Match 67 6/27</span></div>
     </div>
   </div>
 </div><script>
