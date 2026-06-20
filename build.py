@@ -1,19 +1,19 @@
 ﻿# -*- coding: utf-8 -*-
-# 2026世界杯独立网页生成器
+# 2026世界杯独立网页生成器 v2 (含6/21 4场详细预测+全部比分预测)
 import sys, os
 sys.path.insert(0, '.')
 from teams_data import TEAMS
 from group_data import GROUPS
+from predictions import PREDICTIONS, OTHER_PREDICTIONS
 
-# 等级颜色(武力值越高色越深)
 def power_color(p):
-    if p >= 88: return "#ff3a3a"   # S级
-    if p >= 80: return "#ff8a00"   # A级
-    if p >= 72: return "#ffb700"   # B级
-    if p >= 65: return "#3ec46d"   # C级
-    if p >= 55: return "#2bbfd3"   # D级
-    if p >= 45: return "#7a8b99"   # E级
-    return "#4a5158"               # F级
+    if p >= 88: return "#ff3a3a"
+    if p >= 80: return "#ff8a00"
+    if p >= 72: return "#ffb700"
+    if p >= 65: return "#3ec46d"
+    if p >= 55: return "#2bbfd3"
+    if p >= 45: return "#7a8b99"
+    return "#4a5158"
 
 def power_label(p):
     if p >= 88: return "S"
@@ -24,7 +24,6 @@ def power_label(p):
     if p >= 45: return "E"
     return "F"
 
-# HTML 模板
 HTML_HEAD = """<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -115,6 +114,29 @@ table.stand .adv { color:#3ec46d; font-size:10px; }
 .prediction { margin-top:10px; padding:8px; background:rgba(255,180,0,0.06); border-radius:8px; border-left:3px solid #ffb700; font-size:12px; }
 .prediction b { color:#ffb700; }
 
+/* 比分预测大板块 */
+.match-prediction { background:linear-gradient(180deg, rgba(255,180,0,0.04), rgba(255,180,0,0.01)); border:1px solid rgba(255,180,0,0.2); border-radius:14px; padding:14px; margin-bottom:12px; }
+.match-prediction .mp-header { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
+.match-prediction .mp-title { font-size:16px; font-weight:700; color:#ffd966; }
+.match-prediction .mp-time { font-size:11px; color:#8aa3bd; }
+.match-prediction .mp-teams { display:flex; align-items:center; justify-content:space-around; margin:10px 0; padding:10px; background:rgba(0,0,0,0.25); border-radius:10px; }
+.match-prediction .mp-team { flex:1; text-align:center; }
+.match-prediction .mp-team .nm { font-size:14px; font-weight:700; }
+.match-prediction .mp-team .pwr { display:inline-block; margin-top:4px; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; }
+.match-prediction .mp-vs { font-size:20px; color:#8aa3bd; padding:0 8px; }
+.match-prediction .mp-context { font-size:12px; color:#c8d6e2; padding:8px 10px; background:rgba(0,0,0,0.2); border-radius:8px; margin:8px 0; line-height:1.6; }
+.match-prediction .mp-form { font-size:12px; color:#8aa3bd; padding:6px 10px; border-left:2px solid #2bbfd3; margin:6px 0; }
+.match-prediction .mp-factors { font-size:12px; color:#c8d6e2; }
+.match-prediction .mp-factors li { padding:3px 0; padding-left:16px; position:relative; }
+.match-prediction .mp-factors li::before { content:"▶"; position:absolute; left:0; color:#ffb700; font-size:9px; top:5px; }
+.match-prediction .mp-scores { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:8px; margin-top:10px; }
+.match-prediction .mp-score-card { background:rgba(0,0,0,0.3); border:1px solid rgba(255,180,0,0.2); border-radius:8px; padding:8px; text-align:center; }
+.match-prediction .mp-score-card .sc { font-size:20px; font-weight:800; color:#ffd966; }
+.match-prediction .mp-score-card .pc { font-size:10px; color:#3ec46d; margin-top:2px; }
+.match-prediction .mp-score-card .desc { font-size:10px; color:#8aa3bd; margin-top:4px; line-height:1.3; }
+.match-prediction .mp-score-card.top { background:rgba(255,180,0,0.15); border-color:#ffb700; }
+.match-prediction .mp-advice { margin-top:10px; padding:10px; background:linear-gradient(90deg, rgba(255,180,0,0.15), rgba(255,180,0,0.05)); border-radius:8px; font-size:13px; font-weight:700; text-align:center; color:#ffd966; }
+
 /* 武力榜 */
 .power-rank { display:grid; grid-template-columns:1fr; gap:6px; }
 @media(min-width:600px){ .power-rank { grid-template-columns:repeat(2,1fr); } }
@@ -125,6 +147,15 @@ table.stand .adv { color:#3ec46d; font-size:10px; }
 .pr-row .pwr { font-weight:800; }
 .pr-row .bar { flex:2; height:6px; background:rgba(255,255,255,0.06); border-radius:3px; overflow:hidden; }
 .pr-row .fill { height:100%; }
+
+/* R3 比分预测表格 */
+.r3-table { width:100%; border-collapse:collapse; font-size:12px; margin-top:10px; }
+.r3-table th { background:rgba(255,180,0,0.1); padding:6px 4px; color:#ffd966; text-align:center; font-size:11px; font-weight:600; }
+.r3-table td { padding:8px 4px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.06); }
+.r3-table td.t { text-align:left; }
+.r3-table td.sc { font-weight:800; color:#ffd966; }
+.r3-table td.sc small { display:block; color:#8aa3bd; font-size:9px; font-weight:400; }
+.r3-table tr:hover { background:rgba(255,180,0,0.04); }
 
 footer { text-align:center; padding:30px 16px 14px; color:#5a6e84; font-size:11px; }
 footer a { color:#ffb700; }
@@ -144,6 +175,8 @@ footer a { color:#ffb700; }
 </div>
 <div class="nav">
   <button class="active" onclick="goTo('overview')">总览</button>
+  <button onclick="goTo('mpred')">⭐ 6/21预测</button>
+  <button onclick="goTo('r3pred')">R3预测</button>
   <button onclick="goTo('power')">武力榜</button>
   <button onclick="goTo('groups')">分组赛</button>
   <button onclick="goTo('teams')">48强详情</button>
@@ -227,7 +260,7 @@ def group_html(g):
   <div class="matches">
     <h4>✅ 已结束 (R1-R2)</h4>
     {played_html}
-    <h4 style="margin-top:10px">⏳ 未踢 (R3 · 6/24-25)</h4>
+    <h4 style="margin-top:10px">⏳ 未踢 (R3 · 6/24-27)</h4>
     {remain_html}
   </div>
   <div class="prediction">💡 预测: {pred}</div>
@@ -243,13 +276,69 @@ def power_rank_html():
         rows += f'<div class="pr-row"><span class="pos">{medal}</span><span class="nm">{t["zh"]} <span style="color:#8aa3bd;font-size:11px">({t["group"]}组)</span></span><div class="bar"><div class="fill" style="width:{p}%;background:{c}"></div></div><span class="pwr" style="color:{c}">{p}</span></div>'
     return rows
 
-# 淘汰赛预测
+def match_prediction_html(key, p):
+    """单场详细预测卡片"""
+    h_en, a_en = p["teams"]
+    h = TEAMS[h_en]
+    a = TEAMS[a_en]
+    ph, pa = p["powers"]
+    ch, ca = power_color(ph), power_color(pa)
+    lh, la = power_label(ph), power_label(pa)
+    factors = "".join(f'<li>{f}</li>' for f in p["key_factors"])
+    scores_html = ""
+    for i, s in enumerate(p["scores"]):
+        sc, pc = s[0], s[1]
+        desc = s[2] if len(s) > 2 else ""
+        top_class = " top" if i == 0 else ""
+        scores_html += f'<div class="mp-score-card{top_class}"><div class="sc">{sc}</div><div class="pc">概率 {int(pc*100)}%</div><div class="desc">{desc}</div></div>'
+    return f'''<div class="match-prediction">
+  <div class="mp-header">
+    <div class="mp-title">⚽ {p["title"]}</div>
+    <div class="mp-time">🕒 {p["time"]}</div>
+  </div>
+  <div class="mp-teams">
+    <div class="mp-team">
+      <div class="nm">{h["zh"]}</div>
+      <div class="pwr" style="background:{ch}33;color:{ch}">武力 {ph} · {lh}级</div>
+    </div>
+    <div class="mp-vs">VS</div>
+    <div class="mp-team">
+      <div class="nm">{a["zh"]}</div>
+      <div class="pwr" style="background:{ca}33;color:{ca}">武力 {pa} · {la}级</div>
+    </div>
+  </div>
+  <div class="mp-context">📋 {p["context"]}</div>
+  <div class="mp-form">📊 状态: {p["form"]}</div>
+  <div class="mp-context">🏟 {p["venue"]}</div>
+  <ul class="mp-factors">{factors}</ul>
+  <div class="mp-scores">{scores_html}</div>
+  <div class="mp-advice">💎 {p["advice"]}</div>
+</div>'''
+
+def r3_table_html():
+    """R3 全部比分预测(精简表格)"""
+    rows = ""
+    for key, p in OTHER_PREDICTIONS.items():
+        h_en, a_en = p["teams"]
+        h, a = TEAMS[h_en], TEAMS[a_en]
+        ph, pa = p["powers"]
+        ch, ca = power_color(ph), power_color(pa)
+        lh, la = power_label(ph), power_label(pa)
+        scores_str = " / ".join(s[0] for s in p["scores"][:2])
+        main_sc = p["scores"][0]
+        rows += f'''<tr>
+  <td class="t"><b>{h["zh"]}</b><br><small style="color:{ch}">武力 {ph}({lh})</small></td>
+  <td class="t"><b>{a["zh"]}</b><br><small style="color:{ca}">武力 {pa}({la})</small></td>
+  <td class="sc">{main_sc[0]}<small>{int(main_sc[1]*100)}% 主推</small></td>
+  <td class="t" style="font-size:10px">{scores_str}<br><small style="color:#8aa3bd">{p["reasoning"]}</small></td>
+</tr>'''
+    return f'''<table class="r3-table">
+<thead><tr><th>主队</th><th>客队</th><th>主推比分</th><th>其他可能 + 简析</th></tr></thead>
+<tbody>{rows}</tbody>
+</table>'''
+
 def knockout_pred():
-    # 假设A1..L1 + 8个最佳第3晋级
     g_winners = [TEAMS[g["predictions"]["winner"]]["zh"] for g in GROUPS]
-    g_runners = [TEAMS[g["predictions"]["runner"]]["zh"] for g in GROUPS]
-    g_thirds = [TEAMS[g["predictions"]["third"]]["zh"] for g in GROUPS]
-    # 32强对阵(简版)
     r32 = [
         ("A1 vs B/C/D 3rd", g_winners[0]),
         ("C1 vs F2/I3/J3", g_winners[2]),
@@ -269,7 +358,6 @@ def knockout_pred():
         rows += f'<div class="pr-row"><span class="nm">{desc}</span><span class="pwr" style="color:#ffb700">→ {team}</span></div>'
     return rows
 
-# 总览统计
 def overview_stats():
     avg = round(sum(t["power"] for t in TEAMS.values()) / 48)
     top3 = sorted(TEAMS.values(), key=lambda x:-x["power"])[:3]
@@ -284,39 +372,51 @@ def overview_stats():
       <div class="stat"><div class="v">🥇 {top3[0]["zh"]}</div><div class="l">武力王者 · {top3[0]["power"]}</div></div>
       <div class="stat"><div class="v">🥈 {top3[1]["zh"]}</div><div class="l">第二把交椅 · {top3[1]["power"]}</div></div>
       <div class="stat"><div class="v">🥉 {top3[2]["zh"]}</div><div class="l">第三极 · {top3[2]["power"]}</div></div>
-      <div class="stat"><div class="v">⚽ 72</div><div class="l">已进球 (R1+R2)</div></div>
+      <div class="stat"><div class="v">📅 6/21</div><div class="l">4场比分预测</div></div>
     </div>'''
 
-# 拼装
 out = HTML_HEAD
 out += '<div class="container">'
 out += '<div class="section" id="overview"><div class="section-title">📊 总览</div>'
 out += overview_stats()
 out += '</div>'
 
+# 6/21 详细预测(顶部置顶)
+out += '<div class="section" id="mpred"><div class="section-title">⭐ 6/21 4场比赛详细预测 (含3组比分)</div>'
+for key in ["M37_6/21","M38_6/21","M39_6/21","M40_6/21"]:
+    out += match_prediction_html(key, PREDICTIONS[key])
+out += '</div>'
+
+# R3 全部预测(精简)
+out += '<div class="section" id="r3pred"><div class="section-title">📋 R3 全部24场比分预测 (6/24-27)</div>'
+out += r3_table_html()
+out += '<div class="prediction" style="margin-top:14px">💡 注: 主推比分为概率最高, 其他可能为备选; 综合武力值+近况+历史+关键球员+战术匹配给出</div></div>'
+
+# 武力榜
 out += '<div class="section" id="power"><div class="section-title">⚔ 武力榜 (48强排名)</div>'
 out += '<div class="power-rank">' + power_rank_html() + '</div></div>'
 
+# 分组
 out += '<div class="section" id="groups"><div class="section-title">⚽ 小组赛战况 (A-L)</div>'
 out += '<div class="groups">'
 for g in GROUPS: out += group_html(g)
 out += '</div></div>'
 
+# 48强
 out += '<div class="section" id="teams"><div class="section-title">🏟 48强卡片 · 点击查看详情</div>'
 out += '<div class="teams">'
 for en in TEAMS: out += team_card_html(en)
 out += '</div></div>'
 
+# 淘汰赛
 out += '<div class="section" id="preview"><div class="section-title">🔮 淘汰赛预测 (32强晋级)</div>'
 out += '<div class="power-rank">' + knockout_pred() + '</div>'
 out += '<div class="prediction" style="margin-top:14px">💡 注: 基于各组前2名+8个最佳第3名晋级; 预测由小组赛表现+武力值综合得出,实际对阵将随抽签而定。</div></div>'
 
 out += '</div>'
 
-# 弹层
 for en in TEAMS: out += modal_html(en)
 
-# 脚本
 out += '''<script>
 function goTo(id){
   const el=document.getElementById(id);
@@ -329,7 +429,7 @@ function hideTeam(en){document.getElementById("m-"+en).classList.remove("active"
 document.querySelectorAll(".modal").forEach(m=>m.addEventListener("click",e=>{if(e.target===m){m.classList.remove("active");document.body.style.overflow="";}}));
 </script>
 <footer>
-📚 数据来源: 维基百科 2026年國際足協世界盃 · FIFA官方 · 各大球队主页<br>
+📚 数据来源: 维基百科 2026 FIFA World Cup · FIFA官方 · 各大球队主页<br>
 ⚔ 武力值为综合评估(阵容深度/球星/年龄/状态/历史),非官方 · 仅供娱乐参考<br>
 🏆 Made with ❤️ by Codex · 离线可用 · 推到GIT随时查看
 </footer>
