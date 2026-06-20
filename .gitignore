@@ -1,0 +1,9 @@
+﻿__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+_*.txt
+_*.html
+wc2026*.html
+extract.py
+verify.py
