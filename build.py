@@ -392,7 +392,7 @@ out += '</div>'
 
 # 6/21 详细预测(顶部置顶)
 out += '<div class="section" id="mpred"><div class="section-title">⭐ 6/21凌晨-上午 4场比赛详细预测 (北京时间 6/21, 即美国 6/20 比赛日, 含3组比分)</div>'
-for key in ["M33_6/20","M34_6/20","M35_6/20","M36_6/20"]:
+for key in ["M35_6/20","M33_6/20","M34_6/20","M36_6/20"]:
     out += match_prediction_html(key, PREDICTIONS[key])
 out += '</div>'
 
