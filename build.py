@@ -135,6 +135,11 @@ table.stand .adv { color:#3ec46d; font-size:10px; }
 .match-prediction .mp-score-card .pc { font-size:10px; color:#3ec46d; margin-top:2px; }
 .match-prediction .mp-score-card .desc { font-size:10px; color:#8aa3bd; margin-top:4px; line-height:1.3; }
 .match-prediction .mp-score-card.top { background:rgba(255,180,0,0.15); border-color:#ffb700; }
+.match-prediction .mp-main-score { background:linear-gradient(90deg, rgba(255,180,0,0.25), rgba(255,180,0,0.1)); padding:12px 14px; border-radius:10px; font-size:15px; color:#ffd966; margin-bottom:12px; text-align:center; border:1px solid rgba(255,180,0,0.3); }
+.match-prediction .mp-main-score b { font-size:24px; color:#fff; margin:0 4px; font-weight:900; }
+.match-prediction .mp-main-pc { display:inline-block; background:rgba(255,180,0,0.3); padding:2px 10px; border-radius:10px; font-size:12px; font-weight:700; margin-left:8px; }
+.match-prediction .mp-score-card { position:relative; }
+.match-prediction .mp-badge { position:absolute; top:-8px; right:-6px; background:#ffb700; color:#0a1929; font-size:10px; font-weight:800; padding:2px 8px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.3); }
 .match-prediction .mp-advice { margin-top:10px; padding:10px; background:linear-gradient(90deg, rgba(255,180,0,0.15), rgba(255,180,0,0.05)); border-radius:8px; font-size:13px; font-weight:700; text-align:center; color:#ffd966; }
 
 /* 武力榜 */
@@ -286,13 +291,16 @@ def match_prediction_html(key, p):
     ch, ca = power_color(ph), power_color(pa)
     lh, la = power_label(ph), power_label(pa)
     factors = "".join(f'<li>{f}</li>' for f in p["key_factors"])
+    main_sc = p["scores"][0]
+    main_score_banner = f'<div class="mp-main-score">主推比分 <b>{main_sc[0]}</b> <span class="mp-main-pc">{int(main_sc[1]*100)}% 概率</span></div>'
     scores_html = ""
     for i, s in enumerate(p["scores"]):
         sc, pc = s[0], s[1]
         desc = s[2] if len(s) > 2 else ""
         top_class = " top" if i == 0 else ""
-        scores_html += f'<div class="mp-score-card{top_class}"><div class="sc">{sc}</div><div class="pc">概率 {int(pc*100)}%</div><div class="desc">{desc}</div></div>'
-    return f'''<div class="match-prediction">
+        badge = '<div class="mp-badge">主推</div>' if i == 0 else ""
+        scores_html += f'<div class="mp-score-card{top_class}">{badge}<div class="sc">{sc}</div><div class="pc">概率 {int(pc*100)}%</div><div class="desc">{desc}</div></div>'
+    return f'''<div class="match-prediction">{main_score_banner}
   <div class="mp-header">
     <div class="mp-title">⚽ {p["title"]}</div>
     <div class="mp-time">🕒 {p["time"]}</div>
