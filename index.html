@@ -78,14 +78,14 @@ a { color:inherit; text-decoration:none; }
 .match-card .m-advice { background:linear-gradient(90deg, rgba(255,180,0,0.18), rgba(255,180,0,0.05)); padding:8px 10px; border-radius:8px; font-size:13px; font-weight:700; text-align:center; color:#ffd966; border:1px solid rgba(255,180,0,0.25); }
 
 /* === 球队卡片网格(2-6列) === */
-.teams { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+.teams { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; align-items:start; }
 @media(min-width:600px){ .teams { grid-template-columns:repeat(3,1fr); } }
 @media(min-width:900px){ .teams { grid-template-columns:repeat(4,1fr); } }
 @media(min-width:1200px){ .teams { grid-template-columns:repeat(5,1fr); } }
-.team-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:10px; position:relative; cursor:pointer; transition:transform 0.2s, border-color 0.2s; }
+.team-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:7px 9px; position:relative; cursor:pointer; transition:transform 0.2s, border-color 0.2s; min-height:78px; display:flex; flex-direction:column; justify-content:space-between; }
 .team-card:hover, .team-card:active { transform:translateY(-2px); border-color:#ffb700; }
 .team-card .rank { position:absolute; top:6px; right:8px; font-size:10px; color:#8aa3bd; background:rgba(0,0,0,0.3); padding:1px 5px; border-radius:6px; }
-.team-card .name { font-size:14px; font-weight:700; }
+.team-card .name { font-size:13px; font-weight:700; line-height:1.2; }
 .team-card .name-en { font-size:9px; color:#8aa3bd; margin-top:1px; }
 .team-card .power-bar { margin-top:6px; height:6px; background:rgba(255,255,255,0.08); border-radius:3px; overflow:hidden; }
 .team-card .power-fill { height:100%; border-radius:3px; }
