@@ -17,10 +17,10 @@ a { color:inherit; text-decoration:none; } @keyframes scroll { 0% { transform: t
 .brand { background: linear-gradient(135deg, rgba(40,40,40,0.7) 0%, rgba(20,20,20,0.85) 50%, rgba(40,40,40,0.7) 100%); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 28px 16px 22px; text-align:center; position:relative; overflow:hidden; }
 .brand::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 20% 30%, rgba(255,180,0,0.18), transparent 50%), radial-gradient(circle at 80% 70%, rgba(255,58,58,0.15), transparent 50%), radial-gradient(circle at 50% 100%, rgba(43,191,211,0.12), transparent 60%); }
 .brand::after { content:""; position:absolute; left:0; right:0; bottom:0; height:75%; background: url('assets/stars_bar.jpg') center / cover no-repeat; mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 25%, rgba(0,0,0,0.85) 60%, #000 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 25%, rgba(0,0,0,0.85) 60%, #000 100%); opacity:0.28; pointer-events:none; }
-.brand h1 { font-size:26px; font-weight:800; position:relative; background: linear-gradient(90deg, #ffd966, #ff6a00); -webkit-background-clip:text; background-clip:text; color:transparent; letter-spacing:2px; }
-.brand .sub { margin-top:6px; font-size:13px; color:#9ab; position:relative; }
-.brand .meta { margin-top:12px; display:flex; flex-wrap:wrap; gap:6px; justify-content:center; position:relative; }
-.brand .meta span { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); padding:3px 10px; border-radius:14px; font-size:11px; color:#a8b9c9; }
+.brand h1 { font-size:24px; font-weight:800; position:relative; margin-top:2px; background: linear-gradient(90deg, #ffd966, #ff6a00); -webkit-background-clip:text; background-clip:text; color:transparent; letter-spacing:2px; }
+.brand .sub { display:none; }
+.brand .meta { margin-top:6px; display:flex; flex-wrap:wrap; gap:5px; justify-content:center; position:relative; }
+.brand .meta span { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); padding:2px 8px; border-radius:12px; font-size:10px; color:#a8b9c9; }
 
 /* === 导航 === */
 .nav { position:sticky; top:0; z-index:50; background:rgba(10,25,41,0.95); backdrop-filter: blur(8px); border-bottom:1px solid rgba(255,255,255,0.06); padding:8px 12px; display:flex; gap:6px; overflow-x:auto; }
@@ -158,9 +158,9 @@ footer a { color:#ffb700; }
 </head>
 <body>
 <div class="brand">
-  <div style="text-align:center;margin-bottom:8px;font-size:11px;letter-spacing:3px;color:#ffb700;font-weight:700;text-shadow:0 0 8px rgba(255,180,0,0.3)">FIFA WORLD CUP 26</div>
-  <div style="overflow:hidden;white-space:nowrap;margin:6px 0 12px;padding:6px 0;background:rgba(0,0,0,0.3);border-radius:20px;border:1px solid rgba(255,255,255,0.05)">
-    <div style="display:flex;width:max-content;animation:scroll 50s linear infinite;color:#aab;font-size:13px;letter-spacing:1px"><span style="padding-right:40px">⚽ 🇦🇷 阿根廷 · 🇧🇷 巴西 · 🇪🇸 西班牙 · 🇫🇷 法国 · 🇩🇪 德国 · 🏴 英格兰 · 🇵🇹 葡萄牙 · 🇳🇱 荷兰 · 🇧🇪 比利时 · 🇮🇹 意大利 · 🇲🇽 墨西哥 · 🇺🇸 美国 · 🇯🇵 日本 · 🇰🇷 韩国 · 🇸🇦 沙特 · 🇪🇬 埃及 · 🇲🇦 摩洛哥 · 🇳🇬 尼日利亚 · 🇧🇷 巴西 · 🇨🇲 喀麦隆 · 🇬🇭 加纳 · 🇨🇲 喀麦隆 · 🇸🇳 塞内加尔 · 🇹🇳 突尼斯 · 🇨🇻 佛得角 · 🇦🇷 阿根廷 · 🇺🇾 乌拉圭 · 🇨🇴 哥伦比亚 · 🇨🇱 智利 · 🇪🇨 厄瓜多尔 · 🇵🇪 秘鲁 · 🇧🇴 玻利维亚 · 🇻🇪 委内瑞拉 · 🇵🇦 巴拿马 · 🇨🇷 哥斯达黎加 · 🇯🇲 牙买加 · 🇭🇹 海地 · 🇨🇦 加拿大 · 🇦🇺 澳大利亚 · 🇮🇷 伊朗 · 🇮🇶 伊拉克 · 🇶🇦 卡塔尔 · 🇦🇪 阿联酋 · 🇸🇦 沙特 · 🇨🇳 中国 · 🇯🇵 日本 · 🇰🇷 韩国 · ⚽  全部 48 强 决战美加墨</span><span style="padding-right:40px">⚽ 🇦🇷 阿根廷 · 🇧🇷 巴西 · 🇪🇸 西班牙 · 🇫🇷 法国 · 🇩🇪 德国 · 🏴 英格兰 · 🇵🇹 葡萄牙 · 🇳🇱 荷兰 · 🇧🇪 比利时 · 🇮🇹 意大利 · 🇲🇽 墨西哥 · 🇺🇸 美国 · 🇯🇵 日本 · 🇰🇷 韩国 · 🇸🇦 沙特 · 🇪🇬 埃及 · 🇲🇦 摩洛哥 · 🇳🇬 尼日利亚 · 🇧🇷 巴西 · 🇨🇲 喀麦隆 · 🇬🇭 加纳 · 🇨🇲 喀麦隆 · 🇸🇳 塞内加尔 · 🇹🇳 突尼斯 · 🇨🇻 佛得角 · 🇦🇷 阿根廷 · 🇺🇾 乌拉圭 · 🇨🇴 哥伦比亚 · 🇨🇱 智利 · 🇪🇨 厄瓜多尔 · 🇵🇪 秘鲁 · 🇧🇴 玻利维亚 · 🇻🇪 委内瑞拉 · 🇵🇦 巴拿马 · 🇨🇷 哥斯达黎加 · 🇯🇲 牙买加 · 🇭🇹 海地 · 🇨🇦 加拿大 · 🇦🇺 澳大利亚 · 🇮🇷 伊朗 · 🇮🇶 伊拉克 · 🇶🇦 卡塔尔 · 🇦🇪 阿联酋 · 🇸🇦 沙特 · 🇨🇳 中国 · 🇯🇵 日本 · 🇰🇷 韩国 · ⚽  全部 48 强 决战美加墨</span></div>
+  <div style="text-align:center;margin-bottom:4px;font-size:9px;letter-spacing:2px;color:#ffb700;font-weight:700;text-shadow:0 0 6px rgba(255,180,0,0.3);opacity:0.7">FIFA WORLD CUP 26</div>
+  <div style="overflow:hidden;white-space:nowrap;margin:4px 0 8px;padding:4px 0;background:rgba(0,0,0,0.3);border-radius:20px;border:1px solid rgba(255,255,255,0.05)">
+    <div style="display:flex;width:max-content;animation:scroll 50s linear infinite;color:#aab;font-size:11px;letter-spacing:0.5px"><span style="padding-right:40px">⚽ 🇦🇷 阿根廷 · 🇧🇷 巴西 · 🇪🇸 西班牙 · 🇫🇷 法国 · 🇩🇪 德国 · 🏴 英格兰 · 🇵🇹 葡萄牙 · 🇳🇱 荷兰 · 🇧🇪 比利时 · 🇮🇹 意大利 · 🇲🇽 墨西哥 · 🇺🇸 美国 · 🇯🇵 日本 · 🇰🇷 韩国 · 🇸🇦 沙特 · 🇪🇬 埃及 · 🇲🇦 摩洛哥 · 🇳🇬 尼日利亚 · 🇧🇷 巴西 · 🇨🇲 喀麦隆 · 🇬🇭 加纳 · 🇨🇲 喀麦隆 · 🇸🇳 塞内加尔 · 🇹🇳 突尼斯 · 🇨🇻 佛得角 · 🇦🇷 阿根廷 · 🇺🇾 乌拉圭 · 🇨🇴 哥伦比亚 · 🇨🇱 智利 · 🇪🇨 厄瓜多尔 · 🇵🇪 秘鲁 · 🇧🇴 玻利维亚 · 🇻🇪 委内瑞拉 · 🇵🇦 巴拿马 · 🇨🇷 哥斯达黎加 · 🇯🇲 牙买加 · 🇭🇹 海地 · 🇨🇦 加拿大 · 🇦🇺 澳大利亚 · 🇮🇷 伊朗 · 🇮🇶 伊拉克 · 🇶🇦 卡塔尔 · 🇦🇪 阿联酋 · 🇸🇦 沙特 · 🇨🇳 中国 · 🇯🇵 日本 · 🇰🇷 韩国 · ⚽  全部 48 强 决战美加墨</span><span style="padding-right:40px">⚽ 🇦🇷 阿根廷 · 🇧🇷 巴西 · 🇪🇸 西班牙 · 🇫🇷 法国 · 🇩🇪 德国 · 🏴 英格兰 · 🇵🇹 葡萄牙 · 🇳🇱 荷兰 · 🇧🇪 比利时 · 🇮🇹 意大利 · 🇲🇽 墨西哥 · 🇺🇸 美国 · 🇯🇵 日本 · 🇰🇷 韩国 · 🇸🇦 沙特 · 🇪🇬 埃及 · 🇲🇦 摩洛哥 · 🇳🇬 尼日利亚 · 🇧🇷 巴西 · 🇨🇲 喀麦隆 · 🇬🇭 加纳 · 🇨🇲 喀麦隆 · 🇸🇳 塞内加尔 · 🇹🇳 突尼斯 · 🇨🇻 佛得角 · 🇦🇷 阿根廷 · 🇺🇾 乌拉圭 · 🇨🇴 哥伦比亚 · 🇨🇱 智利 · 🇪🇨 厄瓜多尔 · 🇵🇪 秘鲁 · 🇧🇴 玻利维亚 · 🇻🇪 委内瑞拉 · 🇵🇦 巴拿马 · 🇨🇷 哥斯达黎加 · 🇯🇲 牙买加 · 🇭🇹 海地 · 🇨🇦 加拿大 · 🇦🇺 澳大利亚 · 🇮🇷 伊朗 · 🇮🇶 伊拉克 · 🇶🇦 卡塔尔 · 🇦🇪 阿联酋 · 🇸🇦 沙特 · 🇨🇳 中国 · 🇯🇵 日本 · 🇰🇷 韩国 · ⚽  全部 48 强 决战美加墨</span></div>
   </div>
   <h1 style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap">
     <svg width="36" height="36" viewBox="0 0 64 64" style="filter:drop-shadow(0 0 8px rgba(255,180,0,0.5))">
@@ -195,12 +195,10 @@ footer a { color:#ffb700; }
       <text x="32" y="22" text-anchor="middle" font-size="9" font-weight="900" fill="#5a3300">★</text>
     </svg>
   </h1>
-  <div class="sub">2026 🇺🇸🇲🇽🇨🇦 美加墨世界杯 · 48强详情 + 每日比分预测</div>
-  <div style="text-align:center;font-size:10px;color:#8aa3bd;margin-top:6px;letter-spacing:0.5px">🕒 6/22 09:00 更新 · ESPN/DraftKings 实时赔率 + λ 模型 · 4场预测</div>
+  <div style="text-align:center;font-size:9px;color:#6a8090;margin-top:4px;letter-spacing:0.3px;opacity:0.75">6/22 09:00 · ESPN/DraftKings · λ模型 · 4场预测</div>
   <div class="meta" style="position:relative">
     <span>揭幕 6/11</span>
     <span>决赛 7/19</span>
-    <span>16城 104场</span>
     <span style="background:rgba(255,180,0,0.12);border-color:#ffb700;color:#ffd966">北京时间</span>
   </div>
 </div>
