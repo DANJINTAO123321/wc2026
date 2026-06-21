@@ -14,8 +14,8 @@ body::before { content:""; position:fixed; inset:0; pointer-events:none; z-index
 a { color:inherit; text-decoration:none; } @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* === 顶部品牌 === */
-.brand { background: linear-gradient(135deg, rgba(40,40,40,0.7) 0%, rgba(20,20,20,0.85) 50%, rgba(40,40,40,0.7) 100%); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 220px 16px 12px; text-align:center; position:relative; overflow:hidden; }
-.brand::after { content:""; position:absolute; left:0; right:0; top:0; height:200px; background: url('assets/stars_top.jpg') center center / 100% 100% no-repeat; opacity:0.95; pointer-events:none; }
+.brand { background: linear-gradient(135deg, rgba(40,40,40,0.7) 0%, rgba(20,20,20,0.85) 50%, rgba(40,40,40,0.7) 100%); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 95px 16px 10px; text-align:center; position:relative; overflow:hidden; }
+.brand::after { content:""; position:absolute; left:0; right:0; top:0; height:80px; background: #000 url('assets/stars_top.jpg') center / contain no-repeat; opacity:0.95; pointer-events:none; }
 .brand h1 { font-size:22px; font-weight:800; position:relative; margin:0 0 4px; background: linear-gradient(90deg, #ffd966, #ff6a00); -webkit-background-clip:text; background-clip:text; color:transparent; letter-spacing:2px; }
 .brand .sub { display:none; }
 .brand .meta { margin-top:6px; display:flex; flex-wrap:wrap; gap:5px; justify-content:center; position:relative; }
@@ -157,42 +157,12 @@ footer a { color:#ffb700; }
 </head>
 <body>
 <div class="brand">
-  <h1 style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap">
-    <svg width="36" height="36" viewBox="0 0 64 64" style="filter:drop-shadow(0 0 8px rgba(255,180,0,0.5))">
-      <defs>
-        <linearGradient id="trophy" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#ffd966"/>
-          <stop offset="100%" style="stop-color:#ff8a00"/>
-        </linearGradient>
-      </defs>
-      <path d="M16 8 L48 8 L48 16 Q48 32 32 36 Q16 32 16 16 Z" fill="url(#trophy)" stroke="#ffb700" stroke-width="1.5"/>
-      <path d="M16 12 Q8 12 8 20 Q8 28 16 28" fill="none" stroke="#ffb700" stroke-width="2.5"/>
-      <path d="M48 12 Q56 12 56 20 Q56 28 48 28" fill="none" stroke="#ffb700" stroke-width="2.5"/>
-      <rect x="28" y="36" width="8" height="10" fill="url(#trophy)"/>
-      <rect x="20" y="46" width="24" height="6" rx="1" fill="url(#trophy)" stroke="#ffb700" stroke-width="1"/>
-      <rect x="14" y="52" width="36" height="4" rx="1" fill="url(#trophy)" stroke="#ffb700" stroke-width="1"/>
-      <text x="32" y="22" text-anchor="middle" font-size="9" font-weight="900" fill="#5a3300">★</text>
-    </svg>
-    <span>玲珑世界杯预测</span>
-    <svg width="36" height="36" viewBox="0 0 64 64" style="filter:drop-shadow(0 0 8px rgba(255,180,0,0.5))">
-      <defs>
-        <linearGradient id="trophy2" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#ffd966"/>
-          <stop offset="100%" style="stop-color:#ff8a00"/>
-        </linearGradient>
-      </defs>
-      <path d="M16 8 L48 8 L48 16 Q48 32 32 36 Q16 32 16 16 Z" fill="url(#trophy2)" stroke="#ffb700" stroke-width="1.5"/>
-      <path d="M16 12 Q8 12 8 20 Q8 28 16 28" fill="none" stroke="#ffb700" stroke-width="2.5"/>
-      <path d="M48 12 Q56 12 56 20 Q56 28 48 28" fill="none" stroke="#ffb700" stroke-width="2.5"/>
-      <rect x="28" y="36" width="8" height="10" fill="url(#trophy2)"/>
-      <rect x="20" y="46" width="24" height="6" rx="1" fill="url(#trophy2)" stroke="#ffb700" stroke-width="1"/>
-      <rect x="14" y="52" width="36" height="4" rx="1" fill="url(#trophy2)" stroke="#ffb700" stroke-width="1"/>
-      <text x="32" y="22" text-anchor="middle" font-size="9" font-weight="900" fill="#5a3300">★</text>
-    </svg>
+  <h1 style="display:block;text-align:center;margin:0 0 6px;position:relative;z-index:2">
+    <span style="background:linear-gradient(90deg,#ffd966,#ff6a00);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800;letter-spacing:1px">玲珑2026世界杯预测</span>
   </h1>
   <div style="text-align:center;font-size:9px;color:#6a8090;margin-top:4px;letter-spacing:0.3px;opacity:0.75">6/22 09:00 · ESPN/DraftKings · λ模型 · 4场预测</div>
-  <div style="overflow:hidden;white-space:nowrap;margin:4px 0 8px;padding:4px 0;background:rgba(0,0,0,0.3);border-radius:20px;border:1px solid rgba(255,255,255,0.05)">
-    <div style="display:flex;width:max-content;animation:scroll 50s linear infinite;color:#aab;font-size:11px;letter-spacing:0.5px"><span style="padding-right:40px">⚽ 🇦🇷 阿根廷 · 🇧🇷 巴西 · 🇪🇸 西班牙 · 🇫🇷 法国 · 🇩🇪 德国 · 🏴 英格兰 · 🇵🇹 葡萄牙 · 🇳🇱 荷兰 · 🇧🇪 比利时 · 🇮🇹 意大利 · 🇲🇽 墨西哥 · 🇺🇸 美国 · 🇯🇵 日本 · 🇰🇷 韩国 · 🇸🇦 沙特 · 🇪🇬 埃及 · 🇲🇦 摩洛哥 · 🇳🇬 尼日利亚 · 🇧🇷 巴西 · 🇨🇲 喀麦隆 · 🇬🇭 加纳 · 🇨🇲 喀麦隆 · 🇸🇳 塞内加尔 · 🇹🇳 突尼斯 · 🇨🇻 佛得角 · 🇦🇷 阿根廷 · 🇺🇾 乌拉圭 · 🇨🇴 哥伦比亚 · 🇨🇱 智利 · 🇪🇨 厄瓜多尔 · 🇵🇪 秘鲁 · 🇧🇴 玻利维亚 · 🇻🇪 委内瑞拉 · 🇵🇦 巴拿马 · 🇨🇷 哥斯达黎加 · 🇯🇲 牙买加 · 🇭🇹 海地 · 🇨🇦 加拿大 · 🇦🇺 澳大利亚 · 🇮🇷 伊朗 · 🇮🇶 伊拉克 · 🇶🇦 卡塔尔 · 🇦🇪 阿联酋 · 🇸🇦 沙特 · 🇨🇳 中国 · 🇯🇵 日本 · 🇰🇷 韩国 · ⚽  全部 48 强 决战美加墨</span><span style="padding-right:40px">⚽ 🇦🇷 阿根廷 · 🇧🇷 巴西 · 🇪🇸 西班牙 · 🇫🇷 法国 · 🇩🇪 德国 · 🏴 英格兰 · 🇵🇹 葡萄牙 · 🇳🇱 荷兰 · 🇧🇪 比利时 · 🇮🇹 意大利 · 🇲🇽 墨西哥 · 🇺🇸 美国 · 🇯🇵 日本 · 🇰🇷 韩国 · 🇸🇦 沙特 · 🇪🇬 埃及 · 🇲🇦 摩洛哥 · 🇳🇬 尼日利亚 · 🇧🇷 巴西 · 🇨🇲 喀麦隆 · 🇬🇭 加纳 · 🇨🇲 喀麦隆 · 🇸🇳 塞内加尔 · 🇹🇳 突尼斯 · 🇨🇻 佛得角 · 🇦🇷 阿根廷 · 🇺🇾 乌拉圭 · 🇨🇴 哥伦比亚 · 🇨🇱 智利 · 🇪🇨 厄瓜多尔 · 🇵🇪 秘鲁 · 🇧🇴 玻利维亚 · 🇻🇪 委内瑞拉 · 🇵🇦 巴拿马 · 🇨🇷 哥斯达黎加 · 🇯🇲 牙买加 · 🇭🇹 海地 · 🇨🇦 加拿大 · 🇦🇺 澳大利亚 · 🇮🇷 伊朗 · 🇮🇶 伊拉克 · 🇶🇦 卡塔尔 · 🇦🇪 阿联酋 · 🇸🇦 沙特 · 🇨🇳 中国 · 🇯🇵 日本 · 🇰🇷 韩国 · ⚽  全部 48 强 决战美加墨</span></div>
+  <div style="position:absolute;left:-5%;right:-5%;top:100px;height:28px;line-height:28px;overflow:hidden;white-space:nowrap;z-index:1;opacity:0.4;pointer-events:none">
+    <div style="display:flex;width:max-content;animation:scroll 90s linear infinite;color:#aab;font-size:13px;letter-spacing:1px"><span style="padding-right:40px">⚽️ 全部 48 强 决战美加墨 ·    1 阿根廷 ·    2 巴西 ·    3 西班牙 ·    4 法国 ·    5 德国 ·    6 葡萄牙 ·    7 英格兰 ·    8 荷兰 ·    9 比利时 ·    10 乌拉圭 ·    11 摩洛哥 ·    12 日本 ·    13 哥伦比亚 ·    14 克罗地亚 ·    15 挪威 ·    16 塞内加尔 ·    17 瑞士 ·    18 美国 ·    19 墨西哥 ·    20 韩国 ·    21 瑞典 ·    22 加拿大 ·    23 伊朗 ·    24 苏格兰 ·    25 土耳其 ·    26 厄瓜多尔 ·    27 奥地利 ·    28 科特迪瓦 ·    29 埃及 ·    30 巴拉圭 ·    31 澳大利亚 ·    32 捷克 ·    33 阿尔及利亚 ·    34 突尼斯 ·    35 乌兹别克斯坦 ·    36 沙特阿拉伯 ·    37 卡塔尔 ·    38 波黑 ·    39 加纳 ·    40 南非 ·    41 刚果(金) ·    42 巴拿马 ·    43 佛得角 ·    44 约旦 ·    45 伊拉克 ·    46 新西兰 ·    47 海地 ·    48 库拉索</span><span style="padding-right:40px">⚽️ 全部 48 强 决战美加墨 ·    1 阿根廷 ·    2 巴西 ·    3 西班牙 ·    4 法国 ·    5 德国 ·    6 葡萄牙 ·    7 英格兰 ·    8 荷兰 ·    9 比利时 ·    10 乌拉圭 ·    11 摩洛哥 ·    12 日本 ·    13 哥伦比亚 ·    14 克罗地亚 ·    15 挪威 ·    16 塞内加尔 ·    17 瑞士 ·    18 美国 ·    19 墨西哥 ·    20 韩国 ·    21 瑞典 ·    22 加拿大 ·    23 伊朗 ·    24 苏格兰 ·    25 土耳其 ·    26 厄瓜多尔 ·    27 奥地利 ·    28 科特迪瓦 ·    29 埃及 ·    30 巴拉圭 ·    31 澳大利亚 ·    32 捷克 ·    33 阿尔及利亚 ·    34 突尼斯 ·    35 乌兹别克斯坦 ·    36 沙特阿拉伯 ·    37 卡塔尔 ·    38 波黑 ·    39 加纳 ·    40 南非 ·    41 刚果(金) ·    42 巴拿马 ·    43 佛得角 ·    44 约旦 ·    45 伊拉克 ·    46 新西兰 ·    47 海地 ·    48 库拉索</span></div>
   </div>
 
 </div>
