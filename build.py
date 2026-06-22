@@ -380,10 +380,10 @@ out += '<div class="container">'
 
 # 1. 今日预测(顶部, 网格布局)
 out += '<div class="section" id="mpred">'
-out += '<div class="section-title">⭐ 今日预测 (北京时间 6/21 凌晨-上午)</div>'
+out += '<div class="section-title">⭐ 今日预测 (北京时间 6/22-6/23)</div>'
 if PREDICTIONS:
     out += '<div class="matches-grid">'
-    for key in ["M35_6/20","M33_6/20","M34_6/20","M36_6/20"]:
+    for key in ["M42_6/22","M43_6/22","M41_6/23","M44_6/23"]:
         if key in PREDICTIONS:
             out += match_card_html(key, PREDICTIONS[key])
     out += '</div>'
